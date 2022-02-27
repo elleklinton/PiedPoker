@@ -1,7 +1,7 @@
 from typing import List
 
-from card import Card
-from test.hands.base_hand import BaseHand
+from card_internals.card import Card
+from hands.base_hand import BaseHand
 from hands.high_card import HighCard
 
 
@@ -61,6 +61,8 @@ class ThreeOfAKind(BaseHand):
             else:  # Same trip card_internals, delegate to HighCard to determine winner
                 return BaseHand(self.cards_not_in_hand).as_hand(HighCard) < BaseHand(other.cards_not_in_hand).as_hand(HighCard)
 
+    def __hash__(self):
+        return hash(str(self))
 
 
 

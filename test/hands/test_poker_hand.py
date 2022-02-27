@@ -10,7 +10,7 @@ from hands.straight import Straight
 from hands.straight_flush import StraightFlush
 from hands.three_of_a_kind import ThreeOfAKind
 from hands.two_pair import TwoPair
-from poker_hand import PokerHand
+from hands.poker_hand import PokerHand
 from test.hands.hand_test_utils import HandTestUtils
 
 
@@ -64,4 +64,34 @@ class TestPokerHand(TestCase):
         cards = HandTestUtils.build_shorthand('as', 'ks', 'qs', 'js', '10s')
         hand = PokerHand(cards)
         self.assertIsInstance(hand.as_best_hand(), RoyalFlush)
+
+    def test_hashes_unique(self):
+        # Test 2 different hands (but same type) have different hashes
+        cards = HandTestUtils.build_shorthand('2s', '2d', '5h', '8d', '10s', 'jh', 'as')
+        hand = PokerHand(cards)
+
+        cards_2 = HandTestUtils.build_shorthand('ad', '3d', '5h', '8d', '10s', 'jh', 'as')
+        hand_2 = PokerHand(cards_2)
+
+        assert len({hand, hand_2}) == 2, 'Error: expected set to be len 2'
+
+    def test_hashes_unique_as_best_hand(self):
+        # Test 2 different hands (but same type) have different hashes
+        cards = HandTestUtils.build_shorthand('2s', '2d', '5h', '8d', '10s', 'jh', 'as')
+        hand = PokerHand(cards).as_best_hand()
+
+        cards_2 = HandTestUtils.build_shorthand('3s', '3d', '5h', '8d', '10s', 'jh', 'as')
+        hand_2 = PokerHand(cards_2).as_best_hand()
+
+        assert len({hand, hand_2}) == 2, 'Error: expected set to be len 2'
+
+        # Test 2 different hands (DIFFERENT hand types) have different hashes
+        cards = HandTestUtils.build_shorthand('as', 'ks', 'qs', 'js', '10s')
+        hand = PokerHand(cards).as_best_hand()
+
+        cards_2 = HandTestUtils.build_shorthand('3s', '3d', '5h', '8d', '10s', 'jh', 'as')
+        hand_2 = PokerHand(cards_2).as_best_hand()
+
+        assert len({hand, hand_2}) == 2, 'Error: expected set to be len 2'
+
 

@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from test.hands.base_hand import BaseHand
+from hands.base_hand import BaseHand
 from hands.one_pair import OnePair
 from test.hands.hand_test_utils import HandTestUtils
 

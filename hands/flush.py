@@ -1,7 +1,7 @@
 from typing import List
 
-from card import Card
-from test.hands.base_hand import BaseHand
+from card_internals.card import Card
+from hands.base_hand import BaseHand
 
 
 class Flush(BaseHand):
@@ -47,6 +47,10 @@ class Flush(BaseHand):
             return True
         else:
             return self.cards_in_hand[0] < other.cards_in_hand[0]
+
+    def __hash__(self):
+        return hash(str(self))
+
 
 
 

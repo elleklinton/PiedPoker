@@ -4,7 +4,8 @@ from card_internals.comparable import Comparable
 
 
 class Rank(Comparable):
-    ALLOWED_VALUES = ['2', '3', '4', '5', '6', '7', '8', '9', 't', '10', 'j', 'q', 'k', 'a']
+    ALLOWED_VALUES = ['2', '3', '4', '5', '6', '7', '8', '9', 't', '10', 'j', 'q', 'k', 'a']  # Has 't' and '10'
+    ALLOWED_VALUES_SET = {'2', '3', '4', '5', '6', '7', '8', '9', '10', 'j', 'q', 'k', 'a'}  # Only has '10'
 
     def __init__(self, value: Union[str, int]):
         if isinstance(value, int):
@@ -33,6 +34,9 @@ class Rank(Comparable):
     def __gt__(self, other):
         return self.rank > other.rank
 
+    def __ge__(self, other):
+        return not self < other
+
     def __lt__(self, other):
         return self.rank < other.rank
 
@@ -41,6 +45,8 @@ class Rank(Comparable):
             return self.rank - other
         else:
             if self.rank == 2 and other.rank == 14:  # Case for 2 - ace, should be 1
+                return 1
+            elif self.rank == 14 and other.rank == 2:
                 return 1
             return self.rank - other.rank
 

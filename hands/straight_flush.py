@@ -1,7 +1,7 @@
 from typing import List
 
-from card import Card
-from test.hands.base_hand import BaseHand
+from card_internals.card import Card
+from hands.base_hand import BaseHand
 
 
 class StraightFlush(BaseHand):
@@ -48,3 +48,5 @@ class StraightFlush(BaseHand):
         else:
             return self.straight_flush[0] < other.straight_flush[0]
 
+    def __hash__(self):
+        return hash(str(self))

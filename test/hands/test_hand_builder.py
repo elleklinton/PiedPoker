@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from card import Card
+from card_internals.card import Card
 from test.hands.hand_test_utils import HandTestUtils
 
 

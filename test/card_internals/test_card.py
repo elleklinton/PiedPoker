@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from card import Card
+from card_internals.card import Card
 from card_internals.rank import Rank
 from card_internals.suit import Suit
 

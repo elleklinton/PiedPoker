@@ -1,7 +1,7 @@
 from typing import List
 
-from card import Card
-from test.hands.base_hand import BaseHand
+from card_internals.card import Card
+from hands.base_hand import BaseHand
 
 
 class TwoPair(BaseHand):
@@ -33,7 +33,7 @@ class TwoPair(BaseHand):
             if self.ranks_pair[0] == other.ranks_pair[0]:  # Same top pair
                 if self.ranks_pair[1] == other.ranks_pair[1]: # Same bottom pair
                     # Only equal if same kicker card_internals
-                    return self.cards_not_in_hand[0] == other.cards_not_in_hand[0]
+                    return self.cards_not_in_hand == other.cards_not_in_hand
         return False
 
     def __gt__(self, other):
@@ -72,6 +72,8 @@ class TwoPair(BaseHand):
                 else:  # Same top and bottom pair, comes down to kicker card_internals
                     return self.cards_not_in_hand[0] < other.cards_not_in_hand[0]
 
+    def __hash__(self):
+        return hash(str(self))
 
 
 

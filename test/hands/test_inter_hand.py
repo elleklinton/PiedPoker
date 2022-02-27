@@ -1,6 +1,6 @@
 import unittest
 
-from test.hands.base_hand import BaseHand
+from hands.base_hand import BaseHand
 from hands.flush import Flush
 from hands.four_of_a_kind import FourOfAKind
 from hands.full_house import FullHouse
@@ -49,5 +49,9 @@ class TestInterHand(unittest.TestCase):
                     self.assertNotEqual(hand_one, hand_two)
                     self.assertFalse(hand_one > hand_two, f'Test Failed:\n{hand_one}\n!>\n{hand_two}\n(expected lt)')
                     self.assertLess(hand_one, hand_two)
+
+    def test_hashes_unique(self):
+        s = set(ALL_RANKED_HANDS)
+        assert len(s) == len(ALL_RANKED_HANDS)
 
 

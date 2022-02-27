@@ -1,8 +1,8 @@
 from typing import List
 
-from card import Card
+from card_internals.card import Card
 from card_internals.rank import Rank
-from test.hands.base_hand import BaseHand
+from hands.base_hand import BaseHand
 
 
 class RoyalFlush(BaseHand):
@@ -49,5 +49,7 @@ class RoyalFlush(BaseHand):
         else:
             return False  # All royal flushes are equal
 
+    def __hash__(self):
+        return hash(str(self))
 
 

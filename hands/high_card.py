@@ -1,7 +1,7 @@
 from typing import List
 
-from card import Card
-from test.hands.base_hand import BaseHand
+from card_internals.card import Card
+from hands.base_hand import BaseHand
 
 
 class HighCard(BaseHand):
@@ -14,10 +14,6 @@ class HighCard(BaseHand):
         :type cards:
         """
         raise NotImplementedError('Error: You cannot initialize this class directly. You must call BaseHand.asHand()')
-
-    @property
-    def is_hand(self):
-        return True
 
     def __num_to_compare__(self, other):
         return min(len(self.ranks_single), len(other.ranks_single), 5)
@@ -70,4 +66,5 @@ class HighCard(BaseHand):
                     return True
             return False
 
-
+    def __hash__(self):
+        return hash(str(self))

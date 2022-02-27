@@ -1,7 +1,7 @@
 from typing import List
 
-from card import Card
-from test.hands.base_hand import BaseHand
+from card_internals.card import Card
+from hands.base_hand import BaseHand
 
 
 class FourOfAKind(BaseHand):
@@ -25,11 +25,11 @@ class FourOfAKind(BaseHand):
 
     @property
     def cards_not_in_hand(self):
-        return [next(c for c in self.cards_sorted if c.rank not in self.ranks_quad)]
+        return [c for c in self.cards_sorted if c.rank not in self.ranks_quad][:1]
 
     def __eq__(self, other):
         if super().__eq__(other):  # Same class of hand
-            return self.ranks_quad[0] == other.ranks_quad[0] and self.cards_not_in_hand[0] == other.cards_not_in_hand[0]
+            return self.ranks_quad[0] == other.ranks_quad[0] and self.cards_not_in_hand == other.cards_not_in_hand
         return False
 
     def __gt__(self, other):
@@ -57,3 +57,6 @@ class FourOfAKind(BaseHand):
                 return False
             else:
                 return self.cards_not_in_hand[0] < other.cards_not_in_hand[0]
+
+    def __hash__(self):
+        return hash(str(self))

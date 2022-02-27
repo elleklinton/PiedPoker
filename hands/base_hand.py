@@ -1,6 +1,6 @@
 from typing import List, Dict
 
-from card import Card
+from card_internals.card import Card
 from card_internals.rank import Rank
 from card_internals.suit import Suit
 
@@ -52,7 +52,7 @@ class BaseHand:
 
     @property
     def is_hand(self):
-        return False
+        return True
 
     @property
     def cards_in_hand(self):
@@ -105,9 +105,9 @@ class BaseHand:
                         self.all_confirmed_straights.append(s)
                         self.__straight_flush_counter__(s)
                 elif lowest_card_in_straight.rank == c.rank:
-                    # Next card_internals is equal to current lowest card_internals in straight
+                    # Next card is equal to current lowest card in straight
                     # Therefore, we duplicate this list again, but replace the
-                    # last element with the current card_internals (in case a straight flush shows up)
+                    # last element with the current card (in case a straight flush shows up)
                     new_possible_straight = s.copy()[:len(s) - 1] + [c]
                     new_straights.append(new_possible_straight)
                     if len(new_possible_straight) == 5:
@@ -135,7 +135,10 @@ class BaseHand:
         return self.hand_rank < other.hand_rank
 
     def __str__(self):
-        return f'{self.__class__.__name__}({self.cards_in_hand}, {self.cards_not_in_hand})'
+        return self.__repr__()
 
     def __repr__(self):
-        return self.__str__()
+        return f'{self.__class__.__name__}({self.cards_in_hand}, {self.cards_not_in_hand})'
+
+    def __hash__(self):
+        return str(self).__hash__()

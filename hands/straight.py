@@ -1,7 +1,7 @@
 from typing import List
 
-from card import Card
-from test.hands.base_hand import BaseHand
+from card_internals.card import Card
+from hands.base_hand import BaseHand
 
 
 class Straight(BaseHand):
@@ -48,7 +48,8 @@ class Straight(BaseHand):
         else:
             return self.top_straight[0] < other.top_straight[0]
 
-
+    def __hash__(self):
+        return hash(str(self))
 
 
 

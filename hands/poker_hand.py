@@ -1,6 +1,6 @@
 from typing import List
 
-from card import Card
+from card_internals.card import Card
 from hands.flush import Flush
 from hands.four_of_a_kind import FourOfAKind
 from hands.full_house import FullHouse
@@ -11,7 +11,7 @@ from hands.straight import Straight
 from hands.straight_flush import StraightFlush
 from hands.three_of_a_kind import ThreeOfAKind
 from hands.two_pair import TwoPair
-from test.hands.base_hand import BaseHand
+from hands.base_hand import BaseHand
 
 
 class PokerHand(BaseHand):
@@ -59,3 +59,5 @@ class PokerHand(BaseHand):
             if self.is_hand:  # This will always be true for HighCard, so this will always be reached
                 return self
 
+    def __hash__(self):
+        return super(PokerHand, self).__hash__()
