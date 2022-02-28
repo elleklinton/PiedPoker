@@ -17,11 +17,22 @@ class FullHouse(BaseHand):
 
     @property
     def is_hand(self):
-        return len(self.ranks_pair) >= 1 and len(self.ranks_triple) >= 1
+        if len(self.ranks_triple) >= 1:
+            if len(self.ranks_pair) >= 1 or len(self.ranks_triple) >= 2:
+                return True
+        return False
+
+    @property
+    def __trip_rank__(self):
+        return self.ranks_triple[0]
+
+    @property
+    def __pair_rank__(self):
+        return self.ranks_pair[0] if self.ranks_pair else self.ranks_triple[1]
 
     @property
     def cards_in_hand(self):
-        card_ranks = {self.ranks_pair[0], self.ranks_triple[0]}
+        card_ranks = {self.__trip_rank__, self.__pair_rank__}
         return [c for c in self.cards_sorted if c.rank in card_ranks][:5]
 
     @property
@@ -30,7 +41,7 @@ class FullHouse(BaseHand):
 
     def __eq__(self, other):
         if super().__eq__(other):  # Same class of hand
-            return self.ranks_triple[0] == other.ranks_triple[0] and self.ranks_pair[0] == other.ranks_pair[0]
+            return self.__trip_rank__ == other.__trip_rank__ and self.__pair_rank__ == other.__pair_rank__
         return False
 
     def __gt__(self, other):
@@ -39,10 +50,10 @@ class FullHouse(BaseHand):
         elif super().__lt__(other):
             return False
         else:
-            if self.ranks_triple[0] > other.ranks_triple[0]:
+            if self.__trip_rank__ > other.__trip_rank__:
                 return True
-            elif self.ranks_triple[0] == other.ranks_triple[0]:
-                return self.ranks_pair[0] > other.ranks_pair[0]
+            elif self.__trip_rank__ == other.__trip_rank__:
+                return self.__pair_rank__ > other.__pair_rank__
             else:
                 return False
 
@@ -52,10 +63,10 @@ class FullHouse(BaseHand):
         if super().__lt__(other):
             return True
         else:
-            if self.ranks_triple[0] < other.ranks_triple[0]:
+            if self.__trip_rank__ < other.__trip_rank__:
                 return True
-            elif self.ranks_triple[0] == other.ranks_triple[0]:
-                return self.ranks_pair[0] < other.ranks_pair[0]
+            elif self.__trip_rank__ == other.__trip_rank__:
+                return self.__pair_rank__ < other.__pair_rank__
             else:
                 return False
 

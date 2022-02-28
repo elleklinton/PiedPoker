@@ -25,3 +25,11 @@ class PlayerHasSuitedCards(BasePokerEvent):
         if self.only_suited_connectors:
             return len(card_suits) == 1 and abs(actual_cards[0].rank - actual_cards[1].rank) == 1
         return len(card_suits) == 1
+
+    def __str__(self):
+        if self.only_suited_connectors:
+            return f'{self.__class__.__name__}: Only Suited Connectors'
+        return self.__class__.__name__
+
+    def __repr__(self):
+        return str(self)

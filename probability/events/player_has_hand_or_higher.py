@@ -21,3 +21,9 @@ class PlayerHasHandOrHigher(BasePokerEvent):
         if not self.player:
             self.player = round_result.player_one
         return round_result.player_during_round[self.player].hand.hand_rank >= self.target_hand_type.hand_rank
+
+    def __str__(self):
+        return f'{self.__class__.__name__}: {self.target_hand_type}'
+
+    def __repr__(self):
+        return str(self)

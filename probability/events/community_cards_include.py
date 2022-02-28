@@ -17,3 +17,9 @@ class CommunityCardsInclude(BasePokerEvent):
 
     def is_event(self, round_result: RoundResult) -> bool:
         return len(self.target_cards.intersection(set(round_result.community_cards))) == len(set(self.target_cards))
+
+    def __str__(self):
+        return f'{self.__class__.__name__}: {self.target_cards}'
+
+    def __repr__(self):
+        return str(self)

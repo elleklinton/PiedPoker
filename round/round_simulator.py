@@ -14,7 +14,7 @@ from round.round import Round
 from round.round_result import RoundResult
 
 
-class RoundSimulator(Round):
+class RoundSimulator:
     def __init__(self, community_cards: List[Card] = (), players: List[Player] = (), total_players: int = 5,
                  other_drawn_cards: List[Card] = ()):
         """
@@ -35,7 +35,8 @@ class RoundSimulator(Round):
         for i in range(total_players - len(players)):
             players.append(Player(f'player_{i}', []))
 
-        super().__init__(community_cards, players, other_drawn_cards)
+        self.round = Round(community_cards, players, other_drawn_cards)
+        self.players = self.round.players
 
     def simulate(self, n: int = 1000, n_jobs: int = 4, status_bar: bool = True):
         """
@@ -58,16 +59,13 @@ class RoundSimulator(Round):
 
         if n_jobs == 1:  # Don't want to parallelize
             if not status_bar:
-                simulations = [self.__simulate_round__() for i in range(n)]
+                simulations = [self.round.simulate() for i in range(n)]
             else:
-                simulations = [self.__simulate_round__() for i in tqdm(range(n))]
+                simulations = [self.round.simulate() for i in tqdm(range(n))]
         else:
             if not status_bar:
-                simulations = Parallel(n_jobs=n_jobs)(delayed(self.__simulate_round__)() for i in range(n))
+                simulations = Parallel(n_jobs=n_jobs)(delayed(self.round.simulate)() for i in range(n))
             else:
-                simulations = Parallel(n_jobs=n_jobs)(delayed(self.__simulate_round__)() for i in tqdm(range(n)))
+                simulations = Parallel(n_jobs=n_jobs)(delayed(self.round.simulate)() for i in tqdm(range(n)))
 
         return SimulationProbability(simulations)
-
-    def __simulate_round__(self):
-        return super().simulate()

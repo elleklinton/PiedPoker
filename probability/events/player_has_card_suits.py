@@ -24,3 +24,9 @@ class PlayerHasCardSuits(BasePokerEvent):
         actual_cards = round_result.player_during_round[self.player].cards
         set_intersection = set(self.target_suits).intersection(set([c.suit for c in actual_cards]))
         return len(set_intersection) == len(set(self.target_suits))
+
+    def __str__(self):
+        return f'{self.__class__.__name__}: {self.target_suits}'
+
+    def __repr__(self):
+        return str(self)

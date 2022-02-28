@@ -42,3 +42,9 @@ class PlayerHasPocketPair(BasePokerEvent):
             self.player = round_result.player_one
         actual_cards = round_result.player_during_round[self.player].cards
         return len(set([c.rank for c in actual_cards])) == 1 and actual_cards[0].rank in self.target_ranks
+
+    def __str__(self):
+        return f'{self.__class__.__name__}: {self.target_ranks}'
+
+    def __repr__(self):
+        return str(self)

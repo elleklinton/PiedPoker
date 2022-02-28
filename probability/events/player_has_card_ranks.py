@@ -24,3 +24,9 @@ class PlayerHasCardRanks(BasePokerEvent):
         actual_cards = round_result.player_during_round[self.player].cards
         set_intersection = set(self.target_ranks).intersection(set([c.rank for c in actual_cards]))
         return len(set_intersection) == len(set(self.target_ranks))
+
+    def __str__(self):
+        return f'{self.__class__.__name__}: {self.target_ranks}'
+
+    def __repr__(self):
+        return str(self)

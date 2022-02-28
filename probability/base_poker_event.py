@@ -12,6 +12,12 @@ class BasePokerEvent:
     def is_event(self, round_result: RoundResult) -> bool:
         raise NotImplementedError('Error: PokerEvent.is_event is undefined')
 
+    def __str__(self):
+        return f'{self.__class__.__name__}'
+
+    def __repr__(self):
+        return str(self)
+
     # def AND(self, other: Union[BasePokerEvent, Callable[[RoundResult], bool]]) -> BasePokerEvent:
     #     if isinstance(other, BasePokerEvent):
     #         other = other.filter_fn

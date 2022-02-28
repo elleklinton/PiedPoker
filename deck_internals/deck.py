@@ -7,20 +7,6 @@ from card_internals.suit import Suit
 import numpy as np
 
 
-# class CardsOfDeck:
-#     ALL_CARDS = [Card(rank, suit) for rank in Rank.ALLOWED_VALUES_SET for suit in Suit.ALLOWED_VALUES]
-#
-#     CARD_TO_INDEX: Dict[Card, int] = {card: i for (i, card) in enumerate(ALL_CARDS)}
-#
-#     def __init__(self, excluding: List[Card]):
-#         self.cards = self.ALL_CARDS[:] # Make a copy of the ordered cards
-#         for c in excluding:
-#             self.remove(c)
-#
-#     def remove(self, card: Card):
-#         idx = self.CA
-
-
 class Deck:
     ALL_CARDS = np.array([Card(rank, suit) for rank in Rank.ALLOWED_VALUES_SET for suit in Suit.ALLOWED_VALUES])
 
@@ -33,7 +19,6 @@ class Deck:
 
         if n > len(self.ALL_CARDS) - len(self.excluded_cards):
             raise RuntimeError(f'Error: Cannot draw {n} cards from a deck with only {len(self.ALL_CARDS) - len(self.excluded_cards)} un-drawn cards.')
-
 
         drawn_cards = []
         selected_cards = np.random.choice(self.ALL_CARDS, size=n, replace=True)

@@ -20,6 +20,7 @@ class PlayerHasHand(BasePokerEvent):
         """
         super().__init__()
         self.player = player
+        self.__target_hand_type__ = target_hand_type
 
         if isinstance(target_hand_type, list):
             target_hands = target_hand_type
@@ -33,3 +34,9 @@ class PlayerHasHand(BasePokerEvent):
             self.player = round_result.player_one
 
         return round_result.player_during_round[self.player].hand.hand_rank in self.target_hand_ranks_set
+
+    def __str__(self):
+        return f'{self.__class__.__name__}: {self.__target_hand_type__.__name__}'
+
+    def __repr__(self):
+        return str(self)
