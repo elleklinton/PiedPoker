@@ -2,7 +2,7 @@ from typing import List
 
 from probability.base_poker_event import BasePokerEvent
 from probability.probability_value import ProbabilityValue
-from round.round_result import RoundResult
+from round.native.round_result import RoundResult
 
 
 class SimulationProbability:

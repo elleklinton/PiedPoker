@@ -18,9 +18,11 @@ from time import time
 
 from card_internals.card import Card
 from card_internals.rank import Rank
+from hands.four_of_a_kind import FourOfAKind
 from player.player import Player
+from probability.events.player_has_hand import PlayerHasHand
 from probability.events.player_wins import PlayerWins
-from round.round_simulator import RoundSimulator
+from round.native.round_simulator import RoundSimulator
 
 """
 Probability of winning given pocket pair (2 players):
@@ -80,13 +82,14 @@ Pocket As Probability of Winning with 2 players:
 """
 
 
-def run_pocket_pair_odds(total_players=2, n_trials=1000):
+def run_pocket_pair_odds(total_players=2, n_trials=10000):
     for r in sorted(list(Rank.ALLOWED_VALUES_SET), key=lambda rr: Rank(rr)):
         p1 = Player('Ellek', [Card(f'{r}d'), Card(f'{r}s')])
 
         round_simulator = RoundSimulator(players=[p1], community_cards=[], total_players=total_players)
         t = time()
-        result = round_simulator.simulate(n_trials, n_jobs=-1, status_bar=False)
+        result = round_simulator.simulate(n_trials, n_jobs=1, status_bar=False)
+        print(f'took {time() - t} seconds')
 
         prob = result.probability_of(
             event=PlayerWins(),
@@ -168,5 +171,27 @@ def run(n=1000):
 # lp_wrapper()
 # lp.print_stats()
 
+# t = time()
 # run_pocket_pair_odds(2)
-run(20000)
+# print(t - time())
+# run(20000)
+
+p1 = Player('Ellek', [Card('as'), Card('ah')])
+community_cards = [Card('ac'), Card('10d'), Card('5s'), Card('6h')]
+
+other_drawn_cards = []
+
+players = [p1]
+
+total_players = 2
+
+round_simulator = RoundSimulator(players=players, community_cards=community_cards, total_players=total_players, other_drawn_cards=other_drawn_cards)
+result = round_simulator.simulate(10000, n_jobs=1)
+
+print(f'Probability that {p1.name} wins:')
+p = result.probability_of(
+    event=PlayerHasHand(FourOfAKind),
+    given=None,
+)
+print(p)
+

@@ -52,6 +52,8 @@ class TwoPair(BaseHand):
                 elif self.ranks_pair[1] < other.ranks_pair[1]:
                     return False
                 else:  # Same top and bottom pair, comes down to kicker card_internals
+                    if not self.cards_not_in_hand or not other.cards_not_in_hand:
+                        return False
                     return self.cards_not_in_hand[0] > other.cards_not_in_hand[0]
 
     def __lt__(self, other):
@@ -70,6 +72,9 @@ class TwoPair(BaseHand):
                 elif self.ranks_pair[1] > other.ranks_pair[1]:
                     return False
                 else:  # Same top and bottom pair, comes down to kicker card_internals
+                    if not self.cards_not_in_hand or not other.cards_not_in_hand:
+                        return False
+
                     return self.cards_not_in_hand[0] < other.cards_not_in_hand[0]
 
     def __hash__(self):

@@ -1,7 +1,6 @@
 from unittest import TestCase
 
 from probability.base_poker_event import BasePokerEvent
-from round.round_result import RoundResult
 
 
 class TestBasePokerEvent(TestCase):

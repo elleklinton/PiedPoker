@@ -27,6 +27,10 @@ class StraightFlush(BaseHand):
     def cards_not_in_hand(self):
         return []
 
+    @property
+    def is_suit_dependent(self):
+        return True
+
     def __eq__(self, other):
         if super().__eq__(other):  # Same class of hand
             return self.straight_flush[0] == other.straight_flush[0]

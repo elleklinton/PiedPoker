@@ -23,21 +23,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3cbb2352-993c-4228-8d94-ceb3871a62fa" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/probability/events/no_tie.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/functional/known_probabilities/test_cases.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/functional/utils/simulation_test_case.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/functional/utils/simulator_factory.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/unit/hands/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/unit/player/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/unit/probability/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/unit/probability/events/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/unit/probability/events/test_no_tie.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/unit/round/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lookup_table/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lookup_table/generate_lookup_table.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lookup_table/lookup_table_hands.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lookup_table/merge_lookup_tables.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lookup_table/out/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lookup_table/utils/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lookup_table/utils/file_handler.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lookup_table/utils/ranker.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/round/from_table/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/round/from_table/player_from_table.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/round/from_table/poker_hand_from_table.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/round/from_table/poker_hand_table.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/round/from_table/round_from_table.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/round/from_table/round_simulator_from_table.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/round/native/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/round/native/round_result.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/visualization/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/visualization/pocket_pair_map.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/card_internals/card.py" beforeDir="false" afterPath="$PROJECT_DIR$/card_internals/card.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/deck_internals/deck.py" beforeDir="false" afterPath="$PROJECT_DIR$/deck_internals/deck.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hands/full_house.py" beforeDir="false" afterPath="$PROJECT_DIR$/hands/full_house.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hands/base_hand.py" beforeDir="false" afterPath="$PROJECT_DIR$/hands/base_hand.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hands/flush.py" beforeDir="false" afterPath="$PROJECT_DIR$/hands/flush.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hands/four_of_a_kind.py" beforeDir="false" afterPath="$PROJECT_DIR$/hands/four_of_a_kind.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hands/poker_hand.py" beforeDir="false" afterPath="$PROJECT_DIR$/hands/poker_hand.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hands/royal_flush.py" beforeDir="false" afterPath="$PROJECT_DIR$/hands/royal_flush.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hands/straight_flush.py" beforeDir="false" afterPath="$PROJECT_DIR$/hands/straight_flush.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hands/two_pair.py" beforeDir="false" afterPath="$PROJECT_DIR$/hands/two_pair.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/player/player.py" beforeDir="false" afterPath="$PROJECT_DIR$/player/player.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/probability/base_poker_event.py" beforeDir="false" afterPath="$PROJECT_DIR$/probability/base_poker_event.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/probability/events/community_cards_include.py" beforeDir="false" afterPath="$PROJECT_DIR$/probability/events/community_cards_include.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/probability/events/no_tie.py" beforeDir="false" afterPath="$PROJECT_DIR$/probability/events/no_tie.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/probability/events/player_has_card_ranks.py" beforeDir="false" afterPath="$PROJECT_DIR$/probability/events/player_has_card_ranks.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/probability/events/player_has_card_suits.py" beforeDir="false" afterPath="$PROJECT_DIR$/probability/events/player_has_card_suits.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/probability/events/player_has_cards.py" beforeDir="false" afterPath="$PROJECT_DIR$/probability/events/player_has_cards.py" afterDir="false" />
@@ -46,49 +63,21 @@
       <change beforePath="$PROJECT_DIR$/probability/events/player_has_pocket_pair.py" beforeDir="false" afterPath="$PROJECT_DIR$/probability/events/player_has_pocket_pair.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/probability/events/player_has_suited_cards.py" beforeDir="false" afterPath="$PROJECT_DIR$/probability/events/player_has_suited_cards.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/probability/events/player_wins.py" beforeDir="false" afterPath="$PROJECT_DIR$/probability/events/player_wins.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/round/round_simulator.py" beforeDir="false" afterPath="$PROJECT_DIR$/round/round_simulator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/card_internals/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/functional/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/card_internals/test_card.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/unit/card_internals/test_card.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/card_internals/test_rank.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/unit/card_internals/test_rank.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/card_internals/test_suit.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/unit/card_internals/test_suit.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/deck_internals/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/functional/known_probabilities/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/deck_internals/test_deck.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/unit/deck_internals/test_deck.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/hands/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/functional/utils/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/hands/hand_test_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/unit/hands/hand_test_utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/hands/test_flush.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/unit/hands/test_flush.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/hands/test_four_of_a_kind.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/unit/hands/test_four_of_a_kind.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/hands/test_full_house.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/unit/hands/test_full_house.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/hands/test_hand_builder.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/unit/hands/test_hand_builder.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/hands/test_high_card.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/unit/hands/test_high_card.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/hands/test_inter_hand.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/unit/hands/test_inter_hand.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/hands/test_one_pair.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/unit/hands/test_one_pair.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/hands/test_poker_hand.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/unit/hands/test_poker_hand.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/hands/test_royal_flush.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/unit/hands/test_royal_flush.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/hands/test_straight.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/unit/hands/test_straight.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/hands/test_straight_flush.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/unit/hands/test_straight_flush.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/hands/test_three_of_a_kind.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/unit/hands/test_three_of_a_kind.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/hands/test_two_pair.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/unit/hands/test_two_pair.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/player/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/functional/utils/simulation_test_case_payload.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/player/test_player.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/unit/player/test_player.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/probability/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/unit/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/probability/events/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/unit/card_internals/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/probability/events/events_test_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/unit/probability/events/events_test_utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/probability/events/test_community_cards_include.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/unit/probability/events/test_community_cards_include.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/probability/events/test_player_has_card_ranks.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/unit/probability/events/test_player_has_card_ranks.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/probability/events/test_player_has_card_suits.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/unit/probability/events/test_player_has_card_suits.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/probability/events/test_player_has_cards.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/unit/probability/events/test_player_has_cards.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/probability/events/test_player_has_hand.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/unit/probability/events/test_player_has_hand.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/probability/events/test_player_has_hand_or_higher.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/unit/probability/events/test_player_has_hand_or_higher.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/probability/events/test_player_has_pocket_pair.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/unit/probability/events/test_player_has_pocket_pair.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/probability/events/test_player_has_suited_cards.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/unit/probability/events/test_player_has_suited_cards.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/probability/events/test_player_wins.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/unit/probability/events/test_player_wins.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/probability/test_base_poker_event.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/unit/probability/test_base_poker_event.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/probability/test_probability_value.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/unit/probability/test_probability_value.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/probability/test_simulation_probability.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/unit/probability/test_simulation_probability.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/round/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/unit/deck_internals/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/round/test_round.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/unit/round/test_round.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/round/test_round_result.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/unit/round/test_round_result.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/round/test_round_simulator.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/unit/round/test_round_simulator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/probability/simulation_probability.py" beforeDir="false" afterPath="$PROJECT_DIR$/probability/simulation_probability.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/round/round.py" beforeDir="false" afterPath="$PROJECT_DIR$/round/native/round.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/round/round_result.py" beforeDir="false" afterPath="$PROJECT_DIR$/round/from_table/round_result_from_table.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/round/round_simulator.py" beforeDir="false" afterPath="$PROJECT_DIR$/round/native/round_simulator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sample.py" beforeDir="false" afterPath="$PROJECT_DIR$/sample.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/functional/known_probabilities/test_cases.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/functional/known_probabilities/functional_test_cases.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/functional/utils/simulation_test_case.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/functional/utils/simulation_test_case.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/functional/utils/simulator_factory.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/functional/utils/simulator_factory.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/unit/deck_internals/test_deck.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/unit/deck_internals/test_deck.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/unit/probability/events/events_test_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/unit/probability/events/events_test_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/unit/probability/test_base_poker_event.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/unit/probability/test_base_poker_event.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/unit/probability/test_simulation_probability.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/unit/probability/test_simulation_probability.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/unit/round/test_round.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/unit/round/test_round.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/unit/round/test_round_result.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/unit/round/test_round_result.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/unit/round/test_round_simulator.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/unit/round/test_round_simulator.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +109,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/test/unit/probability/events" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/round/from_table" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -128,28 +117,69 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="PyCoverageOptionsProvider">
     <option name="myUseBundledCoveragePy" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/round/from_table" />
+      <recent name="$PROJECT_DIR$/lookup_table/out" />
       <recent name="$PROJECT_DIR$/test/unit/probability/events" />
       <recent name="$PROJECT_DIR$/probability/events" />
       <recent name="$PROJECT_DIR$/test/probability/events" />
-      <recent name="$PROJECT_DIR$/probability" />
-      <recent name="$PROJECT_DIR$/player" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/round/from_table" />
+      <recent name="$PROJECT_DIR$/round/round_from_table" />
+      <recent name="$PROJECT_DIR$/round/round" />
+      <recent name="$PROJECT_DIR$/round/native" />
       <recent name="$PROJECT_DIR$/test/functional/utils" />
-      <recent name="$PROJECT_DIR$/test/unit" />
-      <recent name="$PROJECT_DIR$/test/unit_tests" />
-      <recent name="$PROJECT_DIR$/test/round" />
-      <recent name="$PROJECT_DIR$/round" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Unittests for test_cases.TestCases">
+  <component name="RunManager" selected="Python tests.Unittests for functional_test_cases.TestCases">
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="poker" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/.conda/envs/poker/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="merge_lookup_tables" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="poker" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="$USER_HOME$/.conda/envs/poker/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lookup_table/merge_lookup_tables.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="round_simulator NON CONSOLE" type="PythonConfigurationType" factoryName="Python">
       <module name="poker" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -163,9 +193,50 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/round/round_simulator.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/round/native/round_simulator.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="round_simulator_from_table" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="poker" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/.conda/envs/poker/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/round/from_table/round_simulator_from_table.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="sample" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="poker" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="$USER_HOME$/.conda/envs/poker/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/sample.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
@@ -188,7 +259,7 @@
       <option name="_new_targetType" value="&quot;CUSTOM&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for test_cases.TestCases" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for functional_test_cases.TestCases" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="poker" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -200,11 +271,11 @@
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_pattern" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_cases.TestCases&quot;" />
+      <option name="_new_target" value="&quot;functional_test_cases.TestCases&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for test_cases.TestCases.test_flush_draw" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for functional_test_cases.TestCases.test_four_of_a_kind_river" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="poker" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -216,55 +287,7 @@
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_pattern" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_cases.TestCases.test_flush_draw&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Unittests for test_cases.TestCases.test_probability_of_pocket_pair" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <module name="poker" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="$USER_HOME$/.conda/envs/poker/bin/python" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_pattern" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_cases.TestCases.test_probability_of_pocket_pair&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Unittests for test_cases.TestCases.test_probability_of_specific_pocket_pair" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <module name="poker" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="$USER_HOME$/.conda/envs/poker/bin/python" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_pattern" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_cases.TestCases.test_probability_of_specific_pocket_pair&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Unittests for test_cases.TestCases.test_probability_of_winning" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <module name="poker" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="$USER_HOME$/.conda/envs/poker/bin/python" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_pattern" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_cases.TestCases.test_probability_of_winning&quot;" />
+      <option name="_new_target" value="&quot;functional_test_cases.TestCases.test_four_of_a_kind_river&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -415,19 +438,19 @@
     <list>
       <item itemvalue="Python.round_simulator NON CONSOLE" />
       <item itemvalue="Python tests.All Unit Tests" />
-      <item itemvalue="Python tests.Unittests for test_cases.TestCases.test_flush_draw" />
-      <item itemvalue="Python tests.Unittests for test_cases.TestCases.test_probability_of_pocket_pair" />
-      <item itemvalue="Python tests.Unittests for test_cases.TestCases.test_probability_of_specific_pocket_pair" />
-      <item itemvalue="Python tests.Unittests for test_cases.TestCases.test_probability_of_winning" />
-      <item itemvalue="Python tests.Unittests for test_cases.TestCases" />
+      <item itemvalue="Python.round_simulator_from_table" />
+      <item itemvalue="Python tests.Unittests for functional_test_cases.TestCases" />
+      <item itemvalue="Python tests.Unittests for functional_test_cases.TestCases.test_four_of_a_kind_river" />
+      <item itemvalue="Python.merge_lookup_tables" />
+      <item itemvalue="Python.sample" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Unittests for test_cases.TestCases" />
-        <item itemvalue="Python tests.Unittests for test_cases.TestCases.test_probability_of_winning" />
-        <item itemvalue="Python tests.Unittests for test_cases.TestCases.test_probability_of_specific_pocket_pair" />
-        <item itemvalue="Python tests.Unittests for test_cases.TestCases.test_probability_of_pocket_pair" />
-        <item itemvalue="Python tests.Unittests for test_cases.TestCases.test_flush_draw" />
+        <item itemvalue="Python tests.Unittests for functional_test_cases.TestCases" />
+        <item itemvalue="Python.sample" />
+        <item itemvalue="Python.round_simulator_from_table" />
+        <item itemvalue="Python.merge_lookup_tables" />
+        <item itemvalue="Python.merge_lookup_tables" />
       </list>
     </recent_temporary>
   </component>
@@ -440,7 +463,7 @@
       <option name="presentableId" value="Default" />
       <updated>1643779616378</updated>
       <workItem from="1643779632498" duration="109067000" />
-      <workItem from="1644738161626" duration="45110000" />
+      <workItem from="1644738161626" duration="96288000" />
     </task>
     <servers />
   </component>
@@ -460,15 +483,18 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2273" y="-28" width="1071" height="730" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1645997890338">
-      <screen x="1792" y="-295" width="2507" height="1415" />
+    <state x="334" y="232" width="1071" height="706" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1646287069646">
+      <screen x="0" y="25" width="1742" height="1095" />
     </state>
     <state x="344" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1644479586925" />
+    <state x="334" y="232" width="1071" height="706" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.1742.1095@0.25.1742.1095" timestamp="1646287069646" />
+    <state x="334" y="232" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.1743.1095@0.25.1743.1095" timestamp="1646261316723" />
     <state x="335" y="231" width="1071" height="730" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.1747.1095@0.25.1747.1095" timestamp="1644371891966" />
-    <state x="2273" y="-28" key="#com.intellij.execution.impl.EditConfigurationsDialog/1792.-295.2507.1415/0.25.1792.1095@1792.-295.2507.1415" timestamp="1645997890338" />
-    <state x="608" y="378" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1644032149259">
-      <screen x="0" y="25" width="1747" height="1095" />
+    <state x="2273" y="-28" key="#com.intellij.execution.impl.EditConfigurationsDialog/1792.-295.2507.1415/0.25.1792.1095@1792.-295.2507.1415" timestamp="1646012762679" />
+    <state x="606" y="378" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1646261213227">
+      <screen x="0" y="25" width="1742" height="1095" />
     </state>
+    <state x="606" y="378" key="#com.intellij.ide.util.TreeClassChooserDialog/0.25.1742.1095@0.25.1742.1095" timestamp="1646261213227" />
     <state x="608" y="378" key="#com.intellij.ide.util.TreeClassChooserDialog/0.25.1747.1095@0.25.1747.1095" timestamp="1644032149259" />
     <state x="579" y="152" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1643787186186">
       <screen x="0" y="25" width="1747" height="1095" />
@@ -478,101 +504,128 @@
       <screen x="0" y="25" width="1747" height="1095" />
     </state>
     <state x="754" y="329" width="602" height="486" key="#xdebugger.XInspectDialog/0.25.1747.1095@0.25.1747.1095" timestamp="1644196349099" />
-    <state x="1792" y="-295" width="2507" height="1415" key="#xdebugger.evaluate" timestamp="1646005603922">
-      <screen x="1792" y="-295" width="2507" height="1415" />
+    <state x="755" y="521" width="474" height="255" key="#xdebugger.evaluate" timestamp="1646369209446">
+      <screen x="0" y="25" width="1742" height="1095" />
     </state>
     <state x="901" y="472" key="#xdebugger.evaluate/0.0.1792.1120@0.0.1792.1120" timestamp="1644479232667" />
+    <state x="755" y="521" width="474" height="255" key="#xdebugger.evaluate/0.25.1742.1095@0.25.1742.1095" timestamp="1646369209446" />
+    <state x="652" y="419" key="#xdebugger.evaluate/0.25.1743.1095@0.25.1743.1095" timestamp="1646270791008" />
     <state x="878" y="535" key="#xdebugger.evaluate/0.25.1747.1095@0.25.1747.1095" timestamp="1645861057932" />
-    <state x="1792" y="-295" width="2507" height="1415" key="#xdebugger.evaluate/1792.-295.2507.1415/0.25.1792.1095@1792.-295.2507.1415" timestamp="1646005603922" />
+    <state x="2731" y="214" width="474" height="329" key="#xdebugger.evaluate/1792.-295.2507.1415/0.25.1792.1095@1792.-295.2507.1415" timestamp="1646025202432" />
     <state width="802" height="466" key="DebuggerActiveHint" timestamp="1644195414603">
       <screen x="0" y="25" width="1747" height="1095" />
     </state>
     <state width="802" height="466" key="DebuggerActiveHint/0.25.1747.1095@0.25.1747.1095" timestamp="1644195414603" />
-    <state width="2465" height="412" key="GridCell.Tab.0.bottom" timestamp="1646007317882">
-      <screen x="1792" y="-295" width="2507" height="1415" />
+    <state width="1702" height="305" key="GridCell.Tab.0.bottom" timestamp="1646429551861">
+      <screen x="0" y="25" width="1743" height="1095" />
     </state>
     <state width="1750" height="292" key="GridCell.Tab.0.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1644878954074" />
+    <state width="1702" height="305" key="GridCell.Tab.0.bottom/0.25.1742.1095@0.25.1742.1095" timestamp="1646374473479" />
+    <state width="1702" height="305" key="GridCell.Tab.0.bottom/0.25.1743.1095@0.25.1743.1095" timestamp="1646429551861" />
     <state width="1702" height="292" key="GridCell.Tab.0.bottom/0.25.1744.1095@0.25.1744.1095" timestamp="1644739329675" />
     <state width="1702" height="292" key="GridCell.Tab.0.bottom/0.25.1745.1095@0.25.1745.1095" timestamp="1645224907373" />
     <state width="1702" height="412" key="GridCell.Tab.0.bottom/0.25.1746.1095@0.25.1746.1095" timestamp="1645862518479" />
     <state width="1702" height="292" key="GridCell.Tab.0.bottom/0.25.1747.1095@0.25.1747.1095" timestamp="1645862261808" />
     <state width="1699" height="301" key="GridCell.Tab.0.bottom/0.25.1748.1095@0.25.1748.1095" timestamp="1644386398131" />
-    <state width="2465" height="412" key="GridCell.Tab.0.bottom/1792.-295.2507.1415/0.25.1792.1095@1792.-295.2507.1415" timestamp="1646007317882" />
-    <state width="2465" height="412" key="GridCell.Tab.0.center" timestamp="1646007317882">
-      <screen x="1792" y="-295" width="2507" height="1415" />
+    <state width="2465" height="496" key="GridCell.Tab.0.bottom/1792.-295.2507.1415/0.25.1792.1095@1792.-295.2507.1415" timestamp="1646026470441" />
+    <state width="1702" height="305" key="GridCell.Tab.0.center" timestamp="1646429551860">
+      <screen x="0" y="25" width="1743" height="1095" />
     </state>
     <state width="1750" height="292" key="GridCell.Tab.0.center/0.0.1792.1120@0.0.1792.1120" timestamp="1644878954073" />
+    <state width="1702" height="305" key="GridCell.Tab.0.center/0.25.1742.1095@0.25.1742.1095" timestamp="1646374473479" />
+    <state width="1702" height="305" key="GridCell.Tab.0.center/0.25.1743.1095@0.25.1743.1095" timestamp="1646429551860" />
     <state width="1702" height="292" key="GridCell.Tab.0.center/0.25.1744.1095@0.25.1744.1095" timestamp="1644739329674" />
     <state width="1702" height="292" key="GridCell.Tab.0.center/0.25.1745.1095@0.25.1745.1095" timestamp="1645224907373" />
     <state width="1702" height="412" key="GridCell.Tab.0.center/0.25.1746.1095@0.25.1746.1095" timestamp="1645862518478" />
     <state width="1702" height="292" key="GridCell.Tab.0.center/0.25.1747.1095@0.25.1747.1095" timestamp="1645862261808" />
     <state width="1699" height="301" key="GridCell.Tab.0.center/0.25.1748.1095@0.25.1748.1095" timestamp="1644386398130" />
-    <state width="2465" height="412" key="GridCell.Tab.0.center/1792.-295.2507.1415/0.25.1792.1095@1792.-295.2507.1415" timestamp="1646007317882" />
-    <state width="2465" height="412" key="GridCell.Tab.0.left" timestamp="1646007317881">
-      <screen x="1792" y="-295" width="2507" height="1415" />
+    <state width="2465" height="496" key="GridCell.Tab.0.center/1792.-295.2507.1415/0.25.1792.1095@1792.-295.2507.1415" timestamp="1646026470440" />
+    <state width="1702" height="305" key="GridCell.Tab.0.left" timestamp="1646429551860">
+      <screen x="0" y="25" width="1743" height="1095" />
     </state>
     <state width="1750" height="292" key="GridCell.Tab.0.left/0.0.1792.1120@0.0.1792.1120" timestamp="1644878954073" />
+    <state width="1702" height="305" key="GridCell.Tab.0.left/0.25.1742.1095@0.25.1742.1095" timestamp="1646374473478" />
+    <state width="1702" height="305" key="GridCell.Tab.0.left/0.25.1743.1095@0.25.1743.1095" timestamp="1646429551860" />
     <state width="1702" height="292" key="GridCell.Tab.0.left/0.25.1744.1095@0.25.1744.1095" timestamp="1644739329674" />
     <state width="1702" height="292" key="GridCell.Tab.0.left/0.25.1745.1095@0.25.1745.1095" timestamp="1645224907372" />
     <state width="1702" height="412" key="GridCell.Tab.0.left/0.25.1746.1095@0.25.1746.1095" timestamp="1645862518477" />
     <state width="1702" height="292" key="GridCell.Tab.0.left/0.25.1747.1095@0.25.1747.1095" timestamp="1645862261807" />
     <state width="1699" height="301" key="GridCell.Tab.0.left/0.25.1748.1095@0.25.1748.1095" timestamp="1644386398129" />
-    <state width="2465" height="412" key="GridCell.Tab.0.left/1792.-295.2507.1415/0.25.1792.1095@1792.-295.2507.1415" timestamp="1646007317881" />
-    <state width="2465" height="412" key="GridCell.Tab.0.right" timestamp="1646007317882">
-      <screen x="1792" y="-295" width="2507" height="1415" />
+    <state width="2465" height="496" key="GridCell.Tab.0.left/1792.-295.2507.1415/0.25.1792.1095@1792.-295.2507.1415" timestamp="1646026470440" />
+    <state width="1702" height="305" key="GridCell.Tab.0.right" timestamp="1646429551861">
+      <screen x="0" y="25" width="1743" height="1095" />
     </state>
     <state width="1750" height="292" key="GridCell.Tab.0.right/0.0.1792.1120@0.0.1792.1120" timestamp="1644878954074" />
+    <state width="1702" height="305" key="GridCell.Tab.0.right/0.25.1742.1095@0.25.1742.1095" timestamp="1646374473479" />
+    <state width="1702" height="305" key="GridCell.Tab.0.right/0.25.1743.1095@0.25.1743.1095" timestamp="1646429551861" />
     <state width="1702" height="292" key="GridCell.Tab.0.right/0.25.1744.1095@0.25.1744.1095" timestamp="1644739329675" />
     <state width="1702" height="292" key="GridCell.Tab.0.right/0.25.1745.1095@0.25.1745.1095" timestamp="1645224907373" />
     <state width="1702" height="412" key="GridCell.Tab.0.right/0.25.1746.1095@0.25.1746.1095" timestamp="1645862518478" />
     <state width="1702" height="292" key="GridCell.Tab.0.right/0.25.1747.1095@0.25.1747.1095" timestamp="1645862261808" />
     <state width="1699" height="301" key="GridCell.Tab.0.right/0.25.1748.1095@0.25.1748.1095" timestamp="1644386398130" />
-    <state width="2465" height="412" key="GridCell.Tab.0.right/1792.-295.2507.1415/0.25.1792.1095@1792.-295.2507.1415" timestamp="1646007317882" />
-    <state width="2465" height="496" key="GridCell.Tab.1.bottom" timestamp="1646005630777">
-      <screen x="1792" y="-295" width="2507" height="1415" />
+    <state width="2465" height="496" key="GridCell.Tab.0.right/1792.-295.2507.1415/0.25.1792.1095@1792.-295.2507.1415" timestamp="1646026470440" />
+    <state width="1702" height="496" key="GridCell.Tab.1.bottom" timestamp="1646371875150">
+      <screen x="0" y="25" width="1742" height="1095" />
     </state>
     <state width="1750" height="391" key="GridCell.Tab.1.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1644556842317" />
+    <state width="1702" height="496" key="GridCell.Tab.1.bottom/0.25.1742.1095@0.25.1742.1095" timestamp="1646371875150" />
+    <state width="1702" height="496" key="GridCell.Tab.1.bottom/0.25.1743.1095@0.25.1743.1095" timestamp="1646270826608" />
     <state width="1702" height="369" key="GridCell.Tab.1.bottom/0.25.1746.1095@0.25.1746.1095" timestamp="1645861327221" />
     <state width="1702" height="369" key="GridCell.Tab.1.bottom/0.25.1747.1095@0.25.1747.1095" timestamp="1645860624999" />
-    <state width="2465" height="496" key="GridCell.Tab.1.bottom/1792.-295.2507.1415/0.25.1792.1095@1792.-295.2507.1415" timestamp="1646005630777" />
-    <state width="2465" height="496" key="GridCell.Tab.1.center" timestamp="1646005630777">
-      <screen x="1792" y="-295" width="2507" height="1415" />
+    <state width="2465" height="496" key="GridCell.Tab.1.bottom/1792.-295.2507.1415/0.25.1792.1095@1792.-295.2507.1415" timestamp="1646026469934" />
+    <state width="1702" height="496" key="GridCell.Tab.1.center" timestamp="1646371875150">
+      <screen x="0" y="25" width="1742" height="1095" />
     </state>
     <state width="1750" height="391" key="GridCell.Tab.1.center/0.0.1792.1120@0.0.1792.1120" timestamp="1644556842317" />
+    <state width="1702" height="496" key="GridCell.Tab.1.center/0.25.1742.1095@0.25.1742.1095" timestamp="1646371875150" />
+    <state width="1702" height="496" key="GridCell.Tab.1.center/0.25.1743.1095@0.25.1743.1095" timestamp="1646270826607" />
     <state width="1702" height="369" key="GridCell.Tab.1.center/0.25.1746.1095@0.25.1746.1095" timestamp="1645861327221" />
     <state width="1702" height="369" key="GridCell.Tab.1.center/0.25.1747.1095@0.25.1747.1095" timestamp="1645860624999" />
-    <state width="2465" height="496" key="GridCell.Tab.1.center/1792.-295.2507.1415/0.25.1792.1095@1792.-295.2507.1415" timestamp="1646005630777" />
-    <state width="2465" height="496" key="GridCell.Tab.1.left" timestamp="1646005630776">
-      <screen x="1792" y="-295" width="2507" height="1415" />
+    <state width="2465" height="496" key="GridCell.Tab.1.center/1792.-295.2507.1415/0.25.1792.1095@1792.-295.2507.1415" timestamp="1646026469934" />
+    <state width="1702" height="496" key="GridCell.Tab.1.left" timestamp="1646371875150">
+      <screen x="0" y="25" width="1742" height="1095" />
     </state>
     <state width="1750" height="391" key="GridCell.Tab.1.left/0.0.1792.1120@0.0.1792.1120" timestamp="1644556842316" />
+    <state width="1702" height="496" key="GridCell.Tab.1.left/0.25.1742.1095@0.25.1742.1095" timestamp="1646371875150" />
+    <state width="1702" height="496" key="GridCell.Tab.1.left/0.25.1743.1095@0.25.1743.1095" timestamp="1646270826607" />
     <state width="1702" height="369" key="GridCell.Tab.1.left/0.25.1746.1095@0.25.1746.1095" timestamp="1645861327220" />
     <state width="1702" height="369" key="GridCell.Tab.1.left/0.25.1747.1095@0.25.1747.1095" timestamp="1645860624999" />
-    <state width="2465" height="496" key="GridCell.Tab.1.left/1792.-295.2507.1415/0.25.1792.1095@1792.-295.2507.1415" timestamp="1646005630776" />
-    <state width="2465" height="496" key="GridCell.Tab.1.right" timestamp="1646005630777">
-      <screen x="1792" y="-295" width="2507" height="1415" />
+    <state width="2465" height="496" key="GridCell.Tab.1.left/1792.-295.2507.1415/0.25.1792.1095@1792.-295.2507.1415" timestamp="1646026469933" />
+    <state width="1702" height="496" key="GridCell.Tab.1.right" timestamp="1646371875150">
+      <screen x="0" y="25" width="1742" height="1095" />
     </state>
     <state width="1750" height="391" key="GridCell.Tab.1.right/0.0.1792.1120@0.0.1792.1120" timestamp="1644556842317" />
+    <state width="1702" height="496" key="GridCell.Tab.1.right/0.25.1742.1095@0.25.1742.1095" timestamp="1646371875150" />
+    <state width="1702" height="496" key="GridCell.Tab.1.right/0.25.1743.1095@0.25.1743.1095" timestamp="1646270826608" />
     <state width="1702" height="369" key="GridCell.Tab.1.right/0.25.1746.1095@0.25.1746.1095" timestamp="1645861327221" />
     <state width="1702" height="369" key="GridCell.Tab.1.right/0.25.1747.1095@0.25.1747.1095" timestamp="1645860624999" />
-    <state width="2465" height="496" key="GridCell.Tab.1.right/1792.-295.2507.1415/0.25.1792.1095@1792.-295.2507.1415" timestamp="1646005630777" />
-    <state x="2336" y="-61" key="SettingsEditor" timestamp="1645909963192">
-      <screen x="1792" y="-295" width="2507" height="1415" />
+    <state width="2465" height="496" key="GridCell.Tab.1.right/1792.-295.2507.1415/0.25.1792.1095@1792.-295.2507.1415" timestamp="1646026469934" />
+    <state x="378" y="206" key="SettingsEditor" timestamp="1646198718231">
+      <screen x="0" y="25" width="1742" height="1095" />
     </state>
+    <state x="378" y="206" key="SettingsEditor/0.25.1742.1095@0.25.1742.1095" timestamp="1646198718231" />
     <state x="379" y="208" key="SettingsEditor/0.25.1747.1095@0.25.1747.1095" timestamp="1644293015934" />
     <state x="2336" y="-61" key="SettingsEditor/1792.-295.2507.1415/0.25.1792.1095@1792.-295.2507.1415" timestamp="1645909963192" />
-    <state x="2613" y="95" width="858" height="753" key="find.popup" timestamp="1646006943393">
+    <state width="1253" height="707" key="XDebugger.FullValuePopup" timestamp="1646025217485">
       <screen x="1792" y="-295" width="2507" height="1415" />
+    </state>
+    <state width="1253" height="707" key="XDebugger.FullValuePopup/1792.-295.2507.1415/0.25.1792.1095@1792.-295.2507.1415" timestamp="1646025217485" />
+    <state x="571" y="327" width="597" height="583" key="find.popup" timestamp="1646258252368">
+      <screen x="0" y="25" width="1742" height="1095" />
     </state>
     <state x="587" y="309" width="613" height="596" key="find.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1644609333321" />
+    <state x="571" y="327" width="597" height="583" key="find.popup/0.25.1742.1095@0.25.1742.1095" timestamp="1646258252368" />
+    <state x="571" y="327" width="597" height="583" key="find.popup/0.25.1743.1095@0.25.1743.1095" timestamp="1646245840720" />
     <state x="572" y="327" width="597" height="582" key="find.popup/0.25.1747.1095@0.25.1747.1095" timestamp="1644190413154" />
-    <state x="2613" y="95" width="858" height="753" key="find.popup/1792.-295.2507.1415/0.25.1792.1095@1792.-295.2507.1415" timestamp="1646006943393" />
-    <state x="2560" y="21" width="963" height="875" key="search.everywhere.popup" timestamp="1645998904442">
-      <screen x="1792" y="-295" width="2507" height="1415" />
+    <state x="2613" y="95" width="858" height="753" key="find.popup/1792.-295.2507.1415/0.25.1792.1095@1792.-295.2507.1415" timestamp="1646011862763" />
+    <state x="534" y="270" width="670" height="678" key="search.everywhere.popup" timestamp="1646370908336">
+      <screen x="0" y="25" width="1742" height="1095" />
     </state>
     <state x="549" y="250" width="688" height="692" key="search.everywhere.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1644609395006" />
+    <state x="534" y="270" width="670" height="678" key="search.everywhere.popup/0.25.1742.1095@0.25.1742.1095" timestamp="1646370908336" />
+    <state x="534" y="270" width="671" height="678" key="search.everywhere.popup/0.25.1743.1095@0.25.1743.1095" timestamp="1646269948799" />
     <state x="535" y="269" width="670" height="676" key="search.everywhere.popup/0.25.1747.1095@0.25.1747.1095" timestamp="1644300854830" />
-    <state x="2560" y="21" width="963" height="875" key="search.everywhere.popup/1792.-295.2507.1415/0.25.1792.1095@1792.-295.2507.1415" timestamp="1645998904442" />
+    <state x="2560" y="21" width="963" height="875" key="search.everywhere.popup/1792.-295.2507.1415/0.25.1792.1095@1792.-295.2507.1415" timestamp="1646010364528" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -609,7 +662,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/probability/base_poker_event.py</url>
-          <line>23</line>
+          <line>21</line>
           <option name="timeStamp" value="104" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -622,16 +675,44 @@
           <line>65</line>
           <option name="timeStamp" value="110" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/deck_internals/deck.py</url>
+          <line>60</line>
+          <option name="timeStamp" value="137" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/visualization/pocket_pair_map.py</url>
+          <line>58</line>
+          <option name="timeStamp" value="138" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/visualization/pocket_pair_map.py</url>
+          <line>19</line>
+          <option name="timeStamp" value="139" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/deck_internals/deck.py</url>
+          <line>51</line>
+          <option name="timeStamp" value="141" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/round/from_table/poker_hand_table.py</url>
+          <line>32</line>
+          <option name="timeStamp" value="144" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/poker$Unittests_for_test_deck_TestDeck_test_all_cards_drawn.coverage" NAME="Unittests for test_deck.TestDeck.test_all_cards_drawn Coverage Results" MODIFIED="1646292137584" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/poker$sample.coverage" NAME="sample Coverage Results" MODIFIED="1646260372482" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_poker_hand_TestPokerHand.coverage" NAME="Unittests for test_poker_hand.TestPokerHand Coverage Results" MODIFIED="1644111261551" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_straight_TestStraight.coverage" NAME="Unittests for test_straight.TestStraight Coverage Results" MODIFIED="1644032047539" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/hands" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_probability_value_TestProbabilityValue_test_odds_str.coverage" NAME="Unittests for test_probability_value.TestProbabilityValue.test_odds_str Coverage Results" MODIFIED="1645919303405" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_high_card_TestHighCard_test_comparisons.coverage" NAME="Unittests for test_high_card.TestHighCard.test_comparisons Coverage Results" MODIFIED="1645908729393" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/hands" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_player_has_hand_TestPlayerHasCards_test_is_not_event.coverage" NAME="Unittests for test_player_has_hand.TestPlayerHasCards.test_is_not_event Coverage Results" MODIFIED="1645922571220" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_suit_TestSuit_test_init_sad.coverage" NAME="Unittests for test_suit.TestSuit.test_init_sad Coverage Results" MODIFIED="1643864521176" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/card" />
+    <SUITE FILE_PATH="coverage/poker$pocket_pair_map.coverage" NAME="pocket_pair_map Coverage Results" MODIFIED="1646288195312" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/poker$Unittests_in_test_straight_py.coverage" NAME="Unittests in test_straight.py Coverage Results" MODIFIED="1644108044027" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/hands" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_high_card_TestHighCard_test_eq.coverage" NAME="Unittests for test_high_card.TestHighCard.test_eq Coverage Results" MODIFIED="1643934480388" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/hands" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_royal_flush_TestRoyalFlush_test_is_hand.coverage" NAME="Unittests for test_royal_flush.TestRoyalFlush.test_is_hand Coverage Results" MODIFIED="1644108007899" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/hands" />
@@ -643,15 +724,16 @@
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_round_result_TestRoundResult_test_str_winning_players_names.coverage" NAME="Unittests for test_round_result.TestRoundResult.test_str_winning_players_names Coverage Results" MODIFIED="1645917078612" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/poker$Unittests_in_test_one_pair_py.coverage" NAME="Unittests in test_one_pair.py Coverage Results" MODIFIED="1644107973256" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/hands" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_player_has_hand_TestPlayerHasHand_test_is_event.coverage" NAME="Unittests for test_player_has_hand.TestPlayerHasHand.test_is_event Coverage Results" MODIFIED="1645925278663" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/poker$All_Unit_Tests.coverage" NAME="All Unit Tests Coverage Results" MODIFIED="1645997986316" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/poker$All_Unit_Tests.coverage" NAME="All Unit Tests Coverage Results" MODIFIED="1646261317647" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/poker$round_simulator_NON_CONSOLE.coverage" NAME="round_simulator NON CONSOLE Coverage Results" MODIFIED="1645862518471" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_straight_TestStraight_test_non_straight.coverage" NAME="Unittests for test_straight.TestStraight.test_non_straight Coverage Results" MODIFIED="1644104943675" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/hands" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_player_has_hand_TestPlayerHasHand.coverage" NAME="Unittests for test_player_has_hand.TestPlayerHasHand Coverage Results" MODIFIED="1645925306476" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_three_of_a_kind_TestThreeOfAKind_test_tiebreakers.coverage" NAME="Unittests for test_three_of_a_kind.TestThreeOfAKind.test_tiebreakers Coverage Results" MODIFIED="1644023163634" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/hands" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_straight_flush_TestStraightFlush_test_all_possible_straight_flushes.coverage" NAME="Unittests for test_straight_flush.TestStraightFlush.test_all_possible_straight_flushes Coverage Results" MODIFIED="1644108064034" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/hands" />
+    <SUITE FILE_PATH="coverage/poker$Unittests_for_test_deck_TestDeck_test_does_not_redraw_excluded_cards.coverage" NAME="Unittests for test_deck.TestDeck.test_does_not_redraw_excluded_cards Coverage Results" MODIFIED="1646369753178" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_round_TestRound_test_simulate.coverage" NAME="Unittests for test_round.TestRound.test_simulate Coverage Results" MODIFIED="1645914648445" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_no_tie_TestNoTie.coverage" NAME="Unittests for test_no_tie.TestNoTie Coverage Results" MODIFIED="1646005999618" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/poker$Unittests_for_test_cases_TestCases.coverage" NAME="Unittests for test_cases.TestCases Coverage Results" MODIFIED="1646007317876" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/poker$Unittests_for_test_cases_TestCases.coverage" NAME="Unittests for test_cases.TestCases Coverage Results" MODIFIED="1646260173472" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_round_simulator_TestRoundSimulator_test_player_dealt_cards_change_between_simulations.coverage" NAME="Unittests for test_round_simulator.TestRoundSimulator.test_player_dealt_cards_change_between_simulations Coverage Results" MODIFIED="1645918471228" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_round_TestRound.coverage" NAME="Unittests for test_round.TestRound Coverage Results" MODIFIED="1645915829934" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_player_has_cards_TestPlayerHasCards_test_is_event.coverage" NAME="Unittests for test_player_has_cards.TestPlayerHasCards.test_is_event Coverage Results" MODIFIED="1645922075277" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -660,7 +742,7 @@
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_straight_TestStraight_test_ace_low_straight.coverage" NAME="Unittests for test_straight.TestStraight.test_ace_low_straight Coverage Results" MODIFIED="1644032034283" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/hands" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_high_card_TestHighCard_test_equality.coverage" NAME="Unittests for test_high_card.TestHighCard.test_equality Coverage Results" MODIFIED="1643949431908" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/hands" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_card_TestCard_test_unique_hash.coverage" NAME="Unittests for test_card.TestCard.test_unique_hash Coverage Results" MODIFIED="1644115483511" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
-    <SUITE FILE_PATH="coverage/poker$Unittests_for_test_deck_TestDeck.coverage" NAME="Unittests for test_deck.TestDeck Coverage Results" MODIFIED="1645908431909" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/deck_internals" />
+    <SUITE FILE_PATH="coverage/poker$Unittests_for_test_deck_TestDeck.coverage" NAME="Unittests for test_deck.TestDeck Coverage Results" MODIFIED="1646369758474" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_probability_value_TestProbabilityValue_test_percent_str.coverage" NAME="Unittests for test_probability_value.TestProbabilityValue.test_percent_str Coverage Results" MODIFIED="1645919247774" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_rank_TestRank_test_gt.coverage" NAME="Unittests for test_rank.TestRank.test_gt Coverage Results" MODIFIED="1643864178669" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/card" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_player_has_hand_or_higher_TestPlayerHasHandOrHigher.coverage" NAME="Unittests for test_player_has_hand_or_higher.TestPlayerHasHandOrHigher Coverage Results" MODIFIED="1645993519523" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -674,6 +756,7 @@
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_three_of_a_kind_TestThreeOfAKind.coverage" NAME="Unittests for test_three_of_a_kind.TestThreeOfAKind Coverage Results" MODIFIED="1644023089264" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/hands" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_player_has_suited_cards_TestPlayerHasSuitedCards.coverage" NAME="Unittests for test_player_has_suited_cards.TestPlayerHasSuitedCards Coverage Results" MODIFIED="1645924700929" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_cases_TestCases_test_flush_river.coverage" NAME="Unittests for test_cases.TestCases.test_flush_river Coverage Results" MODIFIED="1646007130612" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/poker$Unittests_for_test_deck_TestDeck_test_draw_too_many.coverage" NAME="Unittests for test_deck.TestDeck.test_draw_too_many Coverage Results" MODIFIED="1646291924805" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_base_poker_event_TestBasePokerEvent_test_cannot_call_base_poker_event.coverage" NAME="Unittests for test_base_poker_event.TestBasePokerEvent.test_cannot_call_base_poker_event Coverage Results" MODIFIED="1645919122500" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_round_result_TestRoundResult_test_str_winning_hand.coverage" NAME="Unittests for test_round_result.TestRoundResult.test_str_winning_hand Coverage Results" MODIFIED="1645917069707" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_poker_hand_TestPokerHand_test_hashes_unique_as_best_hand.coverage" NAME="Unittests for test_poker_hand.TestPokerHand.test_hashes_unique_as_best_hand Coverage Results" MODIFIED="1645907355834" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/hands" />
@@ -683,10 +766,14 @@
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_four_of_a_kind_TestFourOfAKind_test_cards_in_hand.coverage" NAME="Unittests for test_four_of_a_kind.TestFourOfAKind.test_cards_in_hand Coverage Results" MODIFIED="1644103122437" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/hands" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_round_result_TestRoundResult.coverage" NAME="Unittests for test_round_result.TestRoundResult Coverage Results" MODIFIED="1645917239729" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_community_cards_include_TestCommunityCardsInclude.coverage" NAME="Unittests for test_community_cards_include.TestCommunityCardsInclude Coverage Results" MODIFIED="1645920990304" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/poker$generate_lookup_table.coverage" NAME="generate_lookup_table Coverage Results" MODIFIED="1646248985660" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/poker$Unittests_for_test_deck_TestDeck_test_card_excluded.coverage" NAME="Unittests for test_deck.TestDeck.test_card_excluded Coverage Results" MODIFIED="1646292127987" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_poker_hand_TestPokerHand_test_hashes_unique.coverage" NAME="Unittests for test_poker_hand.TestPokerHand.test_hashes_unique Coverage Results" MODIFIED="1645907561192" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/hands" />
     <SUITE FILE_PATH="coverage/poker$Unittests_in_test_three_of_a_kind_py.coverage" NAME="Unittests in test_three_of_a_kind.py Coverage Results" MODIFIED="1644108109177" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/hands" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_flush_TestFlush.coverage" NAME="Unittests for test_flush.TestFlush Coverage Results" MODIFIED="1644107796547" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/hands" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_round_result_TestRoundResult_test_players_during_hand.coverage" NAME="Unittests for test_round_result.TestRoundResult.test_players_during_hand Coverage Results" MODIFIED="1645917064878" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/poker$round_simulator_from_table.coverage" NAME="round_simulator_from_table Coverage Results" MODIFIED="1646373990760" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/poker$Unittests_for_functional_test_cases_TestCases.coverage" NAME="Unittests for functional_test_cases.TestCases Coverage Results" MODIFIED="1646429551854" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_player_TestPlayer.coverage" NAME="Unittests for test_player.TestPlayer Coverage Results" MODIFIED="1645909919672" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_player_has_hand_TestPlayerHasCards_test_is_event.coverage" NAME="Unittests for test_player_has_hand.TestPlayerHasCards.test_is_event Coverage Results" MODIFIED="1645922535623" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_round_simulator_TestRoundSimulator_test_auto_generate_remaining_players.coverage" NAME="Unittests for test_round_simulator.TestRoundSimulator.test_auto_generate_remaining_players Coverage Results" MODIFIED="1645918241197" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -697,25 +784,27 @@
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_hand_builder_TestHandBuilder_test_happy.coverage" NAME="Unittests for test_hand_builder.TestHandBuilder.test_happy Coverage Results" MODIFIED="1643866989029" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/hands" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_two_pair_TestTwoPair.coverage" NAME="Unittests for test_two_pair.TestTwoPair Coverage Results" MODIFIED="1644022815317" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/hands" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_full_house_TestFullHouse.coverage" NAME="Unittests for test_full_house.TestFullHouse Coverage Results" MODIFIED="1644095626410" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/hands" />
+    <SUITE FILE_PATH="coverage/poker$merge_lookup_tables.coverage" NAME="merge_lookup_tables Coverage Results" MODIFIED="1646371875140" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_player_wins_TestPlayerWins.coverage" NAME="Unittests for test_player_wins.TestPlayerWins Coverage Results" MODIFIED="1645925208037" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_card_TestCard_test_gt.coverage" NAME="Unittests for test_card.TestCard.test_gt Coverage Results" MODIFIED="1643865391073" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/card" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_four_of_a_kind_TestFourOfAKind.coverage" NAME="Unittests for test_four_of_a_kind.TestFourOfAKind Coverage Results" MODIFIED="1644107832805" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/hands" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_round_result_TestRoundResult_test_players_ranked.coverage" NAME="Unittests for test_round_result.TestRoundResult.test_players_ranked Coverage Results" MODIFIED="1645917059352" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_high_card_TestHighCard_test_tiebreakers.coverage" NAME="Unittests for test_high_card.TestHighCard.test_tiebreakers Coverage Results" MODIFIED="1644107891008" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/hands" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_probability_value_TestProbabilityValue_test_str.coverage" NAME="Unittests for test_probability_value.TestProbabilityValue.test_str Coverage Results" MODIFIED="1645919358386" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/poker$Unittests_for_functional_test_cases_TestCases_test_four_of_a_kind_river.coverage" NAME="Unittests for functional_test_cases.TestCases.test_four_of_a_kind_river Coverage Results" MODIFIED="1646370642427" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_probability_value_TestProbabilityValue.coverage" NAME="Unittests for test_probability_value.TestProbabilityValue Coverage Results" MODIFIED="1645919400876" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_player_has_card_suits_TestPlayerHasCardSuits.coverage" NAME="Unittests for test_player_has_card_suits.TestPlayerHasCardSuits Coverage Results" MODIFIED="1645921919692" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_player_has_card_ranks_TestPlayerHasCardRanks_test_is_not_event.coverage" NAME="Unittests for test_player_has_card_ranks.TestPlayerHasCardRanks.test_is_not_event Coverage Results" MODIFIED="1645921676810" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_player_TestPlayer_test_str.coverage" NAME="Unittests for test_player.TestPlayer.test_str Coverage Results" MODIFIED="1645910040749" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_three_of_a_kind_TestThreeOfAKind_test_cards_in_hand.coverage" NAME="Unittests for test_three_of_a_kind.TestThreeOfAKind.test_cards_in_hand Coverage Results" MODIFIED="1644108077919" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/hands" />
-    <SUITE FILE_PATH="coverage/poker$Unittests_for_test_cases_TestCases_test_four_of_a_kind_river.coverage" NAME="Unittests for test_cases.TestCases.test_four_of_a_kind_river Coverage Results" MODIFIED="1646007083471" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/poker$Unittests_for_test_cases_TestCases_test_four_of_a_kind_river.coverage" NAME="Unittests for test_cases.TestCases.test_four_of_a_kind_river Coverage Results" MODIFIED="1646258997335" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_player_has_hand_or_higher_TestPlayerHasHandOrHigher_test_is_not_event.coverage" NAME="Unittests for test_player_has_hand_or_higher.TestPlayerHasHandOrHigher.test_is_not_event Coverage Results" MODIFIED="1645997762900" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_round_result_TestRoundResult_test_winning_hand.coverage" NAME="Unittests for test_round_result.TestRoundResult.test_winning_hand Coverage Results" MODIFIED="1645917158431" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_card_TestCard_test_init_invalid_rank.coverage" NAME="Unittests for test_card.TestCard.test_init_invalid_rank Coverage Results" MODIFIED="1643864661290" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/card" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_cases_TestCases_test_flush_draw.coverage" NAME="Unittests for test_cases.TestCases.test_flush_draw Coverage Results" MODIFIED="1646007199739" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_suit_TestSuit.coverage" NAME="Unittests for test_suit.TestSuit Coverage Results" MODIFIED="1643864524324" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/card" />
-    <SUITE FILE_PATH="coverage/poker$deck.coverage" NAME="deck Coverage Results" MODIFIED="1644478672094" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_simulation_probability_TestSimulationProbability.coverage" NAME="Unittests for test_simulation_probability.TestSimulationProbability Coverage Results" MODIFIED="1645919789715" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/poker$deck.coverage" NAME="deck Coverage Results" MODIFIED="1646284586861" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_cases_TestCases_test_probability_of_specific_pocket_pair.coverage" NAME="Unittests for test_cases.TestCases.test_probability_of_specific_pocket_pair Coverage Results" MODIFIED="1646007261072" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_high_card_TestHighCard_test_5_cases.coverage" NAME="Unittests for test_high_card.TestHighCard.test_5_cases Coverage Results" MODIFIED="1643948578925" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/hands" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_full_house_TestFullHouse_test_comparisons.coverage" NAME="Unittests for test_full_house.TestFullHouse.test_comparisons Coverage Results" MODIFIED="1645997531934" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -726,6 +815,7 @@
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_player_has_pocket_pair_TestPlayerHasPocketPair_test_is_event.coverage" NAME="Unittests for test_player_has_pocket_pair.TestPlayerHasPocketPair.test_is_event Coverage Results" MODIFIED="1645924101767" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_player_has_hand_or_higher_TestPlayerHasHandOrHigher_test_is_event.coverage" NAME="Unittests for test_player_has_hand_or_higher.TestPlayerHasHandOrHigher.test_is_event Coverage Results" MODIFIED="1645993106654" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_cases_TestCases_test_probability_of_winning.coverage" NAME="Unittests for test_cases.TestCases.test_probability_of_winning Coverage Results" MODIFIED="1646007305175" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/poker$poker_hand_table.coverage" NAME="poker_hand_table Coverage Results" MODIFIED="1646254759785" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_two_pair_TestTwoPair_test_cards_in_hand.coverage" NAME="Unittests for test_two_pair.TestTwoPair.test_cards_in_hand Coverage Results" MODIFIED="1644108092407" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/hands" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_card_TestCard_test_str_repr.coverage" NAME="Unittests for test_card.TestCard.test_str_repr Coverage Results" MODIFIED="1644115197114" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_flush_TestFlush_test_cards_in_hand.coverage" NAME="Unittests for test_flush.TestFlush.test_cards_in_hand Coverage Results" MODIFIED="1644032997866" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/hands" />
@@ -735,7 +825,7 @@
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_inter_hand_TestInterHand.coverage" NAME="Unittests for test_inter_hand.TestInterHand Coverage Results" MODIFIED="1644109628448" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/hands" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_one_pair_TestOnePair_test_tiebreakers.coverage" NAME="Unittests for test_one_pair.TestOnePair.test_tiebreakers Coverage Results" MODIFIED="1643952043279" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/hands" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_high_card_TestHighCard_test_cards_in_hand.coverage" NAME="Unittests for test_high_card.TestHighCard.test_cards_in_hand Coverage Results" MODIFIED="1643949633205" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/hands" />
-    <SUITE FILE_PATH="coverage/poker$Unittests_for_test_deck_TestDeck_test_subsequent_draws_do_not_redraw_same_cards.coverage" NAME="Unittests for test_deck.TestDeck.test_subsequent_draws_do_not_redraw_same_cards Coverage Results" MODIFIED="1645908387645" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/deck_internals" />
+    <SUITE FILE_PATH="coverage/poker$Unittests_for_test_deck_TestDeck_test_subsequent_draws_do_not_redraw_same_cards.coverage" NAME="Unittests for test_deck.TestDeck.test_subsequent_draws_do_not_redraw_same_cards Coverage Results" MODIFIED="1646368339818" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_two_pair_TestTwoPair_test_tiebreakers.coverage" NAME="Unittests for test_two_pair.TestTwoPair.test_tiebreakers Coverage Results" MODIFIED="1644022093613" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/hands" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_player_has_hand_or_higher_TestPlayerHasHandOrHigher_test_and.coverage" NAME="Unittests for test_player_has_hand_or_higher.TestPlayerHasHandOrHigher.test_and Coverage Results" MODIFIED="1645925863096" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_community_cards_include_TestCommunityCardsInclude_test_is_event.coverage" NAME="Unittests for test_community_cards_include.TestCommunityCardsInclude.test_is_event Coverage Results" MODIFIED="1645920793310" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

@@ -2,7 +2,7 @@ from typing import List
 
 from card_internals.card import Card
 from probability.base_poker_event import BasePokerEvent
-from round.round_result import RoundResult
+from round.native.round_result import RoundResult
 
 
 class CommunityCardsInclude(BasePokerEvent):

@@ -6,7 +6,7 @@ import random
 from card_internals.card import Card
 from deck_internals.deck import Deck
 from player.player import Player
-from round.round import Round
+from round.native.round import Round
 
 
 class TestRound(TestCase):

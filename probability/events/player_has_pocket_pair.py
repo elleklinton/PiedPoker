@@ -1,7 +1,7 @@
 from card_internals.rank import Rank
 from player.player import Player
 from probability.base_poker_event import BasePokerEvent
-from round.round_result import RoundResult
+from round.native.round_result import RoundResult
 
 
 class PlayerHasPocketPair(BasePokerEvent):

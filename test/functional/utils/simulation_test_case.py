@@ -3,7 +3,7 @@ import inspect
 
 from player.player import Player
 from probability.base_poker_event import BasePokerEvent
-from round.round_simulator import RoundSimulator
+from round.native.round_simulator import RoundSimulator
 from test.functional.utils.simulation_test_case_payload import SimulationTestCasePayload
 
 
