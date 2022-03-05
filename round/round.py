@@ -75,7 +75,7 @@ class Round:
         :return: The round object
         :rtype: Round
         """
-        self.deck = Deck(self.__cards_to_exclude__)
+        self.deck = self.deck.shuffle(self.__cards_to_exclude__)
         self.players = [Player(p.name, p.cards, p.hand) for p in self.__starting_players_state__]
         self.community_cards = [Card(c.rank.value, c.suit.value) for c in self.__starting_community_cards_state__]
         return self

@@ -19,7 +19,9 @@ class Player:
         return self.__repr__()
 
     def __repr__(self):
-        return f'{self.name}: {self.hand}'
+        if self.hand is not None:
+            return f'{self.name}: {self.hand}'
+        return f'{self.name}: {self.cards}'
 
     def __eq__(self, other):
         return self.name == other.name

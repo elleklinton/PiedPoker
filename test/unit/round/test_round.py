@@ -126,4 +126,4 @@ class TestRound(TestCase):
         p2 = Player('Snoop')
 
         r = Round(players=[p1, p2])
-        self.assertEqual(str(r), 'Players: [Ellek: None, Snoop: None], Community Cards: [], Other Drawn Cards: []')
+        self.assertEqual(str(r), 'Players: [Ellek: [A♠, A♦], Snoop: []], Community Cards: [], Other Drawn Cards: []')

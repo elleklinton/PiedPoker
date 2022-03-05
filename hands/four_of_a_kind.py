@@ -43,6 +43,8 @@ class FourOfAKind(BaseHand):
             elif self.ranks_quad[0] < other.ranks_quad[0]:
                 return False
             else:
+                if not self.cards_not_in_hand or not other.cards_not_in_hand:
+                    return False
                 return self.cards_not_in_hand[0] > other.cards_not_in_hand[0]
 
     def __lt__(self, other):
@@ -56,6 +58,8 @@ class FourOfAKind(BaseHand):
             elif self.ranks_quad[0] > other.ranks_quad[0]:
                 return False
             else:
+                if not self.cards_not_in_hand or not other.cards_not_in_hand:
+                    return False
                 return self.cards_not_in_hand[0] < other.cards_not_in_hand[0]
 
     def __hash__(self):

@@ -1,3 +1,4 @@
+from random import seed
 from unittest import TestCase
 import numpy as np
 
@@ -14,13 +15,26 @@ class TestDeck(TestCase):
 
     def test_subsequent_draws_do_not_redraw_same_cards(self):
         deck = Deck()
-        for i in range(1000):
-            drawn = set(deck.draw(8))
+        for i in range(10000):
+            drawn = set(deck.draw(7))
             drawn_again = set(deck.draw(8)) # Should be fully unique from first
             assert len(drawn_again.intersection(drawn)) == 0, \
                 f'Error: redrew same cards:\nFirst draw:\n{sorted(list(drawn))}\nSecond draw:' \
                 f'\n{sorted(list(drawn_again))}\nIntersection:\n{drawn.intersection(drawn_again)}'
             deck.shuffle()
+
+    def test_does_not_redraw_excluded_cards(self):
+        np.random.seed(420)
+        seed(420)
+        for c1 in Deck.ALL_CARDS:
+            for c2 in Deck.ALL_CARDS:
+                if c2 != c1:
+                    forbidden = [c1, c2]
+                    deck = Deck(forbidden)
+                    drawn = set(deck.draw(7))
+                    for d in drawn:
+                        if d in set(forbidden):
+                            self.fail(f'Error: Expected {d} to not be a drawn card because it was an excluded card ({forbidden})!')
 
     def test_each_draw_is_unique(self):
         for i in range(52):

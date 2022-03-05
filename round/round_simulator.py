@@ -38,7 +38,7 @@ class RoundSimulator:
         self.round = Round(community_cards, players, other_drawn_cards)
         self.players = self.round.players
 
-    def simulate(self, n: int = 1000, n_jobs: int = 4, status_bar: bool = True):
+    def simulate(self, n: int = 1000, n_jobs: int = -1, status_bar: bool = True):
         """
         Runs a simulation of n poker games, and returns a SimulationProbability object, which is be used to compute
         probabilities based on the simulations run. This function is parallelized and configurable via function

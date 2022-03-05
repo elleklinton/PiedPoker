@@ -39,13 +39,6 @@ class Card:
         return self.__str__()
 
     def __hash__(self):
-        if self.suit == Suit('s'):
-            return self.rank.rank
-        elif self.suit == Suit('h'):
-            return 100 + self.rank.rank
-        elif self.suit == Suit('d'):
-            return 200 + self.rank.rank
-        elif self.suit == Suit('c'):
-            return 300 + self.rank.rank
+        return hash(self.__str__())
 
 

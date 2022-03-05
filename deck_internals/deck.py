@@ -45,6 +45,7 @@ class Deck:
         :rtype:
         """
         self.excluded_cards = set(excluding) if excluding else set()
+        return self
 
     def __eq__(self, other):
         return self.excluded_cards == other.excluded_cards
