@@ -27,6 +27,10 @@ class Flush(BaseHand):
     def cards_not_in_hand(self):
         return []
 
+    @property
+    def is_suit_dependent(self):
+        return True
+
     def __eq__(self, other):
         if super().__eq__(other):  # Same class of hand
             return self.cards_in_hand[0] == other.cards_in_hand[0]

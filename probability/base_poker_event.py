@@ -1,8 +1,6 @@
 from __future__ import annotations
 
-from typing import Union, Callable
-
-from round.round_result import RoundResult
+from round.native.round_result import RoundResult
 
 
 class BasePokerEvent:

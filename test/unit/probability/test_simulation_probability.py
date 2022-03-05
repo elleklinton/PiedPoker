@@ -1,13 +1,10 @@
 from unittest import TestCase
 
 from card_internals.card import Card
-from hands.one_pair import OnePair
-from hands.two_pair import TwoPair
 from player.player import Player
-from probability.events.player_has_hand import PlayerHasHand
 from probability.events.player_wins import PlayerWins
 from probability.simulation_probability import SimulationProbability
-from round.round_result import RoundResult
+from round.native.round_result import RoundResult
 
 
 class TestSimulationProbability(TestCase):

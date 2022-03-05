@@ -4,7 +4,7 @@ import random
 
 from card_internals.card import Card
 from player.player import Player
-from round.round_simulator import RoundSimulator
+from round.native.round_simulator import RoundSimulator
 
 
 class TestRoundSimulator(TestCase):

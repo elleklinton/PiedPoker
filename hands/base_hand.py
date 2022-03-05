@@ -62,6 +62,10 @@ class BaseHand:
     def cards_not_in_hand(self):
         return self.cards_sorted[:5]
 
+    @property
+    def is_suit_dependent(self):
+        return False
+
     def as_hand(self, target_class):
         self.__class__ = target_class
         return self

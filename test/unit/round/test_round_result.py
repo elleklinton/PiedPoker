@@ -5,7 +5,7 @@ from card_internals.card import Card
 from hands.four_of_a_kind import FourOfAKind
 from hands.poker_hand import PokerHand
 from player.player import Player
-from round.round_result import RoundResult
+from round.native.round_result import RoundResult
 
 
 class TestRoundResult(TestCase):

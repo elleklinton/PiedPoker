@@ -61,3 +61,7 @@ class PokerHand(BaseHand):
 
     def __hash__(self):
         return super(PokerHand, self).__hash__()
+
+    @staticmethod
+    def rank_to_hand_class(hand_rank: int):
+        return PokerHand.ALL_HANDS_RANKED[len(PokerHand.ALL_HANDS_RANKED) - hand_rank - 1]

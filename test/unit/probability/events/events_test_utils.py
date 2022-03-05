@@ -4,7 +4,7 @@ from unittest import TestCase
 from card_internals.card import Card
 from player.player import Player
 from probability.base_poker_event import BasePokerEvent
-from round.round import Round
+from round.native.round import Round
 
 
 class EventsTestUtils:

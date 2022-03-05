@@ -3,7 +3,7 @@ from typing import Union, List
 from hands.base_hand import BaseHand
 from player.player import Player
 from probability.base_poker_event import BasePokerEvent
-from round.round_result import RoundResult
+from round.native.round_result import RoundResult
 
 
 class PlayerHasHand(BasePokerEvent):
