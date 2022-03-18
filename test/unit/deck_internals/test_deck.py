@@ -10,6 +10,12 @@ from deck_internals.deck import Deck
 class TestDeck(TestCase):
     RANK_ALLOWED_VALUES = [v for v in Rank.ALLOWED_VALUES if v != 't']
 
+    def test_deck_seed_works(self):
+        np.random.seed(420)
+        expected = [Card('kd'), Card('2s'), Card('9h'), Card('ks'), Card('jc')]
+        actual = Deck().draw(5)
+        self.assertListEqual(expected, actual)
+
     def setUp(self) -> None:
         np.random.seed(53)
 
@@ -69,5 +75,3 @@ class TestDeck(TestCase):
             self.fail('Error: expected to throw because deck has no more un-drawn cards.')
         except RuntimeError as e:
             self.assertEqual(str(e), 'Error: Cannot draw 1 cards from a deck with only 0 un-drawn cards.')
-
-

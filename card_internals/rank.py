@@ -4,7 +4,7 @@ from card_internals.comparable import Comparable
 
 
 class Rank(Comparable):
-    ALLOWED_VALUES = ['2', '3', '4', '5', '6', '7', '8', '9', 't', '10', 'j', 'q', 'k', 'a']  # Has 't' and '10'
+    ALLOWED_VALUES = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'j', 'q', 'k', 'a']
     ALLOWED_VALUES_SET = {'2', '3', '4', '5', '6', '7', '8', '9', '10', 'j', 'q', 'k', 'a'}  # Only has '10'
 
     def __init__(self, value: Union[str, int]):
