@@ -16,11 +16,12 @@ A: 45.12% == 1:2.22 odds == (9023/20000)
 """
 from time import time
 
-from card_internals.card import Card
-from card_internals.rank import Rank
-from player.player import Player
-from probability.events.player_wins import PlayerWins
-from round.round_simulator import RoundSimulator
+from pied_poker.card import Card
+
+from pied_poker.card import Rank
+from pied_poker.player import Player
+from pied_poker.probability.events.player_wins import PlayerWins
+from pied_poker.poker_round import PokerRoundSimulator as RoundSimulator
 
 """
 Probability of winning given pocket pair (2 players):
@@ -168,5 +169,5 @@ def run(n=1000):
 # lp_wrapper()
 # lp.print_stats()
 
-# run_pocket_pair_odds(2)
-run(20000)
+run_pocket_pair_odds(3)
+# run(20000)
