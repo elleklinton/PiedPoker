@@ -1,7 +1,7 @@
 from unittest import TestCase
 
-from pied_poker import BaseHand
-from pied_poker import FourOfAKind
+from pied_poker.hand import BaseHand
+from pied_poker.hand import FourOfAKind
 from pied_poker.test.unit.hands.hand_test_utils import HandTestUtils
 
 

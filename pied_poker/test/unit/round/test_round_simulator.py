@@ -3,8 +3,8 @@ import numpy as np
 import random
 
 from pied_poker.card.card import Card
-from pied_poker import Player
-from pied_poker import RoundSimulator
+from pied_poker.player import Player
+from pied_poker.poker_round import PokerRoundSimulator as RoundSimulator
 
 
 class TestRoundSimulator(TestCase):

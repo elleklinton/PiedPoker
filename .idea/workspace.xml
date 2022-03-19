@@ -23,111 +23,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3cbb2352-993c-4228-8d94-ceb3871a62fa" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/pied_poker/card/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pied_poker/deck/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pied_poker/hand/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pied_poker/poker_round/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/poker.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/poker.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/card_internals/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/card_internals/card.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/card/card.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/card_internals/comparable.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/card/comparable.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/card_internals/rank.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/card/rank.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/card_internals/suit.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/card/suit.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deck_internals/deck.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/deck/deck.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hands/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/player/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hands/base_hand.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/hand/base_hand.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hands/flush.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/hand/flush.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hands/four_of_a_kind.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/hand/four_of_a_kind.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hands/full_house.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/hand/full_house.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hands/high_card.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/hand/high_card.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hands/one_pair.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/hand/one_pair.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hands/poker_hand.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/hand/poker_hand.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hands/royal_flush.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/hand/royal_flush.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hands/straight.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/hand/straight.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hands/straight_flush.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/hand/straight_flush.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hands/three_of_a_kind.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/hand/three_of_a_kind.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hands/two_pair.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/hand/two_pair.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/player/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/probability/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/player/player.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/player/player.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/probability/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/probability/events/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/probability/base_poker_event.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/probability/base_poker_event.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/probability/events/community_cards_include.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/probability/events/community_cards_include.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/probability/events/no_tie.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/probability/events/no_tie.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/probability/events/player_has_card_ranks.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/probability/events/player_has_card_ranks.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/probability/events/player_has_card_suits.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/probability/events/player_has_card_suits.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/probability/events/player_has_cards.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/probability/events/player_has_cards.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/probability/events/player_has_hand.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/probability/events/player_has_hand.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/probability/events/player_has_hand_or_higher.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/probability/events/player_has_hand_or_higher.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/probability/events/player_has_pocket_pair.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/probability/events/player_has_pocket_pair.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/probability/events/player_has_suited_cards.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/probability/events/player_has_suited_cards.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/probability/events/player_wins.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/probability/events/player_wins.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/probability/probability_value.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/probability/probability_value.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/probability/simulation_probability.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/probability/simulation_probability.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/round/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/test/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/round/round.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/poker_round/poker_round.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/round/round_result.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/poker_round/round_result.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/round/round_simulator.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/poker_round/round_simulator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample.py" beforeDir="false" afterPath="$PROJECT_DIR$/sample.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/test/functional/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/functional/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/test/functional/known_probabilities/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/functional/known_probabilities/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/test/functional/utils/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/functional/known_probabilities/test_cases.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/test/functional/known_probabilities/test_cases.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/functional/utils/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/test/unit/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/functional/utils/simulation_test_case.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/test/functional/utils/simulation_test_case.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/functional/utils/simulation_test_case_payload.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/test/functional/utils/simulation_test_case_payload.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/functional/utils/simulator_factory.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/test/functional/utils/simulator_factory.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/unit/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/test/unit/card_internals/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/unit/card_internals/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/test/unit/deck_internals/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/unit/card_internals/test_card.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/test/unit/card_internals/test_card.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/unit/card_internals/test_rank.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/test/unit/card_internals/test_rank.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/unit/card_internals/test_suit.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/test/unit/card_internals/test_suit.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/unit/deck_internals/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/test/unit/hands/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/unit/deck_internals/test_deck.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/test/unit/deck_internals/test_deck.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/unit/hands/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/test/unit/player/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/unit/hands/hand_test_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/test/unit/hands/hand_test_utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/unit/hands/test_flush.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/test/unit/hands/test_flush.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/unit/hands/test_four_of_a_kind.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/test/unit/hands/test_four_of_a_kind.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/unit/hands/test_full_house.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/test/unit/hands/test_full_house.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/unit/hands/test_hand_builder.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/test/unit/hands/test_hand_builder.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/unit/hands/test_high_card.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/test/unit/hands/test_high_card.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/unit/hands/test_inter_hand.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/test/unit/hands/test_inter_hand.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/unit/hands/test_one_pair.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/test/unit/hands/test_one_pair.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/unit/hands/test_poker_hand.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/test/unit/hands/test_poker_hand.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/unit/hands/test_royal_flush.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/test/unit/hands/test_royal_flush.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/unit/hands/test_straight.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/test/unit/hands/test_straight.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/unit/hands/test_straight_flush.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/test/unit/hands/test_straight_flush.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/unit/hands/test_three_of_a_kind.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/test/unit/hands/test_three_of_a_kind.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/unit/hands/test_two_pair.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/test/unit/hands/test_two_pair.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/unit/player/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/test/unit/probability/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/unit/player/test_player.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/test/unit/player/test_player.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/unit/probability/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/test/unit/probability/events/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/unit/probability/events/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/test/unit/round/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/unit/probability/events/events_test_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/test/unit/probability/events/events_test_utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/unit/probability/events/test_community_cards_include.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/test/unit/probability/events/test_community_cards_include.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/unit/probability/events/test_no_tie.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/test/unit/probability/events/test_no_tie.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/unit/probability/events/test_player_has_card_ranks.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/test/unit/probability/events/test_player_has_card_ranks.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/unit/probability/events/test_player_has_card_suits.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/test/unit/probability/events/test_player_has_card_suits.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/unit/probability/events/test_player_has_cards.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/test/unit/probability/events/test_player_has_cards.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/unit/probability/events/test_player_has_hand.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/test/unit/probability/events/test_player_has_hand.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/unit/probability/events/test_player_has_hand_or_higher.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/test/unit/probability/events/test_player_has_hand_or_higher.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/unit/probability/events/test_player_has_pocket_pair.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/test/unit/probability/events/test_player_has_pocket_pair.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/unit/probability/events/test_player_has_suited_cards.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/test/unit/probability/events/test_player_has_suited_cards.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/unit/probability/events/test_player_wins.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/test/unit/probability/events/test_player_wins.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/unit/probability/test_base_poker_event.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/test/unit/probability/test_base_poker_event.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/unit/probability/test_probability_value.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/test/unit/probability/test_probability_value.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/unit/probability/test_simulation_probability.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/test/unit/probability/test_simulation_probability.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/unit/round/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/visualization/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/unit/round/test_round.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/test/unit/round/test_round.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/unit/round/test_round_result.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/test/unit/round/test_round_result.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/unit/round/test_round_simulator.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/test/unit/round/test_round_simulator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/visualization/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/visualization/pocket_pair_map.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/visualization/pocket_pair_map.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pied_poker/test/unit/hands/test_four_of_a_kind.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/test/unit/hands/test_four_of_a_kind.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pied_poker/test/unit/probability/test_probability_value.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/test/unit/probability/test_probability_value.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pied_poker/test/unit/round/test_round_simulator.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/test/unit/round/test_round_simulator.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -188,7 +87,7 @@
       <recent name="$PROJECT_DIR$/test/round" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.sample">
+  <component name="RunManager" selected="Python tests.All Unit Tests">
     <configuration name="round_simulator NON CONSOLE" type="PythonConfigurationType" factoryName="Python">
       <module name="poker" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -392,7 +291,7 @@
       <updated>1643779616378</updated>
       <workItem from="1643779632498" duration="109067000" />
       <workItem from="1644738161626" duration="45110000" />
-      <workItem from="1647574800972" duration="12908000" />
+      <workItem from="1647574800972" duration="13287000" />
     </task>
     <servers />
   </component>
@@ -451,42 +350,42 @@
       <screen x="0" y="25" width="1747" height="1095" />
     </state>
     <state width="802" height="466" key="DebuggerActiveHint/0.25.1747.1095@0.25.1747.1095" timestamp="1644195414603" />
-    <state width="1702" height="395" key="GridCell.Tab.0.bottom" timestamp="1647670300268">
+    <state width="1702" height="395" key="GridCell.Tab.0.bottom" timestamp="1647670908299">
       <screen x="0" y="25" width="1745" height="1095" />
     </state>
     <state width="1750" height="292" key="GridCell.Tab.0.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1644878954074" />
     <state width="1702" height="292" key="GridCell.Tab.0.bottom/0.25.1744.1095@0.25.1744.1095" timestamp="1644739329675" />
-    <state width="1702" height="395" key="GridCell.Tab.0.bottom/0.25.1745.1095@0.25.1745.1095" timestamp="1647670300268" />
+    <state width="1702" height="395" key="GridCell.Tab.0.bottom/0.25.1745.1095@0.25.1745.1095" timestamp="1647670908299" />
     <state width="1702" height="412" key="GridCell.Tab.0.bottom/0.25.1746.1095@0.25.1746.1095" timestamp="1645862518479" />
     <state width="1702" height="496" key="GridCell.Tab.0.bottom/0.25.1747.1095@0.25.1747.1095" timestamp="1647574784417" />
     <state width="1699" height="301" key="GridCell.Tab.0.bottom/0.25.1748.1095@0.25.1748.1095" timestamp="1644386398131" />
     <state width="2465" height="305" key="GridCell.Tab.0.bottom/1792.-295.2507.1415/0.25.1792.1095@1792.-295.2507.1415" timestamp="1646514743386" />
-    <state width="1702" height="395" key="GridCell.Tab.0.center" timestamp="1647670300268">
+    <state width="1702" height="395" key="GridCell.Tab.0.center" timestamp="1647670908298">
       <screen x="0" y="25" width="1745" height="1095" />
     </state>
     <state width="1750" height="292" key="GridCell.Tab.0.center/0.0.1792.1120@0.0.1792.1120" timestamp="1644878954073" />
     <state width="1702" height="292" key="GridCell.Tab.0.center/0.25.1744.1095@0.25.1744.1095" timestamp="1644739329674" />
-    <state width="1702" height="395" key="GridCell.Tab.0.center/0.25.1745.1095@0.25.1745.1095" timestamp="1647670300268" />
+    <state width="1702" height="395" key="GridCell.Tab.0.center/0.25.1745.1095@0.25.1745.1095" timestamp="1647670908298" />
     <state width="1702" height="412" key="GridCell.Tab.0.center/0.25.1746.1095@0.25.1746.1095" timestamp="1645862518478" />
     <state width="1702" height="496" key="GridCell.Tab.0.center/0.25.1747.1095@0.25.1747.1095" timestamp="1647574784417" />
     <state width="1699" height="301" key="GridCell.Tab.0.center/0.25.1748.1095@0.25.1748.1095" timestamp="1644386398130" />
     <state width="2465" height="305" key="GridCell.Tab.0.center/1792.-295.2507.1415/0.25.1792.1095@1792.-295.2507.1415" timestamp="1646514743385" />
-    <state width="1702" height="395" key="GridCell.Tab.0.left" timestamp="1647670300267">
+    <state width="1702" height="395" key="GridCell.Tab.0.left" timestamp="1647670908298">
       <screen x="0" y="25" width="1745" height="1095" />
     </state>
     <state width="1750" height="292" key="GridCell.Tab.0.left/0.0.1792.1120@0.0.1792.1120" timestamp="1644878954073" />
     <state width="1702" height="292" key="GridCell.Tab.0.left/0.25.1744.1095@0.25.1744.1095" timestamp="1644739329674" />
-    <state width="1702" height="395" key="GridCell.Tab.0.left/0.25.1745.1095@0.25.1745.1095" timestamp="1647670300267" />
+    <state width="1702" height="395" key="GridCell.Tab.0.left/0.25.1745.1095@0.25.1745.1095" timestamp="1647670908298" />
     <state width="1702" height="412" key="GridCell.Tab.0.left/0.25.1746.1095@0.25.1746.1095" timestamp="1645862518477" />
     <state width="1702" height="496" key="GridCell.Tab.0.left/0.25.1747.1095@0.25.1747.1095" timestamp="1647574784417" />
     <state width="1699" height="301" key="GridCell.Tab.0.left/0.25.1748.1095@0.25.1748.1095" timestamp="1644386398129" />
     <state width="2465" height="305" key="GridCell.Tab.0.left/1792.-295.2507.1415/0.25.1792.1095@1792.-295.2507.1415" timestamp="1646514743385" />
-    <state width="1702" height="395" key="GridCell.Tab.0.right" timestamp="1647670300268">
+    <state width="1702" height="395" key="GridCell.Tab.0.right" timestamp="1647670908299">
       <screen x="0" y="25" width="1745" height="1095" />
     </state>
     <state width="1750" height="292" key="GridCell.Tab.0.right/0.0.1792.1120@0.0.1792.1120" timestamp="1644878954074" />
     <state width="1702" height="292" key="GridCell.Tab.0.right/0.25.1744.1095@0.25.1744.1095" timestamp="1644739329675" />
-    <state width="1702" height="395" key="GridCell.Tab.0.right/0.25.1745.1095@0.25.1745.1095" timestamp="1647670300268" />
+    <state width="1702" height="395" key="GridCell.Tab.0.right/0.25.1745.1095@0.25.1745.1095" timestamp="1647670908299" />
     <state width="1702" height="412" key="GridCell.Tab.0.right/0.25.1746.1095@0.25.1746.1095" timestamp="1645862518478" />
     <state width="1702" height="496" key="GridCell.Tab.0.right/0.25.1747.1095@0.25.1747.1095" timestamp="1647574784417" />
     <state width="1699" height="301" key="GridCell.Tab.0.right/0.25.1748.1095@0.25.1748.1095" timestamp="1644386398130" />
@@ -607,7 +506,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_deck_TestDeck_test_all_cards_drawn.coverage" NAME="Unittests for test_deck.TestDeck.test_all_cards_drawn Coverage Results" MODIFIED="1646292137584" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/poker$sample.coverage" NAME="sample Coverage Results" MODIFIED="1647670300262" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/poker$sample.coverage" NAME="sample Coverage Results" MODIFIED="1647670697284" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_poker_hand_TestPokerHand.coverage" NAME="Unittests for test_poker_hand.TestPokerHand Coverage Results" MODIFIED="1644111261551" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_straight_TestStraight.coverage" NAME="Unittests for test_straight.TestStraight Coverage Results" MODIFIED="1644032047539" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/hands" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_probability_value_TestProbabilityValue_test_odds_str.coverage" NAME="Unittests for test_probability_value.TestProbabilityValue.test_odds_str Coverage Results" MODIFIED="1645919303405" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -626,7 +525,7 @@
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_round_result_TestRoundResult_test_str_winning_players_names.coverage" NAME="Unittests for test_round_result.TestRoundResult.test_str_winning_players_names Coverage Results" MODIFIED="1645917078612" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/poker$Unittests_in_test_one_pair_py.coverage" NAME="Unittests in test_one_pair.py Coverage Results" MODIFIED="1644107973256" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/hands" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_player_has_hand_TestPlayerHasHand_test_is_event.coverage" NAME="Unittests for test_player_has_hand.TestPlayerHasHand.test_is_event Coverage Results" MODIFIED="1645925278663" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/poker$All_Unit_Tests.coverage" NAME="All Unit Tests Coverage Results" MODIFIED="1647584834393" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/poker$All_Unit_Tests.coverage" NAME="All Unit Tests Coverage Results" MODIFIED="1647670908290" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/poker$round_simulator_NON_CONSOLE.coverage" NAME="round_simulator NON CONSOLE Coverage Results" MODIFIED="1645862518471" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_straight_TestStraight_test_non_straight.coverage" NAME="Unittests for test_straight.TestStraight.test_non_straight Coverage Results" MODIFIED="1644104943675" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/hands" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_player_has_hand_TestPlayerHasHand.coverage" NAME="Unittests for test_player_has_hand.TestPlayerHasHand Coverage Results" MODIFIED="1645925306476" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
