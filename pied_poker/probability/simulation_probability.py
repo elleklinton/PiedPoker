@@ -14,7 +14,19 @@ class SimulationProbability:
         """
         self.__rounds__ = simulation_rounds
 
-    def probability_of(self, event: base_poker_event.BasePokerEvent, given: base_poker_event.BasePokerEvent = None):
+    def where(self, event: base_poker_event.BasePokerEvent):
+        """
+        Returns a list of PokerRoundResult objects that match the event criteria
+        :param event: The event you would like to filter by
+        :type event: BasePokerEvent
+        :return: List of PokerRoundResult objects that match the event criteria
+        :rtype: List[base_poker_event.BasePokerEvent]
+        """
+        return [r for r in self.__rounds__ if event.filter_fn(r)]
+
+
+    def probability_of(self, event: base_poker_event.BasePokerEvent, given: base_poker_event.BasePokerEvent = None)\
+            -> probability_value.ProbabilityValue:
         """
         Used to compute the probability of a certain event occurring during the simulations.
         Example Usage:

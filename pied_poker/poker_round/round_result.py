@@ -31,3 +31,22 @@ class PokerRoundResult:
     def winning_hand(self):
         return self.players_ranked[0].hand
 
+    def __str__(self):
+        res = f'Community Cards: {self.community_cards}'
+
+        for p in self.players_ranked:
+            if p in self.winners:
+                p_name = f"*{p.name}* (winner)"
+            else:
+                p_name = p.name
+
+            sp = ' ' * 5
+
+            s = f"\n\n{sp}{p_name}:\n{sp * 2}Cards: {p.cards}\n{sp * 2}Hand: {p.hand}"
+            res += s
+
+        return res
+
+    def __repr__(self):
+        return self.__str__()
+

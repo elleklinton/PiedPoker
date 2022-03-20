@@ -41,4 +41,18 @@ class Card:
     def __hash__(self):
         return hash(self.__str__())
 
+    @staticmethod
+    def of(*args):
+        """
+        Initializes a list of Card objects from a list of input strings
+        Example:
+        Card.of('as', 'ad') -> [Card('as'), Card('ad')]
+
+        :param args: The card values to initialize
+        :type args: List[str]
+        :return: List of Card objects
+        :rtype: List[Card]
+        """
+        return [Card(a) for a in args]
+
 

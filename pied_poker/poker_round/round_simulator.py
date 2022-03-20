@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import sys
 from typing import List
 from joblib import Parallel, delayed
 from tqdm import tqdm
@@ -36,7 +37,8 @@ class PokerRoundSimulator:
         self.round = round.PokerRound(community_cards, players, other_drawn_cards)
         self.players = self.round.players
 
-    def simulate(self, n: int = 1000, n_jobs: int = -1, status_bar: bool = True):
+    def simulate(self, n: int = 1000, n_jobs: int = -1, status_bar: bool = True) \
+            -> simulation_probability.SimulationProbability:
         """
         Runs a simulation of n poker games, and returns a SimulationProbability object, which is be used to compute
         probabilities based on the simulations run. This function is parallelized and configurable via function
@@ -55,7 +57,14 @@ class PokerRoundSimulator:
         """
         simulations: List[round_result.PokerRoundResult]
 
-        if n_jobs == 1:  # Don't want to parallelize
+        interactive_console = bool(getattr(sys, 'ps1', sys.flags.interactive))
+        # If we are in interactive console, prevent threading because it breaks there
+
+        if n_jobs == 1 or interactive_console:  # Don't want to parallelize
+            if n_jobs != 1 and interactive_console:
+                print(f'Warning: Threading was requested (n_jobs={n_jobs}), but disabling threading because interactive'
+                      f' console was detected.')
+
             if not status_bar:
                 simulations = [self.round.simulate() for i in range(n)]
             else:

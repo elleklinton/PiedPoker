@@ -14,6 +14,7 @@ Q: 36.21% == 1:2.76 odds == (7242/20000)
 K: 41.23% == 1:2.43 odds == (8246/20000)
 A: 45.12% == 1:2.22 odds == (9023/20000)
 """
+import sys
 from time import time
 
 from pied_poker.card import Card
@@ -87,7 +88,7 @@ def run_pocket_pair_odds(total_players=2, n_trials=1000):
 
         round_simulator = RoundSimulator(players=[p1], community_cards=[], total_players=total_players)
         t = time()
-        result = round_simulator.simulate(n_trials, n_jobs=-1, status_bar=False)
+        result = round_simulator.simulate(n_trials, n_jobs=1, status_bar=False)
 
         prob = result.probability_of(
             event=PlayerWins(),
@@ -169,5 +170,6 @@ def run(n=1000):
 # lp_wrapper()
 # lp.print_stats()
 
-run_pocket_pair_odds(3)
+# run_pocket_pair_odds(3, 1000)
 # run(20000)
+print(bool(getattr(sys, 'ps1', sys.flags.interactive)))
