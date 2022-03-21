@@ -3,7 +3,7 @@ from setuptools import setup
 
 setup(
     name='pied_poker',
-    version='0.1.5',
+    version='0.2.8',
     description='A Python package to run flexible and fast poker simulations using a monte carlo style simulator.',
     long_description='A Python package to run flexible and fast poker simulations using a monte carlo style simulator.',
     url='https://github.com/elleklinton/PiedPoker',

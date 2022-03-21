@@ -8,7 +8,7 @@ class BasePokerEvent:
     def __init__(self):
         self.filter_fn = self.is_event
 
-    def is_event(self, round_result: pp.poker_round.round_result.PokerRoundResult) -> bool:
+    def is_event(self, round_result: pp.poker_round.poker_round_result.PokerRoundResult) -> bool:
         raise NotImplementedError('Error: PokerEvent.is_event is undefined')
 
     def __str__(self):

@@ -39,16 +39,17 @@ from pied_poker.probability import PlayerHasHand
 from pied_poker.probability import PlayerHasHandOrHigher
 from pied_poker.probability import PlayerHasPocketPair
 from pied_poker.probability import PlayerHasSuitedCards
+from pied_poker.probability import PlayerLoses
 from pied_poker.probability import PlayerWins
 from pied_poker.probability import BasePokerEvent
 from pied_poker.probability import ProbabilityValue
-from pied_poker.probability import SimulationProbability
 #
 # # round
 # import pied_poker.poker_round as poker_round
 from pied_poker.poker_round import PokerRound
 from pied_poker.poker_round import PokerRoundResult
 from pied_poker.poker_round import PokerRoundSimulator
+from pied_poker.poker_round import PokerRoundSimulationResult
 #
 # # visualization
 from pied_poker.visualization import CategoricalHeatmap

@@ -23,23 +23,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3cbb2352-993c-4228-8d94-ceb3871a62fa" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/pied_poker/visualization/heatmap/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pied_poker/visualization/heatmap/categorical_heat_map.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pied_poker/visualization/heatmap/heatmap_dimension.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pied_poker/visualization/heatmap/heatmap_dimension_value.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pied_poker/visualization/heatmap/heatmap_generator.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pied_poker/visualization/heatmap_samples/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pied_poker/visualization/heatmap_samples/all_suited_starting_hands.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pied_poker/visualization/heatmap_samples/pocket_pair_vs_num_players.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pied_poker/poker_round/poker_round_simulation_result.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pied_poker/probability/events/player_loses.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pied_poker/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pied_poker/card/card.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/card/card.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pied_poker/poker_round/round_result.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/poker_round/round_result.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pied_poker/poker_round/round_simulator.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/poker_round/round_simulator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pied_poker/probability/simulation_probability.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/probability/simulation_probability.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pied_poker/visualization/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/visualization/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample.py" beforeDir="false" afterPath="$PROJECT_DIR$/sample.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pied_poker/poker_round/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/poker_round/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pied_poker/poker_round/poker_round.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/poker_round/poker_round.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pied_poker/poker_round/round_result.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/poker_round/poker_round_result.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pied_poker/poker_round/round_simulator.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/poker_round/poker_round_simulator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pied_poker/probability/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/probability/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pied_poker/probability/base_poker_event.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/probability/base_poker_event.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pied_poker/probability/events/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/probability/events/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pied_poker/probability/probability_value.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/probability/probability_value.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pied_poker/probability/simulation_probability.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pied_poker/test/unit/probability/test_probability_value.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/test/unit/probability/test_probability_value.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pied_poker/test/unit/probability/test_simulation_probability.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/test/unit/probability/test_simulation_probability.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -72,7 +70,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/pied_poker/visualization/heatmap_samples" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pied_poker/probability/events" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -87,18 +85,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/pied_poker/probability/events" />
       <recent name="$PROJECT_DIR$/pied_poker/visualization/heatmap_samples" />
       <recent name="$PROJECT_DIR$/test/unit/probability/events" />
       <recent name="$PROJECT_DIR$/probability/events" />
       <recent name="$PROJECT_DIR$/test/probability/events" />
-      <recent name="$PROJECT_DIR$/probability" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/pied_poker/poker_round" />
       <recent name="$PROJECT_DIR$/pied_poker/visualization/heatmap" />
       <recent name="$PROJECT_DIR$/pied_poker" />
       <recent name="$PROJECT_DIR$/test/functional/utils" />
       <recent name="$PROJECT_DIR$/test/unit" />
-      <recent name="$PROJECT_DIR$/test/unit_tests" />
     </key>
   </component>
   <component name="RunManager" selected="Python tests.All Unit Tests">
@@ -118,25 +116,6 @@
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pied_poker/visualization/heatmap_samples/all_suited_starting_hands.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="categorical_heat_map" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="poker" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pied_poker/visualization" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pied_poker/visualization/heatmap/categorical_heat_map.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
@@ -184,6 +163,50 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="poker_round_simulation_result" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="poker" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pied_poker/poker_round" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pied_poker/poker_round/poker_round_simulation_result.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="poker_round_simulator" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="poker" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pied_poker/poker_round" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pied_poker/poker_round/poker_round_simulator.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="round_simulator NON CONSOLE" type="PythonConfigurationType" factoryName="Python">
       <module name="poker" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -200,25 +223,6 @@
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/round/round_simulator.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="sample" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="poker" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/sample.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
@@ -294,18 +298,18 @@
       <item itemvalue="Python tests.All Unit Tests" />
       <item itemvalue="Python tests.test_deck" />
       <item itemvalue="Python tests.Unittests for pied_poker.test.unit.deck_internals.test_deck.TestDeck" />
-      <item itemvalue="Python.sample" />
-      <item itemvalue="Python.categorical_heat_map" />
       <item itemvalue="Python.heatmap_generator" />
       <item itemvalue="Python.pocket_pair_vs_num_players" />
       <item itemvalue="Python.all_suited_starting_hands" />
+      <item itemvalue="Python.poker_round_simulation_result" />
+      <item itemvalue="Python.poker_round_simulator" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.poker_round_simulator" />
+        <item itemvalue="Python.poker_round_simulation_result" />
         <item itemvalue="Python.pocket_pair_vs_num_players" />
         <item itemvalue="Python.all_suited_starting_hands" />
-        <item itemvalue="Python.heatmap_generator" />
-        <item itemvalue="Python.categorical_heat_map" />
         <item itemvalue="Python.heatmap_generator" />
       </list>
     </recent_temporary>
@@ -320,7 +324,7 @@
       <updated>1643779616378</updated>
       <workItem from="1643779632498" duration="109067000" />
       <workItem from="1644738161626" duration="45110000" />
-      <workItem from="1647574800972" duration="33048000" />
+      <workItem from="1647574800972" duration="44237000" />
     </task>
     <servers />
   </component>
@@ -368,86 +372,90 @@
       <screen x="0" y="25" width="1747" height="1095" />
     </state>
     <state x="754" y="329" width="602" height="486" key="#xdebugger.XInspectDialog/0.25.1747.1095@0.25.1747.1095" timestamp="1644196349099" />
-    <state x="941" y="479" width="2507" height="1415" key="#xdebugger.evaluate" timestamp="1647740359562">
+    <state x="941" y="479" width="2507" height="1415" key="#xdebugger.evaluate" timestamp="1647817653338">
       <screen x="0" y="25" width="1745" height="1095" />
     </state>
     <state x="901" y="472" key="#xdebugger.evaluate/0.0.1792.1120@0.0.1792.1120" timestamp="1644479232667" />
-    <state x="941" y="479" key="#xdebugger.evaluate/0.25.1745.1095@0.25.1745.1095" timestamp="1647740359562" />
+    <state x="941" y="479" key="#xdebugger.evaluate/0.25.1745.1095@0.25.1745.1095" timestamp="1647817653338" />
     <state x="878" y="535" key="#xdebugger.evaluate/0.25.1747.1095@0.25.1747.1095" timestamp="1645861057932" />
     <state x="1792" y="-295" width="2507" height="1415" key="#xdebugger.evaluate/1792.-295.2507.1415/0.25.1792.1095@1792.-295.2507.1415" timestamp="1646005603922" />
     <state width="802" height="466" key="DebuggerActiveHint" timestamp="1644195414603">
       <screen x="0" y="25" width="1747" height="1095" />
     </state>
     <state width="802" height="466" key="DebuggerActiveHint/0.25.1747.1095@0.25.1747.1095" timestamp="1644195414603" />
-    <state width="1702" height="395" key="GridCell.Tab.0.bottom" timestamp="1647811567483">
-      <screen x="0" y="25" width="1745" height="1095" />
+    <state width="1702" height="395" key="GridCell.Tab.0.bottom" timestamp="1647838064844">
+      <screen x="0" y="25" width="1744" height="1095" />
     </state>
     <state width="1750" height="292" key="GridCell.Tab.0.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1644878954074" />
-    <state width="1702" height="292" key="GridCell.Tab.0.bottom/0.25.1744.1095@0.25.1744.1095" timestamp="1644739329675" />
-    <state width="1702" height="395" key="GridCell.Tab.0.bottom/0.25.1745.1095@0.25.1745.1095" timestamp="1647811567483" />
+    <state width="1702" height="395" key="GridCell.Tab.0.bottom/0.25.1744.1095@0.25.1744.1095" timestamp="1647838064844" />
+    <state width="1702" height="395" key="GridCell.Tab.0.bottom/0.25.1745.1095@0.25.1745.1095" timestamp="1647819567306" />
     <state width="1702" height="395" key="GridCell.Tab.0.bottom/0.25.1746.1095@0.25.1746.1095" timestamp="1647742502142" />
     <state width="1702" height="496" key="GridCell.Tab.0.bottom/0.25.1747.1095@0.25.1747.1095" timestamp="1647574784417" />
     <state width="1699" height="301" key="GridCell.Tab.0.bottom/0.25.1748.1095@0.25.1748.1095" timestamp="1644386398131" />
     <state width="2465" height="305" key="GridCell.Tab.0.bottom/1792.-295.2507.1415/0.25.1792.1095@1792.-295.2507.1415" timestamp="1646514743386" />
-    <state width="1702" height="395" key="GridCell.Tab.0.center" timestamp="1647811567482">
-      <screen x="0" y="25" width="1745" height="1095" />
+    <state width="1702" height="395" key="GridCell.Tab.0.center" timestamp="1647838064844">
+      <screen x="0" y="25" width="1744" height="1095" />
     </state>
     <state width="1750" height="292" key="GridCell.Tab.0.center/0.0.1792.1120@0.0.1792.1120" timestamp="1644878954073" />
-    <state width="1702" height="292" key="GridCell.Tab.0.center/0.25.1744.1095@0.25.1744.1095" timestamp="1644739329674" />
-    <state width="1702" height="395" key="GridCell.Tab.0.center/0.25.1745.1095@0.25.1745.1095" timestamp="1647811567482" />
+    <state width="1702" height="395" key="GridCell.Tab.0.center/0.25.1744.1095@0.25.1744.1095" timestamp="1647838064844" />
+    <state width="1702" height="395" key="GridCell.Tab.0.center/0.25.1745.1095@0.25.1745.1095" timestamp="1647819567305" />
     <state width="1702" height="395" key="GridCell.Tab.0.center/0.25.1746.1095@0.25.1746.1095" timestamp="1647742502142" />
     <state width="1702" height="496" key="GridCell.Tab.0.center/0.25.1747.1095@0.25.1747.1095" timestamp="1647574784417" />
     <state width="1699" height="301" key="GridCell.Tab.0.center/0.25.1748.1095@0.25.1748.1095" timestamp="1644386398130" />
     <state width="2465" height="305" key="GridCell.Tab.0.center/1792.-295.2507.1415/0.25.1792.1095@1792.-295.2507.1415" timestamp="1646514743385" />
-    <state width="1702" height="395" key="GridCell.Tab.0.left" timestamp="1647811567482">
-      <screen x="0" y="25" width="1745" height="1095" />
+    <state width="1702" height="395" key="GridCell.Tab.0.left" timestamp="1647838064843">
+      <screen x="0" y="25" width="1744" height="1095" />
     </state>
     <state width="1750" height="292" key="GridCell.Tab.0.left/0.0.1792.1120@0.0.1792.1120" timestamp="1644878954073" />
-    <state width="1702" height="292" key="GridCell.Tab.0.left/0.25.1744.1095@0.25.1744.1095" timestamp="1644739329674" />
-    <state width="1702" height="395" key="GridCell.Tab.0.left/0.25.1745.1095@0.25.1745.1095" timestamp="1647811567482" />
+    <state width="1702" height="395" key="GridCell.Tab.0.left/0.25.1744.1095@0.25.1744.1095" timestamp="1647838064843" />
+    <state width="1702" height="395" key="GridCell.Tab.0.left/0.25.1745.1095@0.25.1745.1095" timestamp="1647819567304" />
     <state width="1702" height="395" key="GridCell.Tab.0.left/0.25.1746.1095@0.25.1746.1095" timestamp="1647742502141" />
     <state width="1702" height="496" key="GridCell.Tab.0.left/0.25.1747.1095@0.25.1747.1095" timestamp="1647574784417" />
     <state width="1699" height="301" key="GridCell.Tab.0.left/0.25.1748.1095@0.25.1748.1095" timestamp="1644386398129" />
     <state width="2465" height="305" key="GridCell.Tab.0.left/1792.-295.2507.1415/0.25.1792.1095@1792.-295.2507.1415" timestamp="1646514743385" />
-    <state width="1702" height="395" key="GridCell.Tab.0.right" timestamp="1647811567482">
-      <screen x="0" y="25" width="1745" height="1095" />
+    <state width="1702" height="395" key="GridCell.Tab.0.right" timestamp="1647838064844">
+      <screen x="0" y="25" width="1744" height="1095" />
     </state>
     <state width="1750" height="292" key="GridCell.Tab.0.right/0.0.1792.1120@0.0.1792.1120" timestamp="1644878954074" />
-    <state width="1702" height="292" key="GridCell.Tab.0.right/0.25.1744.1095@0.25.1744.1095" timestamp="1644739329675" />
-    <state width="1702" height="395" key="GridCell.Tab.0.right/0.25.1745.1095@0.25.1745.1095" timestamp="1647811567482" />
+    <state width="1702" height="395" key="GridCell.Tab.0.right/0.25.1744.1095@0.25.1744.1095" timestamp="1647838064844" />
+    <state width="1702" height="395" key="GridCell.Tab.0.right/0.25.1745.1095@0.25.1745.1095" timestamp="1647819567305" />
     <state width="1702" height="395" key="GridCell.Tab.0.right/0.25.1746.1095@0.25.1746.1095" timestamp="1647742502142" />
     <state width="1702" height="496" key="GridCell.Tab.0.right/0.25.1747.1095@0.25.1747.1095" timestamp="1647574784417" />
     <state width="1699" height="301" key="GridCell.Tab.0.right/0.25.1748.1095@0.25.1748.1095" timestamp="1644386398130" />
     <state width="2465" height="305" key="GridCell.Tab.0.right/1792.-295.2507.1415/0.25.1792.1095@1792.-295.2507.1415" timestamp="1646514743386" />
-    <state width="1702" height="331" key="GridCell.Tab.1.bottom" timestamp="1647743129598">
-      <screen x="0" y="25" width="1745" height="1095" />
+    <state width="1702" height="331" key="GridCell.Tab.1.bottom" timestamp="1647836423979">
+      <screen x="0" y="25" width="1744" height="1095" />
     </state>
     <state width="1750" height="391" key="GridCell.Tab.1.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1644556842317" />
-    <state width="1702" height="331" key="GridCell.Tab.1.bottom/0.25.1745.1095@0.25.1745.1095" timestamp="1647743129598" />
+    <state width="1702" height="331" key="GridCell.Tab.1.bottom/0.25.1744.1095@0.25.1744.1095" timestamp="1647836423979" />
+    <state width="1702" height="331" key="GridCell.Tab.1.bottom/0.25.1745.1095@0.25.1745.1095" timestamp="1647817994722" />
     <state width="1702" height="369" key="GridCell.Tab.1.bottom/0.25.1746.1095@0.25.1746.1095" timestamp="1645861327221" />
     <state width="1702" height="496" key="GridCell.Tab.1.bottom/0.25.1747.1095@0.25.1747.1095" timestamp="1647574784418" />
     <state width="2465" height="496" key="GridCell.Tab.1.bottom/1792.-295.2507.1415/0.25.1792.1095@1792.-295.2507.1415" timestamp="1646005630777" />
-    <state width="1702" height="331" key="GridCell.Tab.1.center" timestamp="1647743129598">
-      <screen x="0" y="25" width="1745" height="1095" />
+    <state width="1702" height="331" key="GridCell.Tab.1.center" timestamp="1647836423979">
+      <screen x="0" y="25" width="1744" height="1095" />
     </state>
     <state width="1750" height="391" key="GridCell.Tab.1.center/0.0.1792.1120@0.0.1792.1120" timestamp="1644556842317" />
-    <state width="1702" height="331" key="GridCell.Tab.1.center/0.25.1745.1095@0.25.1745.1095" timestamp="1647743129598" />
+    <state width="1702" height="331" key="GridCell.Tab.1.center/0.25.1744.1095@0.25.1744.1095" timestamp="1647836423979" />
+    <state width="1702" height="331" key="GridCell.Tab.1.center/0.25.1745.1095@0.25.1745.1095" timestamp="1647817994722" />
     <state width="1702" height="369" key="GridCell.Tab.1.center/0.25.1746.1095@0.25.1746.1095" timestamp="1645861327221" />
     <state width="1702" height="496" key="GridCell.Tab.1.center/0.25.1747.1095@0.25.1747.1095" timestamp="1647574784418" />
     <state width="2465" height="496" key="GridCell.Tab.1.center/1792.-295.2507.1415/0.25.1792.1095@1792.-295.2507.1415" timestamp="1646005630777" />
-    <state width="1702" height="331" key="GridCell.Tab.1.left" timestamp="1647743129598">
-      <screen x="0" y="25" width="1745" height="1095" />
+    <state width="1702" height="331" key="GridCell.Tab.1.left" timestamp="1647836423979">
+      <screen x="0" y="25" width="1744" height="1095" />
     </state>
     <state width="1750" height="391" key="GridCell.Tab.1.left/0.0.1792.1120@0.0.1792.1120" timestamp="1644556842316" />
-    <state width="1702" height="331" key="GridCell.Tab.1.left/0.25.1745.1095@0.25.1745.1095" timestamp="1647743129598" />
+    <state width="1702" height="331" key="GridCell.Tab.1.left/0.25.1744.1095@0.25.1744.1095" timestamp="1647836423979" />
+    <state width="1702" height="331" key="GridCell.Tab.1.left/0.25.1745.1095@0.25.1745.1095" timestamp="1647817994722" />
     <state width="1702" height="369" key="GridCell.Tab.1.left/0.25.1746.1095@0.25.1746.1095" timestamp="1645861327220" />
     <state width="1702" height="496" key="GridCell.Tab.1.left/0.25.1747.1095@0.25.1747.1095" timestamp="1647574784417" />
     <state width="2465" height="496" key="GridCell.Tab.1.left/1792.-295.2507.1415/0.25.1792.1095@1792.-295.2507.1415" timestamp="1646005630776" />
-    <state width="1702" height="331" key="GridCell.Tab.1.right" timestamp="1647743129598">
-      <screen x="0" y="25" width="1745" height="1095" />
+    <state width="1702" height="331" key="GridCell.Tab.1.right" timestamp="1647836423979">
+      <screen x="0" y="25" width="1744" height="1095" />
     </state>
     <state width="1750" height="391" key="GridCell.Tab.1.right/0.0.1792.1120@0.0.1792.1120" timestamp="1644556842317" />
-    <state width="1702" height="331" key="GridCell.Tab.1.right/0.25.1745.1095@0.25.1745.1095" timestamp="1647743129598" />
+    <state width="1702" height="331" key="GridCell.Tab.1.right/0.25.1744.1095@0.25.1744.1095" timestamp="1647836423979" />
+    <state width="1702" height="331" key="GridCell.Tab.1.right/0.25.1745.1095@0.25.1745.1095" timestamp="1647817994722" />
     <state width="1702" height="369" key="GridCell.Tab.1.right/0.25.1746.1095@0.25.1746.1095" timestamp="1645861327221" />
     <state width="1702" height="496" key="GridCell.Tab.1.right/0.25.1747.1095@0.25.1747.1095" timestamp="1647574784418" />
     <state width="2465" height="496" key="GridCell.Tab.1.right/1792.-295.2507.1415/0.25.1792.1095@1792.-295.2507.1415" timestamp="1646005630777" />
@@ -457,23 +465,23 @@
     <state x="379" y="206" key="SettingsEditor/0.25.1745.1095@0.25.1745.1095" timestamp="1647578770487" />
     <state x="379" y="208" key="SettingsEditor/0.25.1747.1095@0.25.1747.1095" timestamp="1644293015934" />
     <state x="2336" y="-61" key="SettingsEditor/1792.-295.2507.1415/0.25.1792.1095@1792.-295.2507.1415" timestamp="1646514689936" />
-    <state x="571" y="327" width="598" height="583" key="find.popup" timestamp="1647577741998">
+    <state x="571" y="327" width="598" height="583" key="find.popup" timestamp="1647818093985">
       <screen x="0" y="25" width="1745" height="1095" />
     </state>
     <state x="587" y="309" width="613" height="596" key="find.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1644609333321" />
-    <state x="571" y="327" width="598" height="583" key="find.popup/0.25.1745.1095@0.25.1745.1095" timestamp="1647577741998" />
+    <state x="571" y="327" width="598" height="583" key="find.popup/0.25.1745.1095@0.25.1745.1095" timestamp="1647818093985" />
     <state x="572" y="327" width="597" height="582" key="find.popup/0.25.1747.1095@0.25.1747.1095" timestamp="1644190413154" />
     <state x="2613" y="95" width="858" height="753" key="find.popup/1792.-295.2507.1415/0.25.1792.1095@1792.-295.2507.1415" timestamp="1646006943393" />
     <state width="600" height="428" key="javadoc.popup" timestamp="1647734236844">
       <screen x="0" y="25" width="1745" height="1095" />
     </state>
     <state width="600" height="428" key="javadoc.popup/0.25.1745.1095@0.25.1745.1095" timestamp="1647734236844" />
-    <state x="534" y="269" width="671" height="676" key="search.everywhere.popup" timestamp="1647742408659">
+    <state x="534" y="269" width="671" height="676" key="search.everywhere.popup" timestamp="1647822467560">
       <screen x="0" y="25" width="1746" height="1095" />
     </state>
     <state x="549" y="250" width="688" height="692" key="search.everywhere.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1644609395006" />
-    <state x="534" y="269" width="670" height="676" key="search.everywhere.popup/0.25.1745.1095@0.25.1745.1095" timestamp="1647734259132" />
-    <state x="534" y="269" width="671" height="676" key="search.everywhere.popup/0.25.1746.1095@0.25.1746.1095" timestamp="1647742408659" />
+    <state x="534" y="269" width="670" height="676" key="search.everywhere.popup/0.25.1745.1095@0.25.1745.1095" timestamp="1647815886542" />
+    <state x="534" y="269" width="671" height="676" key="search.everywhere.popup/0.25.1746.1095@0.25.1746.1095" timestamp="1647822467560" />
     <state x="535" y="269" width="670" height="676" key="search.everywhere.popup/0.25.1747.1095@0.25.1747.1095" timestamp="1647574482333" />
     <state x="2560" y="21" width="963" height="875" key="search.everywhere.popup/1792.-295.2507.1415/0.25.1792.1095@1792.-295.2507.1415" timestamp="1646510234336" />
   </component>
@@ -526,7 +534,7 @@
           <option name="timeStamp" value="110" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/pied_poker/probability/simulation_probability.py</url>
+          <url>file://$PROJECT_DIR$/pied_poker/poker_round/poker_round_simulation_result.py</url>
           <line>27</line>
           <option name="timeStamp" value="112" />
         </line-breakpoint>
@@ -534,6 +542,11 @@
           <url>file://$PROJECT_DIR$/pied_poker/visualization/heatmap/categorical_heat_map.py</url>
           <line>45</line>
           <option name="timeStamp" value="123" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/pied_poker/poker_round/poker_round_simulation_result.py</url>
+          <line>157</line>
+          <option name="timeStamp" value="132" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -559,7 +572,7 @@
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_round_result_TestRoundResult_test_str_winning_players_names.coverage" NAME="Unittests for test_round_result.TestRoundResult.test_str_winning_players_names Coverage Results" MODIFIED="1645917078612" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/poker$Unittests_in_test_one_pair_py.coverage" NAME="Unittests in test_one_pair.py Coverage Results" MODIFIED="1644107973256" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/hands" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_player_has_hand_TestPlayerHasHand_test_is_event.coverage" NAME="Unittests for test_player_has_hand.TestPlayerHasHand.test_is_event Coverage Results" MODIFIED="1645925278663" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/poker$All_Unit_Tests.coverage" NAME="All Unit Tests Coverage Results" MODIFIED="1647811482728" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/poker$All_Unit_Tests.coverage" NAME="All Unit Tests Coverage Results" MODIFIED="1647838064835" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/poker$round_simulator_NON_CONSOLE.coverage" NAME="round_simulator NON CONSOLE Coverage Results" MODIFIED="1645862518471" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_straight_TestStraight_test_non_straight.coverage" NAME="Unittests for test_straight.TestStraight.test_non_straight Coverage Results" MODIFIED="1644104943675" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/hands" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_player_has_hand_TestPlayerHasHand.coverage" NAME="Unittests for test_player_has_hand.TestPlayerHasHand Coverage Results" MODIFIED="1645925306476" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -571,6 +584,7 @@
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_cases_TestCases.coverage" NAME="Unittests for test_cases.TestCases Coverage Results" MODIFIED="1647584355982" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_round_simulator_TestRoundSimulator_test_player_dealt_cards_change_between_simulations.coverage" NAME="Unittests for test_round_simulator.TestRoundSimulator.test_player_dealt_cards_change_between_simulations Coverage Results" MODIFIED="1645918471228" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_round_TestRound.coverage" NAME="Unittests for test_round.TestRound Coverage Results" MODIFIED="1645915829934" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/poker$poker_round_simulation_result.coverage" NAME="poker_round_simulation_result Coverage Results" MODIFIED="1647817525555" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pied_poker/poker_round" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_player_has_cards_TestPlayerHasCards_test_is_event.coverage" NAME="Unittests for test_player_has_cards.TestPlayerHasCards.test_is_event Coverage Results" MODIFIED="1645922075277" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_simulation_probability_TestSimulationProbability_test_probability_of_and.coverage" NAME="Unittests for test_simulation_probability.TestSimulationProbability.test_probability_of_and Coverage Results" MODIFIED="1645926535324" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_round_TestRound_test_a.coverage" NAME="Unittests for test_round.TestRound.test_a Coverage Results" MODIFIED="1645913628611" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -670,6 +684,7 @@
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_player_has_hand_or_higher_TestPlayerHasHandOrHigher_test_and.coverage" NAME="Unittests for test_player_has_hand_or_higher.TestPlayerHasHandOrHigher.test_and Coverage Results" MODIFIED="1645925863096" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_community_cards_include_TestCommunityCardsInclude_test_is_event.coverage" NAME="Unittests for test_community_cards_include.TestCommunityCardsInclude.test_is_event Coverage Results" MODIFIED="1645920793310" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_rank_TestRank.coverage" NAME="Unittests for test_rank.TestRank Coverage Results" MODIFIED="1647584178311" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/poker$poker_round_simulator.coverage" NAME="poker_round_simulator Coverage Results" MODIFIED="1647836403060" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pied_poker/poker_round" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_card_TestCard_test_eq.coverage" NAME="Unittests for test_card.TestCard.test_eq Coverage Results" MODIFIED="1643864995170" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/card" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_player_has_cards_TestPlayerHasCards_test_is_not_event.coverage" NAME="Unittests for test_player_has_cards.TestPlayerHasCards.test_is_not_event Coverage Results" MODIFIED="1645922149707" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_straight_flush_TestStraightFlush_test_non_straight_flush.coverage" NAME="Unittests for test_straight_flush.TestStraightFlush.test_non_straight_flush Coverage Results" MODIFIED="1644105003110" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/hands" />

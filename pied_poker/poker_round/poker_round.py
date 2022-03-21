@@ -4,7 +4,7 @@ from copy import deepcopy
 from pied_poker.card.card import Card
 from pied_poker.deck.deck import Deck
 from pied_poker.player import Player
-from pied_poker.poker_round.round_result import PokerRoundResult
+from pied_poker.poker_round.poker_round_result import PokerRoundResult
 
 
 class PokerRound:

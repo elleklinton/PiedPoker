@@ -8,9 +8,9 @@ from copy import deepcopy
 
 import pied_poker.card.card as card
 import pied_poker.player.player as player
-import pied_poker.probability.simulation_probability as simulation_probability
+import pied_poker.poker_round.poker_round_simulation_result as simulation_probability
 import pied_poker.poker_round.poker_round as round
-import pied_poker.poker_round.round_result as round_result
+import pied_poker.poker_round.poker_round_result as round_result
 
 
 class PokerRoundSimulator:
@@ -38,7 +38,7 @@ class PokerRoundSimulator:
         self.players = self.round.players
 
     def simulate(self, n: int = 1000, n_jobs: int = -1, status_bar: bool = True) \
-            -> simulation_probability.SimulationProbability:
+            -> simulation_probability.PokerRoundSimulationResult:
         """
         Runs a simulation of n poker games, and returns a SimulationProbability object, which is be used to compute
         probabilities based on the simulations run. This function is parallelized and configurable via function
@@ -75,4 +75,4 @@ class PokerRoundSimulator:
             else:
                 simulations = Parallel(n_jobs=n_jobs)(delayed(self.round.simulate)() for i in tqdm(range(n)))
 
-        return simulation_probability.SimulationProbability(simulations)
+        return simulation_probability.PokerRoundSimulationResult(simulations)

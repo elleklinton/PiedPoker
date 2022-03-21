@@ -11,8 +11,12 @@ class ProbabilityValue:
 
     @property
     def __odds_str__(self):
-        r = 1/self.probability
-        return f'1:{round(r - 1, 2)} odds'
+        if self.probability == 0:
+            return '1:infinity odds'
+        r = (1/self.probability) - 1
+        if r < 1:
+            return f'{round(1/r, 2)}:1 odds'
+        return f'1:{round(r, 2)} odds'
 
     @property
     def __ratio_str__(self):

@@ -7,4 +7,5 @@ from pied_poker.probability.events.player_has_hand import PlayerHasHand
 from pied_poker.probability.events.player_has_hand_or_higher import PlayerHasHandOrHigher
 from pied_poker.probability.events.player_has_pocket_pair import PlayerHasPocketPair
 from pied_poker.probability.events.player_has_suited_cards import PlayerHasSuitedCards
+from pied_poker.probability.events.player_loses import PlayerLoses
 from pied_poker.probability.events.player_wins import PlayerWins

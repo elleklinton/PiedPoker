@@ -13,7 +13,7 @@ class TestProbabilityValue(TestCase):
         self.assertEqual(pv.__odds_str__, '1:2.0 odds')
 
         pv = ProbabilityValue(2, 3)
-        self.assertEqual(pv.__odds_str__, '1:0.5 odds')
+        self.assertEqual(pv.__odds_str__, '2.0:1 odds')
 
     def test_ratio_str(self):
         pv = ProbabilityValue(1, 2)

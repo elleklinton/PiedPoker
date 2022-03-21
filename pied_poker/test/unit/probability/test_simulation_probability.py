@@ -3,7 +3,7 @@ from unittest import TestCase
 from pied_poker.card.card import Card
 from pied_poker.player import Player
 from pied_poker.probability.events.player_wins import PlayerWins
-from pied_poker.probability.simulation_probability import SimulationProbability
+from pied_poker.poker_round.poker_round_simulation_result import PokerRoundSimulationResult
 from pied_poker.poker_round import PokerRoundResult
 
 
@@ -18,7 +18,7 @@ class TestSimulationProbability(TestCase):
         p2 = Player('Snoop', cards=[Card('as'), Card('as')])
         r2 = PokerRoundResult([p1, p2], [])
 
-        return SimulationProbability([r1, r2])
+        return PokerRoundSimulationResult([r1, r2])
 
     def test_probability_of_no_given(self):
         sp = self.generate_simulation_probability()
