@@ -1,7 +1,7 @@
 from typing import List
 
 from pied_poker.card.card import Card
-from pied_poker.hand import BaseHand
+from pied_poker.hand import BaseHand, Flush
 
 
 class StraightFlush(BaseHand):
@@ -50,3 +50,11 @@ class StraightFlush(BaseHand):
 
     def __hash__(self):
         return hash(str(self))
+
+    def __hand_outs__(self) -> List[Card]:
+        rv = []
+        for flushOut in self.as_hand(Flush).__hand_outs__():
+            newHand = BaseHand(self.cards_sorted + [flushOut])
+            if newHand.as_hand(StraightFlush).is_hand:
+                rv.append(flushOut)
+        return rv

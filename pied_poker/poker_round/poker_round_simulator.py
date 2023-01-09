@@ -32,6 +32,7 @@ class PokerRoundSimulator:
         """
         players = deepcopy(players) if players else []
         for i in range(total_players - len(players)):
+            i = i + 1 + len(players)
             players.append(player.Player(f'player_{i}', []))
 
         self.round = round.PokerRound(community_cards, players, other_drawn_cards)

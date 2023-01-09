@@ -3,6 +3,7 @@ from typing import List
 from pied_poker.card.card import Card
 from pied_poker.card.rank import Rank
 from pied_poker.hand import BaseHand
+from pied_poker.hand.straight_flush import StraightFlush
 
 
 class RoyalFlush(BaseHand):
@@ -51,5 +52,14 @@ class RoyalFlush(BaseHand):
 
     def __hash__(self):
         return hash(str(self))
+
+    def __hand_outs__(self) -> List[Card]:
+        rv = []
+
+        for straight_flush_out in self.as_hand(StraightFlush).__hand_outs__():
+            hand = BaseHand(self.cards_sorted + [straight_flush_out])
+            if hand.as_hand(RoyalFlush).is_hand:
+                rv.append(straight_flush_out)
+        return rv
 
 

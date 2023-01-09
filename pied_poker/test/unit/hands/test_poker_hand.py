@@ -94,4 +94,14 @@ class TestPokerHand(TestCase):
 
         assert len({hand, hand_2}) == 2, 'Error: expected set to be len 2'
 
+    def test_outs(self):
+        cards = HandTestUtils.build_shorthand('3s', '5s', '8s', '10s')
+        hand = PokerHand(cards).as_best_hand()
+        self.assertEqual(hand.outs(), {
+            Flush: HandTestUtils.build_shorthand('2s', '4s', '6s', '7s', '9s', 'js', 'qs', 'ks', 'as'),
+            OnePair: HandTestUtils.build_shorthand(
+                '10c', '10d', '10h', '8c', '8d', '8h', '5c', '5d', '5h', '3c', '3d', '3h'
+            )
+        })
+
 

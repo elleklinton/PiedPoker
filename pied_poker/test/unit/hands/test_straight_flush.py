@@ -103,3 +103,11 @@ class TestStraightFlush(TestCase):
 
     def test_not_implemented(self):
         HandTestUtils.test_not_implemented(self, StraightFlush)
+
+    def test_outs(self):
+        a = HandTestUtils.build_shorthand('9s', '7s', '6s', '5s')
+        self.assertEqual(BaseHand(a).as_hand(StraightFlush).__hand_outs__(), HandTestUtils.build_shorthand('8s'))
+
+        a = HandTestUtils.build_shorthand('8s', '7s', '6s', '5s')
+        self.assertEqual(BaseHand(a).as_hand(StraightFlush).__hand_outs__(), HandTestUtils.build_shorthand('4s', '9s'))
+

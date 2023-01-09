@@ -1,5 +1,6 @@
 from typing import List
 
+from pied_poker import Deck
 from pied_poker.card.card import Card
 from pied_poker.hand import BaseHand
 
@@ -50,6 +51,16 @@ class Straight(BaseHand):
 
     def __hash__(self):
         return hash(str(self))
+    
+    def __hand_outs__(self) -> List[Card]:
+        # TODO: this could maybe be more efficient, probably don't need to iterate over all cards here
+        rv = []
+        for card in [c for c in Deck.ALL_CARDS if c not in self.cards_set]:
+            newHand = BaseHand(self.cards_sorted + [card]).as_hand(self.__class__)
+            if newHand.as_hand(Straight).is_hand:
+                rv.append(card)
+        return rv
+            
 
 
 

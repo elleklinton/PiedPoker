@@ -38,3 +38,10 @@ class TestFourOfAKind(TestCase):
 
     def test_not_implemented(self):
         HandTestUtils.test_not_implemented(self, FourOfAKind)
+
+    def test_outs(self):
+        a = HandTestUtils.build_shorthand('as', 'ac', 'ad', '2s', '2h', '2d', '5c', '8c')
+
+        self.assertEqual(BaseHand(a).as_hand(FourOfAKind).__hand_outs__(), HandTestUtils.build_shorthand(
+            'ah', '2c'
+        ))

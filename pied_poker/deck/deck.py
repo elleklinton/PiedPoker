@@ -9,6 +9,7 @@ import numpy as np
 
 class Deck:
     ALL_CARDS = np.array([Card(rank, suit) for rank in Rank.ALLOWED_VALUES for suit in Suit.ALLOWED_VALUES])
+    ALL_RANKS = [Card(rank, 's') for rank in Rank.ALLOWED_VALUES]
 
     def __init__(self, excluding: List[Card] = ()):
         self.excluded_cards = set(excluding) if excluding else set()

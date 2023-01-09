@@ -13,19 +13,20 @@ class Rank(Comparable):
             self.rank = value
             return
         else:
+            value = value.lower()
             super().__init__(value)
 
         if value.isdigit():
             self.rank = int(value)
-        elif value.lower() == 't':
+        elif value == 't':
             self.rank = 10
-        elif value.lower() == 'j':
+        elif value == 'j':
             self.rank = 11
-        elif value.lower() == 'q':
+        elif value == 'q':
             self.rank = 12
-        elif value.lower() == 'k':
+        elif value == 'k':
             self.rank = 13
-        elif value.lower() == 'a':
+        elif value == 'a':
             self.rank = 14
 
     def __eq__(self, other):

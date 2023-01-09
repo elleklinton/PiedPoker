@@ -1,5 +1,6 @@
 from typing import List
 
+from pied_poker import Suit
 from pied_poker.card.card import Card
 from pied_poker.hand import BaseHand
 from pied_poker.hand import HighCard
@@ -66,3 +67,12 @@ class OnePair(BaseHand):
 
     def __hash__(self):
         return hash(str(self))
+
+    def __hand_outs__(self) -> List[Card]:
+        rv = []
+        for c in self.cards_sorted:
+            for s in Suit.ALLOWED_VALUES:
+                card = Card(c.rank.value, s)
+                if card not in self.cards_set:
+                    rv.append(card)
+        return rv

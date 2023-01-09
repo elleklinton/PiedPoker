@@ -82,3 +82,12 @@ class TestTwoPair(TestCase):
 
     def test_not_implemented(self):
         HandTestUtils.test_not_implemented(self, TwoPair)
+
+    def test_outs(self):
+        a = HandTestUtils.build_shorthand('as', '10d', '10c', '5c', '2s')
+
+        outs = BaseHand(a).as_hand(TwoPair).__hand_outs__()
+
+        self.assertEqual(outs, HandTestUtils.build_shorthand(
+            'ac', 'ad', 'ah', '5d', '5h', '5s', '2c', '2d', '2h'
+        ))

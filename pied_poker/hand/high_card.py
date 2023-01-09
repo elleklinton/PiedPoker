@@ -1,5 +1,6 @@
 from typing import List
 
+from pied_poker import Deck
 from pied_poker.card.card import Card
 from pied_poker.hand import BaseHand
 
@@ -68,3 +69,11 @@ class HighCard(BaseHand):
 
     def __hash__(self):
         return hash(str(self))
+
+    def __hand_outs__(self) -> List[Card]:
+        rv = []
+        for c in Deck.ALL_CARDS:
+            if c > self.cards_in_hand[0]:
+                rv.append(c)
+
+        return rv

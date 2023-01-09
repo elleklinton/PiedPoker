@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Dict, Union
 
 from pied_poker.card.card import Card
 from pied_poker.hand.flush import Flush
@@ -13,9 +13,7 @@ from pied_poker.hand.three_of_a_kind import ThreeOfAKind
 from pied_poker.hand.two_pair import TwoPair
 from pied_poker.hand.base_hand import BaseHand
 
-
-class PokerHand(BaseHand):
-    ALL_HANDS_RANKED = [
+ALL_HANDS_RANKED = [
         RoyalFlush,
         StraightFlush,
         FourOfAKind,
@@ -27,6 +25,10 @@ class PokerHand(BaseHand):
         OnePair,
         HighCard
     ]
+
+
+class PokerHand(BaseHand):
+    ALL_HANDS_RANKED = ALL_HANDS_RANKED
 
     def __init__(self, cards: List[Card]):
         """A class used to represent a hand of cards in poker.
@@ -55,9 +57,29 @@ class PokerHand(BaseHand):
 
     def as_best_hand(self):
         for hand_class in self.ALL_HANDS_RANKED:
-            self.as_hand(hand_class)
-            if self.is_hand:  # This will always be true for HighCard, so this will always be reached
-                return self
+            # outsGetter = self.outs
+            new: hand_class = self.as_hand(hand_class)
+            new.outsGetter = lambda: PokerHand.outs(self)
+            if new.is_hand:  # This will always be true for HighCard, so this will always be reached
+                return new
+
+    def outs(self) -> Dict[Union[BaseHand.__class__], List[Card]]:
+        """
+        All of the possible one-carded outs that the player could have that are better than their current hand
+        :return:
+        :rtype:
+        """
+        original_class = self.__class__
+        rv: Dict[Union[BaseHand.__class__], List[Card]] = {}
+
+        for hand_class in PokerHand.ALL_HANDS_RANKED:
+            if hand_class.hand_rank > original_class.hand_rank:
+                outs = self.as_hand(hand_class).__hand_outs__()
+                if len(outs) > 0:
+                    rv[hand_class] = outs
+
+        self.as_hand(original_class)
+        return rv
 
     def __hash__(self):
         return super(PokerHand, self).__hash__()

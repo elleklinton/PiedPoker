@@ -1,5 +1,6 @@
 from unittest import TestCase
 
+from pied_poker import Card
 from pied_poker.hand import BaseHand
 from pied_poker.hand import RoyalFlush
 from pied_poker.test.unit.hands.hand_test_utils import HandTestUtils
@@ -53,3 +54,13 @@ class TestRoyalFlush(TestCase):
 
     def test_not_implemented(self):
         HandTestUtils.test_not_implemented(self, RoyalFlush)
+
+    def test_outs(self):
+        a = HandTestUtils.build_shorthand('as', 'qs', 'js', '10s')
+        self.assertEqual(BaseHand(a).as_hand(RoyalFlush).__hand_outs__(), HandTestUtils.build_shorthand('ks'))
+
+        a = HandTestUtils.build_shorthand('ks', 'qs', 'js', '10s')
+        self.assertEqual(BaseHand(a).as_hand(RoyalFlush).__hand_outs__(), HandTestUtils.build_shorthand('as'))
+
+        a = HandTestUtils.build_shorthand('as', 'ks', 'qs', 'js')
+        self.assertEqual(BaseHand(a).as_hand(RoyalFlush).__hand_outs__(), HandTestUtils.build_shorthand('10s'))

@@ -43,6 +43,8 @@ from pied_poker.probability import PlayerLoses
 from pied_poker.probability import PlayerWins
 from pied_poker.probability import BasePokerEvent
 from pied_poker.probability import ProbabilityValue
+from pied_poker.probability import Tie
+from pied_poker.probability import PlayerWinsWithTie
 #
 # # round
 # import pied_poker.poker_round as poker_round

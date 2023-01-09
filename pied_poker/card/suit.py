@@ -2,7 +2,7 @@ from pied_poker.card.comparable import Comparable
 
 
 class Suit(Comparable):
-    ALLOWED_VALUES = ['c', 'd', 'h', 's']  # clubs, diamonds, hearts, spades
+    ALLOWED_VALUES = ['c', 'd', 'h', 's']  # clubs, diamonds, hearts, spades'
 
     def __init__(self, suit: str):
         super().__init__(suit)

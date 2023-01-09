@@ -54,3 +54,10 @@ class TestThreeOfAKind(TestCase):
 
     def test_not_implemented(self):
         HandTestUtils.test_not_implemented(self, ThreeOfAKind)
+
+    def test_outs(self):
+        a = HandTestUtils.build_shorthand('as', 'ad', '5s', '5d', '6c')
+
+        outs = BaseHand(a).as_hand(ThreeOfAKind).__hand_outs__()
+
+        self.assertEqual(outs, HandTestUtils.build_shorthand('ac', 'ah', '5c', '5h'))

@@ -61,3 +61,9 @@ class TestFullHouse(TestCase):
 
     def test_not_implemented(self):
         HandTestUtils.test_not_implemented(self, FullHouse)
+
+    def test_outs(self):
+        a = HandTestUtils.build_shorthand('as', 'ad', '2c', '2d', '5c')
+        self.assertEqual(BaseHand(a).as_hand(FullHouse).__hand_outs__(), HandTestUtils.build_shorthand(
+            'ac', 'ah', '2h', '2s'
+        ))

@@ -1,5 +1,6 @@
-from typing import List, Dict
+from typing import List, Dict, Union
 
+from pied_poker.deck.deck import Deck
 from pied_poker.card.card import Card
 from pied_poker.card.rank import Rank
 from pied_poker.card.suit import Suit
@@ -7,6 +8,9 @@ from pied_poker.card.suit import Suit
 # Only 6 thru A can be the highest card on a straight
 STRAIGHT_POSSIBLE_HIGH_CARDS = [Rank(str(i)) for i in ['5', '6', '7', '8', '9', '10', 'j', 'q', 'k', 'a']]
 
+def defaultOutsGetter():
+    raise NotImplementedError('Error: this method should not be called directly through BaseHand. '
+                              'Use the hand instance instead.')
 
 class BaseHand:
     hand_rank: int = -1
@@ -18,6 +22,7 @@ class BaseHand:
         :type cards:
         """
         self.cards_sorted: List[Card] = sorted(cards, reverse=True) # For comparing high cards
+        self.cards_set = set()
 
         self.ranks_single: List[Rank] = []  # All ranks of single cards, sorted
         self.ranks_pair: List[Rank] = []  # All ranks of pair cards, sorted
@@ -32,20 +37,22 @@ class BaseHand:
         self.top_straight: List[Card] = None
         self.straight_flush: List[Card] = None
         self.all_confirmed_straights: List[List[Card]] = []
-        possible_straights: List[List[Card]] = []
+        self.possible_straights: List[List[Card]] = []
+        self.outsGetter = lambda: defaultOutsGetter()
 
         for c in self.cards_sorted:
-            self.__straight_counter__(possible_straights, c)
+            self.__straight_counter__(self.possible_straights, c)
             self.__suit_counter__(c)
             self.__rank_counter__(c)
+            self.cards_set.add(c)
 
         # Check for case of ace-low straight, which is missed by above logic
-        if possible_straights:
-            if possible_straights[-1]:
-                if possible_straights[-1][-1].rank == Rank('2'):
+        if self.possible_straights:
+            if self.possible_straights[-1]:
+                if self.possible_straights[-1][-1].rank == Rank('2'):
                     i = 0
                     while self.cards_sorted[i].rank == Rank('a'):  # Add all possible ace straights
-                        self.__straight_counter__(possible_straights, self.cards_sorted[i])
+                        self.__straight_counter__(self.possible_straights, self.cards_sorted[i])
                         i += 1
 
         self.top_straight: List[Card] = self.all_confirmed_straights[0] if self.all_confirmed_straights else None
@@ -142,3 +149,21 @@ class BaseHand:
 
     def __hash__(self):
         return str(self).__hash__()
+
+    def __hand_outs__(self) -> List[Card]:
+        """
+        The outs, if any, that would make the hand. For example, if the player has a 4 flush, the remaining available
+        suited cards would be returned here to complete the flush
+        :return:
+        :rtype: List[Card]
+        """
+        return []
+
+    def outs(self) -> Dict[any, List[Card]]:
+        """
+        All of the possible one-carded outs that the player could have that are better than their current hand
+        :return:
+        :rtype:
+        """
+        return self.outsGetter()
+

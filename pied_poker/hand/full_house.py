@@ -1,7 +1,8 @@
 from typing import List
 
+from pied_poker import Suit
 from pied_poker.card.card import Card
-from pied_poker.hand import BaseHand
+from pied_poker.hand.base_hand import BaseHand
 
 
 class FullHouse(BaseHand):
@@ -72,3 +73,12 @@ class FullHouse(BaseHand):
 
     def __hash__(self):
         return hash(str(self))
+
+    def __hand_outs__(self) -> List[Card]:
+        rv = []
+        for r in self.ranks_pair:
+            for s in Suit.ALLOWED_VALUES:
+                card = Card(r.value, s)
+                if card not in self.cards_set:
+                    rv.append(card)
+        return rv

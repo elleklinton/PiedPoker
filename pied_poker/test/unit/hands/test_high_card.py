@@ -82,3 +82,12 @@ class TestHighCard(TestCase):
 
     def test_not_implemented(self):
         HandTestUtils.test_not_implemented(self, HighCard)
+
+    def test_outs(self):
+        a = HandTestUtils.build_shorthand('10s')
+
+        outs = BaseHand(a).as_hand(HighCard).__hand_outs__()
+        self.assertEqual(outs, HandTestUtils.build_shorthand(
+            'jc', 'jd', 'jh', 'js', 'qc', 'qd', 'qh', 'qs', 'kc', 'kd', 'kh', 'ks', 'ac', 'ad', 'ah', 'as'
+        ))
+

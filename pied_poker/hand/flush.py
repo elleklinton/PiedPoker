@@ -1,5 +1,6 @@
 from typing import List
 
+from pied_poker import Rank
 from pied_poker.card.card import Card
 from pied_poker.hand.base_hand import BaseHand
 
@@ -29,7 +30,12 @@ class Flush(BaseHand):
 
     def __eq__(self, other):
         if super().__eq__(other):  # Same class of hand
-            return self.cards_in_hand[0] == other.cards_in_hand[0]
+            card_i_to_compare = 0
+            while card_i_to_compare < len(self.cards_in_hand):
+                if self.cards_in_hand[card_i_to_compare] != other.cards_in_hand[card_i_to_compare]:
+                    return False
+                card_i_to_compare += 1
+            return True
         return False
 
     def __gt__(self, other):
@@ -38,7 +44,12 @@ class Flush(BaseHand):
         elif super().__lt__(other):
             return False
         else:
-            return self.cards_in_hand[0] > other.cards_in_hand[0]
+            card_i_to_compare = 0
+            while card_i_to_compare < len(self.cards_in_hand):
+                if self.cards_in_hand[card_i_to_compare] > other.cards_in_hand[card_i_to_compare]:
+                    return True
+                card_i_to_compare += 1
+            return False
 
     def __lt__(self, other):
         if super().__gt__(other):
@@ -46,10 +57,27 @@ class Flush(BaseHand):
         if super().__lt__(other):
             return True
         else:
-            return self.cards_in_hand[0] < other.cards_in_hand[0]
+            card_i_to_compare = 0
+            while card_i_to_compare < len(self.cards_in_hand):
+                if self.cards_in_hand[card_i_to_compare] < other.cards_in_hand[card_i_to_compare]:
+                    return True
+                card_i_to_compare += 1
+            return False
 
     def __hash__(self):
         return hash(str(self))
+
+    def __hand_outs__(self) -> List[Card]:
+        rv = []
+        for (suit, count) in self.suit_counts.items():
+            if count == 4:
+                for r in Rank.ALLOWED_VALUES:
+                    card = Card(r, suit.value)
+                    if card not in self.cards_set:
+                        rv.append(card)
+
+        return rv
+
 
 
 
