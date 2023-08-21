@@ -25,6 +25,7 @@ from pied_poker.hand import TwoPair
 from pied_poker.hand import BaseHand
 from pied_poker.hand import EmptyHand
 from pied_poker.hand import Out
+from pied_poker.hand import KillerCard
 
 #
 # # player

@@ -12,3 +12,4 @@ from pied_poker.hand.two_pair import TwoPair
 from pied_poker.hand.poker_hand import PokerHand
 from pied_poker.hand.empty_hand import EmptyHand
 from pied_poker.hand.out import Out
+from pied_poker.hand.killer_card import KillerCard

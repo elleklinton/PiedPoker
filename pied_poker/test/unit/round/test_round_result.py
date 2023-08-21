@@ -1,14 +1,14 @@
 from typing import List
 from unittest import TestCase
 
+from pied_poker.hand.killer_card import KillerCard
 from pied_poker.card.card import Card
-from pied_poker.hand import FourOfAKind
+from pied_poker.hand import Flush
 from pied_poker.hand import PokerHand
 from pied_poker.hand import Straight
 from pied_poker.hand import FourOfAKind
 from pied_poker.hand import FullHouse
 from pied_poker.hand import ThreeOfAKind
-from pied_poker.hand import TwoPair
 from pied_poker.hand.out import Out
 from pied_poker.player import Player
 from pied_poker.poker_round import PokerRoundResult
@@ -90,4 +90,25 @@ class TestRoundResult(TestCase):
 
         self.assertEqual(p3_outs, [
             Out(Straight, Card.of('6c', '6d', '6h', '6s', 'ac', 'ad', 'ah')),
+        ])
+
+    def test_killer_cards_two_pair_with_triple_killer(self):
+        p1 = Player('Ellek', [Card('8s'), Card('kc')])
+        community_cards = [Card('4d'), Card('8c'), Card('4s')]
+        round_result = PokerRoundResult([p1], community_cards)
+
+        p1_killer_cards = round_result.killer_cards(p1)
+        self.assertEqual(p1_killer_cards, [
+            KillerCard(ThreeOfAKind, Card.of('4c', '4h'))
+        ])
+
+    def test_killer_cards_two_pair_with_with_flush_killer(self):
+        p1 = Player('Ellek', [Card('10c'), Card('8d')])
+        community_cards = Card.of('4s', '8s', '10s', '6s')
+        round_result = PokerRoundResult([p1], community_cards)
+
+        p1_killer_cards = round_result.killer_cards(p1)
+        print(p1_killer_cards)
+        self.assertEqual(p1_killer_cards, [
+            KillerCard(Flush, Card.of('2s', '3s', '5s', '7s', '9s', 'js', 'qs', 'ks', 'as'))
         ])

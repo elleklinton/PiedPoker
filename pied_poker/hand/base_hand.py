@@ -52,7 +52,7 @@ class BaseHand:
         :param cards:
         :type cards:
         """
-        self.cards_sorted: List[Card] = sorted(cards, reverse=True) # For comparing high cards
+        self.cards_sorted: List[Card] = sorted(cards, reverse=True)  # For comparing high cards
         self.cards_set = set()
 
         self.ranks_single: List[Rank] = []  # All ranks of single cards, sorted
@@ -202,9 +202,9 @@ class BaseHand:
 
     def outs(self, known_cards: Set[Card] = frozenset(),
              curr_winning_hand: BaseHand = None,
-             should_include_equal_hand_outs = True) -> List[Out]:
+             should_include_equal_hand_outs=True) -> List[Out]:
         """
-         All the possible one-carded outs that the player could have that are better than their current hand.
+        All the possible one-carded outs that the player could have that are better than their current hand.
         :param known_cards: A Set of cards that are already known and cannot be used as outs
         :type known_cards: Set[Card]
         :param curr_winning_hand: The current winning hand. If not provided, will use self as the best current hand.
@@ -253,5 +253,3 @@ class BaseHand:
         self.as_hand(self_original_class)
         curr_winning_hand.as_hand(curr_winning_hand_class)
         return rv
-
-
