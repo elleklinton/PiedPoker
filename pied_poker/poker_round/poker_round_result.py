@@ -41,7 +41,7 @@ class PokerRoundResult:
             if other_player != player:
                 [cards_to_exclude.add(c) for c in other_player.cards]
 
-        return player.hand.outs(cards_to_exclude, self.winning_hand, should_include_equal_hand_outs)
+        return player.hand.outs(cards_to_exclude, self.winning_hand, should_include_equal_hand_outs, player.cards)
 
     def killer_cards(self, player: Player) -> List[KillerCard]:
         """

@@ -202,7 +202,9 @@ class BaseHand:
 
     def outs(self, known_cards: Set[Card] = frozenset(),
              curr_winning_hand: BaseHand = None,
-             should_include_equal_hand_outs=True) -> List[Out]:
+             should_include_equal_hand_outs=True,
+             cards_in_player_hand: List[Card] = ()
+             ) -> List[Out]:
         """
         All the possible one-carded outs that the player could have that are better than their current hand.
         :param known_cards: A Set of cards that are already known and cannot be used as outs
@@ -213,6 +215,9 @@ class BaseHand:
             you have a Flush, should we also return cards that would give you a higher flush? Or if someone on the board
              already has ThreeOfAKind, should we also return ThreeOfAKind that would be stronger for you?
         :type should_include_equal_hand_outs: bool
+        :param cards_in_player_hand: Cards that the player exclusively holds -- we only want to return outs that are
+                exclusive to the player.
+        :type cards_in_player_hand:
         :return: List of outs
         :rtype: List[Out]
         """
@@ -234,6 +239,8 @@ class BaseHand:
         for hand_class in self.ALL_HANDS_RANKED:
             if hand_class.hand_rank >= curr_winning_hand_class.hand_rank:
                 outs = self.as_hand(hand_class).__hand_outs__(known_cards_and_outs)
+                outs = self.__outs_with_cards_in_hand__(cards_in_player_hand, outs)
+
                 if len(outs) > 0:
                     if hand_class.hand_rank > curr_winning_hand_class.hand_rank:
                         # In this case, we can simply return the out as it beats the current best
@@ -253,3 +260,17 @@ class BaseHand:
         self.as_hand(self_original_class)
         curr_winning_hand.as_hand(curr_winning_hand_class)
         return rv
+
+    def __outs_with_cards_in_hand__(self, cards_in_player_hand: List[Card], outs: List[Card]) -> List[Card]:
+        if len(cards_in_player_hand) == 0:
+            return outs
+
+        filtered_outs = []
+        for out in outs:
+            hand_with_out = BaseHand(self.cards_sorted + [out]).as_best_hand()
+            has_card_in_hand = sum([player_card in hand_with_out.cards_in_hand for player_card in cards_in_player_hand])
+            if has_card_in_hand > 0:
+                filtered_outs.append(out)
+
+        return filtered_outs
+
