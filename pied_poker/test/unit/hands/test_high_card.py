@@ -86,8 +86,16 @@ class TestHighCard(TestCase):
     def test_outs(self):
         a = HandTestUtils.build_shorthand('10s')
 
-        outs = BaseHand(a).as_hand(HighCard).__hand_outs__()
+        outs = BaseHand(a).as_hand(HighCard).__hand_outs__(set())
         self.assertEqual(outs, HandTestUtils.build_shorthand(
             'jc', 'jd', 'jh', 'js', 'qc', 'qd', 'qh', 'qs', 'kc', 'kd', 'kh', 'ks', 'ac', 'ad', 'ah', 'as'
         ))
+
+    def test_high_card_diff_lengths(self):
+        a = HandTestUtils.build_shorthand('as', '10s')
+        b = HandTestUtils.build_shorthand('as')
+
+        self.assertGreater(BaseHand(a).as_hand(HighCard), BaseHand(b).as_hand(HighCard))
+        self.assertLess(BaseHand(b).as_hand(HighCard), BaseHand(a).as_hand(HighCard))
+        self.assertNotEqual(BaseHand(b).as_hand(HighCard), BaseHand(a).as_hand(HighCard))
 

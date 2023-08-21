@@ -137,12 +137,12 @@ class TestStraight(TestCase):
 
     def test_outs(self):
         a = HandTestUtils.build_shorthand('as', 'qd', 'jh', '10c')
-        self.assertEqual(BaseHand(a).as_hand(Straight).__hand_outs__(), HandTestUtils.build_shorthand(
+        self.assertEqual(BaseHand(a).as_hand(Straight).__hand_outs__(set()), HandTestUtils.build_shorthand(
             'kc', 'kd', 'kh', 'ks'
         ))
 
         a = HandTestUtils.build_shorthand('kd', 'qh', 'jc', '10h')
-        self.assertEqual(BaseHand(a).as_hand(Straight).__hand_outs__(), HandTestUtils.build_shorthand(
+        self.assertEqual(BaseHand(a).as_hand(Straight).__hand_outs__(set()), HandTestUtils.build_shorthand(
             '9c', '9d', '9h', '9s', 'ac', 'ad', 'ah', 'as'
         ))
 

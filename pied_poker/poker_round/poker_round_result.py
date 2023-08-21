@@ -1,5 +1,6 @@
-from typing import List, Dict
+from typing import List, Dict, Set
 
+from pied_poker.deck.deck import Deck
 from pied_poker.card.card import Card
 from pied_poker.player.player import Player
 
@@ -13,6 +14,16 @@ class PokerRoundResult:
         self.player_during_round: Dict[Player, Player] = {}
         for p in players:
             self.player_during_round[p] = p
+
+        self.__check_unique_cards__()
+
+    def outs(self, player: Player):
+        cards_to_exclude: Set[Card] = set(self.community_cards)
+        for other_player in self.players_ranked:
+            if other_player != player:
+                [cards_to_exclude.add(c) for c in other_player.cards]
+
+        return player.hand.outs(cards_to_exclude, self.winning_hand)
 
     def str_winning_hand(self, include_cards: bool = True):
         hand_type = self.winning_hand.__class__.__name__
@@ -30,6 +41,16 @@ class PokerRoundResult:
     @property
     def winning_hand(self):
         return self.players_ranked[0].hand
+
+    def __check_unique_cards__(self):
+        """
+        This method checks that all players have unique cards. Since we already validate this when we initialize a Deck,
+        we can simply create a quiet Deck here, and rely on the Deck to throw if duplicate cards are detected.
+        :return:
+        :rtype:
+        """
+        dealt_cards = self.community_cards + [card for player in self.players_ranked for card in player.cards]
+        Deck(dealt_cards)
 
     def __str__(self):
         res = f'Community Cards: {self.community_cards}'

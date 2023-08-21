@@ -1,6 +1,6 @@
-from typing import List
+from typing import List, Set
 
-from pied_poker import Suit
+from pied_poker.card.suit import Suit
 from pied_poker.card.card import Card
 from pied_poker.hand import BaseHand
 
@@ -80,14 +80,15 @@ class TwoPair(BaseHand):
     def __hash__(self):
         return hash(str(self))
 
-    def __hand_outs__(self) -> List[Card]:
+    def __hand_outs__(self, out_cards: Set[Card]) -> List[Card]:
         rv = []
         if len(self.ranks_pair) == 1:
             for r in self.ranks_single:
                 for s in Suit.ALLOWED_VALUES:
                     card = Card(r.value, s)
-                    if card not in self.cards_set:
+                    if card not in self.cards_set and card not in out_cards:
                         rv.append(card)
+                        out_cards.update([card])
         return rv
 
 

@@ -14,7 +14,10 @@ class Rank(Comparable):
             return
         else:
             value = value.lower()
-            super().__init__(value)
+            if value == 't':
+                self.rank = 10
+            else:
+                super().__init__(value)
 
         if value.isdigit():
             self.rank = int(value)

@@ -11,7 +11,6 @@ from pied_poker.deck import Deck
 #
 # # hands
 # import pied_poker.hand as hand
-from pied_poker.hand import BaseHand
 from pied_poker.hand import Flush
 from pied_poker.hand import FourOfAKind
 from pied_poker.hand import FullHouse
@@ -23,6 +22,10 @@ from pied_poker.hand import Straight
 from pied_poker.hand import StraightFlush
 from pied_poker.hand import ThreeOfAKind
 from pied_poker.hand import TwoPair
+from pied_poker.hand import BaseHand
+from pied_poker.hand import EmptyHand
+from pied_poker.hand import Out
+
 #
 # # player
 # import pied_poker.player as deck

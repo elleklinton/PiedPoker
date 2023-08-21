@@ -22,3 +22,22 @@ class TestProbabilityValue(TestCase):
     def test_str(self):
         pv = ProbabilityValue(1, 2)
         self.assertEqual(str(pv), '50.0% == 1:1.0 odds == (1/2)')
+
+    def test_event_count_greater_than_given_count(self):
+        try:
+            pv = ProbabilityValue(4, 2)
+            self.fail('Error: expected to throw invalid ProbabityValue')
+        except RuntimeError as e:
+            self.assertEqual(str(e), 'Error: event_count (4) cannot be greater than given_count (2).')
+
+    def test_zero_event_count(self):
+        pv = ProbabilityValue(0, 2)
+        self.assertEqual(str(pv), '0.0% == 1:infinity odds == (0/2)')
+
+    def test_zero_given_count(self):
+        pv = ProbabilityValue(0, 0)
+        self.assertEqual(str(pv), '0.0% == 1:infinity odds == (0/0)')
+
+    def test_100_probability(self):
+        pv = ProbabilityValue(100, 100)
+        self.assertEqual(str(pv), '100.0% == infinity:1 odds == (100/100)')

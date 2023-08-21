@@ -73,6 +73,21 @@ class TestFlush(TestCase):
     def test_outs(self):
         a = HandTestUtils.build_shorthand('as', '9s', '7s', '5s', '10d')
 
-        self.assertEqual(BaseHand(a).as_hand(Flush).__hand_outs__(), HandTestUtils.build_shorthand(
+        self.assertEqual(BaseHand(a).as_hand(Flush).__hand_outs__(set()), HandTestUtils.build_shorthand(
             '2s', '3s', '4s', '6s', '8s', '10s', 'js', 'qs', 'ks'
         ))
+
+    def test_diff_number_flush_cards(self):
+        tableCards = HandTestUtils.build_shorthand('6d', 'qd', 'ad', '4d', '10s')
+        c1 = HandTestUtils.build_shorthand('kd', '3h')
+        c2 = HandTestUtils.build_shorthand('7d', '9d')
+
+        h1 = BaseHand(tableCards + c1).as_hand(Flush)
+        h2 = BaseHand(tableCards + c2).as_hand(Flush)
+
+        self.assertTrue(h1 != h2)
+        self.assertFalse(h1 == h2)
+        self.assertTrue(h1 > h2)
+        self.assertFalse(h1 < h2)
+        self.assertTrue(h2 < h1)
+        self.assertFalse(h2 > h1)

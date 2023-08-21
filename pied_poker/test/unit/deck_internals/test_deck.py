@@ -75,3 +75,11 @@ class TestDeck(TestCase):
             self.fail('Error: expected to throw because deck has no more un-drawn cards.')
         except RuntimeError as e:
             self.assertEqual(str(e), 'Error: Cannot draw 1 cards from a deck with only 0 un-drawn cards.')
+
+    def test_deck_cannot_have_duplicate_exclusions(self):
+        excluding = Card.of('as', 'as', 'ks', 'qd')
+        try:
+            deck = Deck(excluding)
+            self.fail('Error: expected to throw because deck has duplicate of AS card.')
+        except RuntimeError as e:
+            self.assertEqual(str(e), 'Error: Deck cannot have duplicate cards drawn (drawn cards: [A♠, A♠, K♠, Q♦])')

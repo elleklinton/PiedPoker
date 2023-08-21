@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Set
 
 from pied_poker.card.card import Card
 from pied_poker.card.rank import Rank
@@ -12,7 +12,14 @@ class Deck:
     ALL_RANKS = [Card(rank, 's') for rank in Rank.ALLOWED_VALUES]
 
     def __init__(self, excluding: List[Card] = ()):
-        self.excluded_cards = set(excluding) if excluding else set()
+        excluding_set = set(excluding) if excluding else set()
+        Deck.__check_no_duplicate_cards(excluding, excluding_set)
+        self.excluded_cards = excluding_set
+
+    @staticmethod
+    def __check_no_duplicate_cards(excluding: List[Card], excluding_set: Set[Card]):
+        if len(excluding_set) != len(excluding):
+            raise RuntimeError(f'Error: Deck cannot have duplicate cards drawn (drawn cards: {excluding})')
 
     def draw(self, n=1) -> List[Card]:
         if n == 0:
@@ -45,7 +52,9 @@ class Deck:
         :return:
         :rtype:
         """
-        self.excluded_cards = set(excluding) if excluding else set()
+        excluding_set = set(excluding) if excluding else set()
+        Deck.__check_no_duplicate_cards(excluding, excluding_set)
+        self.excluded_cards = excluding_set
         return self
 
     def __eq__(self, other):

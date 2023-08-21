@@ -4,6 +4,12 @@ from unittest import TestCase
 from pied_poker.card.card import Card
 from pied_poker.hand import FourOfAKind
 from pied_poker.hand import PokerHand
+from pied_poker.hand import Straight
+from pied_poker.hand import FourOfAKind
+from pied_poker.hand import FullHouse
+from pied_poker.hand import ThreeOfAKind
+from pied_poker.hand import TwoPair
+from pied_poker.hand.out import Out
 from pied_poker.player import Player
 from pied_poker.poker_round import PokerRoundResult
 
@@ -20,7 +26,6 @@ class TestRoundResult(TestCase):
         p2_cards = [Card('2s'), Card('2d')]
         community_cards = [Card('ah'), Card('ac'), Card('2h'), Card('2c'), Card('10s')]
         return self.generate_round_result(p1_cards, p2_cards, community_cards)
-
 
     def test_players_ranked(self):
         result = self.generate_round_p1_winning()
@@ -51,3 +56,38 @@ class TestRoundResult(TestCase):
         result = self.generate_round_p1_winning()
         self.assertIsInstance(result.winning_hand, FourOfAKind)
         self.assertEqual(result.winning_hand, PokerHand([Card('as'), Card('ad'), Card('ah'), Card('ac'), Card('10s')]).as_best_hand())
+
+    def test_empty_is_not_winner(self):
+        result = self.generate_round_result([], [Card('as')], [])
+        self.assertEqual(len(result.winners), 1)
+
+    def test_outs(self):
+        p1 = Player('Ellek', [Card('as'), Card('4d')])
+        p2 = Player('Slim', [Card('2s'), Card('2d')])
+        p3 = Player('Chris', [Card('5d'), Card('kc')])
+        community_cards = [Card('10s'), Card('2h'), Card('3s'), Card('4c')]
+        round_result = PokerRoundResult([p1, p2, p3], community_cards)
+
+        p1_outs = round_result.outs(p1)
+
+        # Ellek should have Straight outs and ThreeOfAKindKind outs.
+        # The TwoPair outs are not returned here because someone on the board already has  ThreeOfAKind
+        # that would beat these hands
+        self.assertEqual(p1_outs, [
+            Out(Straight, Card.of('5s', '5h', '5s')),
+            Out(ThreeOfAKind, Card.of('4h', '4s'))
+        ])
+
+        p2_outs = round_result.outs(p2)
+
+        # Slim should have Quad and FullHouse draws
+        self.assertEqual(p2_outs, [
+            Out(FourOfAKind, Card.of('2s')),
+            Out(FullHouse, Card.of('10c', '10d', '10h', '4h', '4s', '3c', '3d', '3h'))
+        ])
+
+        p3_outs = round_result.outs(p3)
+
+        self.assertEqual(p3_outs, [
+            Out(Straight, Card.of('6c', '6d', '6h', '6s', 'ac', 'ad', 'ah')),
+        ])

@@ -1,6 +1,6 @@
-from typing import List
+from typing import List, Set
 
-from pied_poker import Deck
+from pied_poker.deck.deck import Deck
 from pied_poker.card.card import Card
 from pied_poker.hand import BaseHand
 
@@ -27,11 +27,18 @@ class HighCard(BaseHand):
     def cards_not_in_hand(self):
         return [c for c in self.cards_sorted if c.rank in self.ranks_single][5:]
 
+    @property
+    def is_hand(self):
+        return len(self.cards_sorted) > 0
+
     def __eq__(self, other):
         if not super().__eq__(other):
             return False
         else:  # If same type of hand, compare within the hand
-            num_to_compare = self.__num_to_compare__(other)
+            if len(self.ranks_single) != len(other.ranks_single):
+                return False
+
+            num_to_compare = self.__num_to_compare__(other) # TODO: this is not necessary as by this point the lists will be equal length
             for i in range(num_to_compare):
                 if self.ranks_single[i] != other.ranks_single[i]:
                     return False
@@ -43,6 +50,11 @@ class HighCard(BaseHand):
         elif super().__lt__(other):
             return False
         else:  # Same hand, compare within that hand
+            if len(self.ranks_single) > len(other.ranks_single):
+                return True
+            elif len(self.ranks_single) < len(other.ranks_single):
+                return False
+
             num_to_compare = self.__num_to_compare__(other)
 
             for i in range(num_to_compare):
@@ -58,6 +70,11 @@ class HighCard(BaseHand):
         if super().__lt__(other):
             return True
         else:
+            if len(self.ranks_single) > len(other.ranks_single):
+                return False
+            elif len(self.ranks_single) < len(other.ranks_single):
+                return True
+
             num_to_compare = self.__num_to_compare__(other)
 
             for i in range(num_to_compare):
@@ -70,10 +87,12 @@ class HighCard(BaseHand):
     def __hash__(self):
         return hash(str(self))
 
-    def __hand_outs__(self) -> List[Card]:
+    def __hand_outs__(self, out_cards: Set[Card]) -> List[Card]:
         rv = []
+        highest_curr_card = self.cards_in_hand[0] if len(self.cards_in_hand) > 0 else Deck.ALL_CARDS[0]
         for c in Deck.ALL_CARDS:
-            if c > self.cards_in_hand[0]:
+            if c > highest_curr_card and c not in out_cards:
                 rv.append(c)
+                out_cards.update([c])
 
         return rv

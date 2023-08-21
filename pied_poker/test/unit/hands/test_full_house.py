@@ -64,6 +64,20 @@ class TestFullHouse(TestCase):
 
     def test_outs(self):
         a = HandTestUtils.build_shorthand('as', 'ad', '2c', '2d', '5c')
-        self.assertEqual(BaseHand(a).as_hand(FullHouse).__hand_outs__(), HandTestUtils.build_shorthand(
+        self.assertEqual(BaseHand(a).as_hand(FullHouse).__hand_outs__(set()), HandTestUtils.build_shorthand(
             'ac', 'ah', '2h', '2s'
+        ))
+
+        a = HandTestUtils.build_shorthand('as', 'ad')
+        self.assertEqual(BaseHand(a).as_hand(FullHouse).__hand_outs__(set()), HandTestUtils.build_shorthand(
+        ))
+
+        a = HandTestUtils.build_shorthand('as', 'ad', '2c', '2d')
+        self.assertEqual(BaseHand(a).as_hand(FullHouse).__hand_outs__(set()), HandTestUtils.build_shorthand(
+            'ac', 'ah', '2h', '2s'
+        ))
+
+        a = HandTestUtils.build_shorthand('as', 'ad', 'ac', '2d', '5s', 'kc')
+        self.assertEqual(BaseHand(a).as_hand(FullHouse).__hand_outs__(set()), HandTestUtils.build_shorthand(
+            'kd', 'kh', 'ks', '5c', '5d', '5h', '2c', '2h', '2s'
         ))

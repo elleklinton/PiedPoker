@@ -1,6 +1,6 @@
-from typing import List
+from typing import List, Set, Tuple
 
-from pied_poker import Rank
+from pied_poker.card.rank import Rank
 from pied_poker.card.card import Card
 from pied_poker.hand.base_hand import BaseHand
 
@@ -48,6 +48,8 @@ class Flush(BaseHand):
             while card_i_to_compare < len(self.cards_in_hand):
                 if self.cards_in_hand[card_i_to_compare] > other.cards_in_hand[card_i_to_compare]:
                     return True
+                elif self.cards_in_hand[card_i_to_compare] < other.cards_in_hand[card_i_to_compare]:
+                    return False
                 card_i_to_compare += 1
             return False
 
@@ -61,24 +63,25 @@ class Flush(BaseHand):
             while card_i_to_compare < len(self.cards_in_hand):
                 if self.cards_in_hand[card_i_to_compare] < other.cards_in_hand[card_i_to_compare]:
                     return True
+                elif self.cards_in_hand[card_i_to_compare] > other.cards_in_hand[card_i_to_compare]:
+                    return False
                 card_i_to_compare += 1
             return False
 
     def __hash__(self):
         return hash(str(self))
 
-    def __hand_outs__(self) -> List[Card]:
+    def __hand_outs__(self, out_cards: Set[Card], include_higher_hand_outs=False) -> List[Card]:
         rv = []
         for (suit, count) in self.suit_counts.items():
-            if count == 4:
+            if count >= 4:
                 for r in Rank.ALLOWED_VALUES:
                     card = Card(r, suit.value)
-                    if card not in self.cards_set:
-                        rv.append(card)
+                    if card not in self.cards_set and card not in out_cards:
+                        hand = BaseHand(self.cards_sorted + [card]).as_best_hand() # TODO: return this to parent iff include higher_hand_outs so we don't have to recalculate
+                        if hand.hand_rank == self.hand_rank or \
+                                (hand.hand_rank > self.hand_rank and include_higher_hand_outs):
+                            rv.append(card)
+                            out_cards.update([card])
 
         return rv
-
-
-
-
-

@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import sys
-from typing import List
+from typing import List, Callable
 from joblib import Parallel, delayed
 from tqdm import tqdm
 from copy import deepcopy
@@ -38,8 +38,11 @@ class PokerRoundSimulator:
         self.round = round.PokerRound(community_cards, players, other_drawn_cards)
         self.players = self.round.players
 
-    def simulate(self, n: int = 1000, n_jobs: int = -1, status_bar: bool = True) \
-            -> simulation_probability.PokerRoundSimulationResult:
+    def simulate(self, n: int = 1000,
+                 n_jobs: int = -1,
+                 status_bar: bool = True,
+                 callback: Callable[[float], None] = lambda x: None,
+                 callback_frequency: float = 0.01) -> simulation_probability.PokerRoundSimulationResult:
         """
         Runs a simulation of n poker games, and returns a SimulationProbability object, which is be used to compute
         probabilities based on the simulations run. This function is parallelized and configurable via function
@@ -53,6 +56,12 @@ class PokerRoundSimulator:
         To use all available CPUs, set n_jobs to -1. Do NOT use parallelization when running through an interactive
         console.
         :type n_jobs: int
+        :param callback: Called on progress intervals. Only called when n_jobs is 1 (no parallelization)
+        :type: Callable[[float], None]
+        :param callback_frequency: The frequency at which the callback is called, in percent. I.e. to call the callback
+        every 1 percent of progress, set callback_frequency to 0.01. To call the callback every 0.05 percents of progress, set
+        callback_frequency to 5.
+        :type: float
         :return: SimulationProbability object, used to compute probabilities based on the simulations run.
         :rtype: SimulationProbability
         """
@@ -66,14 +75,21 @@ class PokerRoundSimulator:
                 print(f'Warning: Threading was requested (n_jobs={n_jobs}), but disabling threading because interactive'
                       f' console was detected.')
 
-            if not status_bar:
-                simulations = [self.round.simulate() for i in range(n)]
-            else:
-                simulations = [self.round.simulate() for i in tqdm(range(n))]
+            simulations = []
+            rounds_per_callback = n * callback_frequency
+            rounds_since_last_callback = rounds_per_callback - 1
+            for i in range(n) if not status_bar else tqdm(range(n)):
+                simulations.append(self.round.simulate())
+                rounds_since_last_callback += 1
+                if rounds_since_last_callback == rounds_per_callback:
+                    callback(i / n)
+                    rounds_since_last_callback = 0
         else:
             if not status_bar:
                 simulations = Parallel(n_jobs=n_jobs)(delayed(self.round.simulate)() for i in range(n))
             else:
                 simulations = Parallel(n_jobs=n_jobs)(delayed(self.round.simulate)() for i in tqdm(range(n)))
+
+        callback(1)
 
         return simulation_probability.PokerRoundSimulationResult(simulations)

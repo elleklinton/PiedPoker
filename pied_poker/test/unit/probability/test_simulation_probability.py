@@ -15,7 +15,7 @@ class TestSimulationProbability(TestCase):
         r1 = PokerRoundResult([p1, p2], [])
 
         p1 = Player('Ellek', cards=[Card('10d'), Card('10s')])
-        p2 = Player('Snoop', cards=[Card('as'), Card('as')])
+        p2 = Player('Snoop', cards=[Card('as'), Card('ac')])
         r2 = PokerRoundResult([p1, p2], [])
 
         return PokerRoundSimulationResult([r1, r2])

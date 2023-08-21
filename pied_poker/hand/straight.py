@@ -1,8 +1,9 @@
-from typing import List
+from typing import List, Set
 
-from pied_poker import Deck
+from pied_poker.deck.deck import Deck
 from pied_poker.card.card import Card
 from pied_poker.hand import BaseHand
+from pied_poker.hand.royal_flush import RoyalFlush
 
 
 class Straight(BaseHand):
@@ -52,13 +53,15 @@ class Straight(BaseHand):
     def __hash__(self):
         return hash(str(self))
     
-    def __hand_outs__(self) -> List[Card]:
+    def __hand_outs__(self, out_cards: Set[Card]) -> List[Card]:
         # TODO: this could maybe be more efficient, probably don't need to iterate over all cards here
         rv = []
-        for card in [c for c in Deck.ALL_CARDS if c not in self.cards_set]:
-            newHand = BaseHand(self.cards_sorted + [card]).as_hand(self.__class__)
-            if newHand.as_hand(Straight).is_hand:
-                rv.append(card)
+        for card in Deck.ALL_CARDS:
+            if card not in self.cards_set and card not in out_cards:
+                newHand = BaseHand(self.cards_sorted + [card]).as_best_hand()
+                if newHand.as_hand(Straight).is_hand or newHand.as_hand(RoyalFlush).is_hand:
+                    rv.append(card)
+                    out_cards.update([card])
         return rv
             
 
