@@ -23,7 +23,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3cbb2352-993c-4228-8d94-ceb3871a62fa" name="Default Changelist" comment="er">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +64,7 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "reference.settings.ide.settings.new.ui",
     "vue.rearranger.settings.migration": "true"
   }
@@ -80,11 +81,11 @@
       <recent name="$PROJECT_DIR$/pied_poker/visualization/heatmap_samples" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/pied_poker/hand" />
       <recent name="$PROJECT_DIR$/pied_poker/poker_round" />
       <recent name="$PROJECT_DIR$/pied_poker/visualization/heatmap" />
       <recent name="$PROJECT_DIR$/pied_poker" />
-      <recent name="$PROJECT_DIR$/test/functional/utils" />
     </key>
   </component>
   <component name="RunManager" selected="Python tests.All Unit Tests">
@@ -297,7 +298,7 @@
       <workItem from="1689980295985" duration="129000" />
       <workItem from="1689980439572" duration="4065000" />
       <workItem from="1690922446863" duration="599000" />
-      <workItem from="1691088529437" duration="22381000" />
+      <workItem from="1691088529437" duration="22865000" />
     </task>
     <servers />
   </component>

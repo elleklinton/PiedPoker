@@ -138,11 +138,11 @@ Let's keep going with the game! The fourth card turns, it’s the King of Spades
 
 ```python
 community_cards.append(pp.Card('ks'))
-print(f'Ellek\'s cards: {p1}')
+print(f'Ellek\'s cards: {p1.cards}')
 print(f'Community cards: {community_cards}')
 ```
 
-    Ellek's cards: Ellek: OnePair([4♠, 4♥], [A♠, Q♠, 10♠])
+    Ellek's cards: [A♠, Q♠]
     Community cards: [4♠, 4♥, 10♠, K♠]
 
 
