@@ -1,7 +1,11 @@
+from __future__ import annotations
 from typing import List
 
-from pied_poker.hand.base_hand import BaseHand
 from pied_poker.card.card import Card
+
+from typing import TYPE_CHECKING
+if TYPE_CHECKING:
+    from pied_poker.hand.base_hand import BaseHand
 
 
 class Out:

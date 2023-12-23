@@ -1,7 +1,3 @@
-from pied_poker.visualization.heatmap import CategoricalHeatmap
-from pied_poker.visualization.heatmap import HeatmapDimension
-from pied_poker.visualization.heatmap import HeatmapDimensionValue
-from pied_poker.visualization.heatmap import HeatmapGenerator
-
-from pied_poker.visualization.heatmap_samples import AllSuitedStartingHands
-from pied_poker.visualization.heatmap_samples import PocketPairVsNumPlayersHeatmap
+from pied_poker.visualization.data_generator import DataGenerator
+from pied_poker.visualization.pocket_pairs_vs_num_players import PocketPairsVsNumPlayers
+from pied_poker.visualization.starting_card_probabilities import StartingCardProbabilities

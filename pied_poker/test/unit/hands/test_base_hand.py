@@ -1,7 +1,8 @@
 from unittest import TestCase
 
-from pied_poker import Player, EmptyHand
+from pied_poker import Player
 from pied_poker.hand.flush import Flush
+from pied_poker.hand import EmptyHand
 from pied_poker.hand import FourOfAKind
 from pied_poker.hand import FullHouse
 from pied_poker.hand import HighCard

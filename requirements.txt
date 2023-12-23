@@ -6,4 +6,11 @@
 
  # (the -e above is optional). you could also just install the package
  # normally with just the line below (after uncommenting)
- .
+ # -r requirements.txt
+
+joblib
+tqdm
+numpy
+seaborn
+pandas
+matplotlib

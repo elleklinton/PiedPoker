@@ -5,6 +5,7 @@ from typing import List, Dict, Union, Set
 from pied_poker.card.card import Card
 from pied_poker.card.rank import Rank
 from pied_poker.card.suit import Suit
+from pied_poker.hand.out import Out
 
 # Only 6 thru A can be the highest card on a straight
 STRAIGHT_POSSIBLE_HIGH_CARDS = [Rank(str(i)) for i in ['5', '6', '7', '8', '9', '10', 'j', 'q', 'k', 'a']]
