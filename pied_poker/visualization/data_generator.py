@@ -139,7 +139,7 @@ class DataGenerator:
         """
 
         # Pivot the DataFrame for the heatmap
-        poker_hands_pivot = df.pivot(self.left_dimension, self.bottom_dimension, self.strength_dimension)
+        poker_hands_pivot = df.pivot(index=self.left_dimension, columns=self.bottom_dimension, values=self.strength_dimension)
 
         # Sort the pivot table
         poker_hands_pivot = self.sort_pivot(poker_hands_pivot)
