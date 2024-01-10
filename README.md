@@ -16,34 +16,30 @@ First, we need to install and import the `pied_poker` package:
 
 
 ```python
-%pip install pied_poker==1.1.2
+%pip install pied_poker==1.2.3
 
 import pied_poker as pp
 import numpy as np
 np.random.seed(420)
 ```
 
-    Collecting pied_poker==1.1.2
-      Downloading pied_poker-1.1.2-py3-none-any.whl (50 kB)
-    [2K     [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m50.8/50.8 kB[0m [31m441.8 kB/s[0m eta [36m0:00:00[0m
-    [?25hRequirement already satisfied: joblib in /usr/local/lib/python3.10/dist-packages (from pied_poker==1.1.2) (1.3.2)
-    Requirement already satisfied: tqdm in /usr/local/lib/python3.10/dist-packages (from pied_poker==1.1.2) (4.66.1)
-    Requirement already satisfied: numpy in /usr/local/lib/python3.10/dist-packages (from pied_poker==1.1.2) (1.23.5)
-    Requirement already satisfied: seaborn in /usr/local/lib/python3.10/dist-packages (from pied_poker==1.1.2) (0.12.2)
-    Requirement already satisfied: pandas in /usr/local/lib/python3.10/dist-packages (from pied_poker==1.1.2) (1.5.3)
-    Requirement already satisfied: python-dateutil>=2.8.1 in /usr/local/lib/python3.10/dist-packages (from pandas->pied_poker==1.1.2) (2.8.2)
-    Requirement already satisfied: pytz>=2020.1 in /usr/local/lib/python3.10/dist-packages (from pandas->pied_poker==1.1.2) (2023.3)
-    Requirement already satisfied: matplotlib!=3.6.1,>=3.1 in /usr/local/lib/python3.10/dist-packages (from seaborn->pied_poker==1.1.2) (3.7.1)
-    Requirement already satisfied: contourpy>=1.0.1 in /usr/local/lib/python3.10/dist-packages (from matplotlib!=3.6.1,>=3.1->seaborn->pied_poker==1.1.2) (1.1.0)
-    Requirement already satisfied: cycler>=0.10 in /usr/local/lib/python3.10/dist-packages (from matplotlib!=3.6.1,>=3.1->seaborn->pied_poker==1.1.2) (0.11.0)
-    Requirement already satisfied: fonttools>=4.22.0 in /usr/local/lib/python3.10/dist-packages (from matplotlib!=3.6.1,>=3.1->seaborn->pied_poker==1.1.2) (4.42.0)
-    Requirement already satisfied: kiwisolver>=1.0.1 in /usr/local/lib/python3.10/dist-packages (from matplotlib!=3.6.1,>=3.1->seaborn->pied_poker==1.1.2) (1.4.4)
-    Requirement already satisfied: packaging>=20.0 in /usr/local/lib/python3.10/dist-packages (from matplotlib!=3.6.1,>=3.1->seaborn->pied_poker==1.1.2) (23.1)
-    Requirement already satisfied: pillow>=6.2.0 in /usr/local/lib/python3.10/dist-packages (from matplotlib!=3.6.1,>=3.1->seaborn->pied_poker==1.1.2) (9.4.0)
-    Requirement already satisfied: pyparsing>=2.3.1 in /usr/local/lib/python3.10/dist-packages (from matplotlib!=3.6.1,>=3.1->seaborn->pied_poker==1.1.2) (3.1.1)
-    Requirement already satisfied: six>=1.5 in /usr/local/lib/python3.10/dist-packages (from python-dateutil>=2.8.1->pandas->pied_poker==1.1.2) (1.16.0)
-    Installing collected packages: pied_poker
-    Successfully installed pied_poker-1.1.2
+    Requirement already satisfied: pied_poker==1.2.3 in /usr/local/lib/python3.10/dist-packages (1.2.3)
+    Requirement already satisfied: joblib in /usr/local/lib/python3.10/dist-packages (from pied_poker==1.2.3) (1.3.2)
+    Requirement already satisfied: tqdm in /usr/local/lib/python3.10/dist-packages (from pied_poker==1.2.3) (4.66.1)
+    Requirement already satisfied: numpy in /usr/local/lib/python3.10/dist-packages (from pied_poker==1.2.3) (1.23.5)
+    Requirement already satisfied: seaborn in /usr/local/lib/python3.10/dist-packages (from pied_poker==1.2.3) (0.12.2)
+    Requirement already satisfied: pandas in /usr/local/lib/python3.10/dist-packages (from pied_poker==1.2.3) (1.5.3)
+    Requirement already satisfied: matplotlib in /usr/local/lib/python3.10/dist-packages (from pied_poker==1.2.3) (3.7.1)
+    Requirement already satisfied: contourpy>=1.0.1 in /usr/local/lib/python3.10/dist-packages (from matplotlib->pied_poker==1.2.3) (1.2.0)
+    Requirement already satisfied: cycler>=0.10 in /usr/local/lib/python3.10/dist-packages (from matplotlib->pied_poker==1.2.3) (0.12.1)
+    Requirement already satisfied: fonttools>=4.22.0 in /usr/local/lib/python3.10/dist-packages (from matplotlib->pied_poker==1.2.3) (4.46.0)
+    Requirement already satisfied: kiwisolver>=1.0.1 in /usr/local/lib/python3.10/dist-packages (from matplotlib->pied_poker==1.2.3) (1.4.5)
+    Requirement already satisfied: packaging>=20.0 in /usr/local/lib/python3.10/dist-packages (from matplotlib->pied_poker==1.2.3) (23.2)
+    Requirement already satisfied: pillow>=6.2.0 in /usr/local/lib/python3.10/dist-packages (from matplotlib->pied_poker==1.2.3) (9.4.0)
+    Requirement already satisfied: pyparsing>=2.3.1 in /usr/local/lib/python3.10/dist-packages (from matplotlib->pied_poker==1.2.3) (3.1.1)
+    Requirement already satisfied: python-dateutil>=2.7 in /usr/local/lib/python3.10/dist-packages (from matplotlib->pied_poker==1.2.3) (2.8.2)
+    Requirement already satisfied: pytz>=2020.1 in /usr/local/lib/python3.10/dist-packages (from pandas->pied_poker==1.2.3) (2023.3.post1)
+    Requirement already satisfied: six>=1.5 in /usr/local/lib/python3.10/dist-packages (from python-dateutil>=2.7->matplotlib->pied_poker==1.2.3) (1.16.0)
 
 
 Recently, I started playing bar poker. Initially, poker seemed like a simple game of chance—you might lose, you might win, or you might even tie. But as I played more, I realized there’s a lot more to poker beneath the surface. In every poker round, there is an element of risk, human psychology, and inherent randomness. These factors can seem dynamic and unpredictable, but a good poker player is able to effectively weigh them all to beat their opponent. I wanted to reach this level of intuition; one where I felt comfortable and confident in my betting decisions, so I made `pied_poker`!
@@ -81,7 +77,7 @@ Let's put this information into a "Game State", or `PokerRoundResult` in the `pi
 
 
 ```python
-round_result = pp.PokerRoundResult([p1, p2], community_cards)
+round_result = pp.PokerRound.PokerRoundResult([p1, p2], community_cards)
 round_result
 ```
 
@@ -150,7 +146,7 @@ We can once again calculate the Outs and Killer Cards for our player below to se
 
 
 ```python
-round_result = pp.PokerRoundResult([p1, p2], community_cards)
+round_result = pp.PokerRound.PokerRoundResult([p1, p2], community_cards)
 round_result
 ```
 
@@ -200,7 +196,7 @@ So in summary, your cards are [A♠, Q♠], and the table cards are [4♠, 4♥,
 
 
 ```python
-round_result = pp.PokerRoundResult([p1, p2], community_cards)
+round_result = pp.PokerRound.PokerRoundResult([p1, p2], community_cards)
 round_result
 ```
 
@@ -243,7 +239,7 @@ First, lets run some simulations. Lets use this scenario and simulate it 10,000 
 
 
 ```python
-simulator = pp.PokerRoundSimulator(community_cards=community_cards,
+simulator = pp.PokerRound.PokerRoundSimulator(community_cards=community_cards,
                        players=[p1, p2],
                       total_players=2)
 num_simulations = 10000
@@ -251,7 +247,7 @@ num_simulations = 10000
 simulation_result = simulator.simulate(n=num_simulations, n_jobs=1)
 ```
 
-    100%|██████████| 10000/10000 [00:11<00:00, 863.41it/s]
+    100%|██████████| 10000/10000 [00:10<00:00, 971.67it/s]
 
 
 Now that we have run the simulation, we can calculate any probability we want! First, let's visualize the hand type distribution for you (p1) in this setup:
@@ -263,7 +259,7 @@ simulation_result.visualize_player_hand_distribution(p1)
 
 
     
-![png](Pied_Poker_files/Pied_Poker_33_0.png)
+![png](sample_images/pied_poker_nb_33_0.png)
     
 
 
@@ -280,7 +276,7 @@ simulation_result.visualize_player_hand_distribution(p2)
 
 
     
-![png](Pied_Poker_files/Pied_Poker_35_0.png)
+![png](sample_images/pied_poker_nb_35_0.png)
     
 
 
@@ -290,7 +286,7 @@ Let's shift the gears a bit and calculate the probability that you would win wit
 
 
 ```python
-simulation_result.probability_of(pp.PlayerWins(p1))
+simulation_result.probability_of(pp.Probability.PlayerWins(p1))
 ```
 
 
@@ -306,7 +302,7 @@ We can take a peek at one of the simulations where you won:
 
 
 ```python
-simulation_result.where(pp.PlayerWins(p1)).sample()
+simulation_result.where(pp.Probability.PlayerWins(p1)).sample()
 ```
 
 
@@ -330,7 +326,7 @@ Now, lets look at an example where you lost to your opponent:
 
 
 ```python
-simulation_result.where(pp.PlayerLoses(p1)).sample()
+simulation_result.where(pp.Probability.PlayerLoses(p1)).sample()
 ```
 
 
@@ -354,7 +350,7 @@ Now, lets calculate the probability that your opponent has specifically a Full H
 
 
 ```python
-simulation_result.probability_of(pp.PlayerHasHand(pp.FullHouse, p2))
+simulation_result.probability_of(pp.Probability.PlayerHasHand(pp.Hand.FullHouse, p2))
 ```
 
 
@@ -375,19 +371,19 @@ First, let's consider a 2 player poker game and analyze which hands you are like
 
 
 ```python
-simulator = pp.PokerRoundSimulator(total_players=2)
+simulator = pp.PokerRound.PokerRoundSimulator(total_players=2)
 num_simulations = 10000
 
 simulation_result = simulator.simulate(n=num_simulations, n_jobs=1)
 simulation_result.visualize_player_hand_distribution()
 ```
 
-    100%|██████████| 10000/10000 [00:13<00:00, 761.43it/s]
+    100%|██████████| 10000/10000 [00:25<00:00, 394.30it/s]
 
 
 
     
-![png](Pied_Poker_files/Pied_Poker_49_1.png)
+![png](sample_images/pied_poker_nb_49_1.png)
     
 
 
@@ -404,7 +400,7 @@ simulation_result.visualize_winning_hands(cumulative=False)
 
 
     
-![png](Pied_Poker_files/Pied_Poker_52_0.png)
+![png](sample_images/pied_poker_nb_52_0.png)
     
 
 
@@ -419,7 +415,7 @@ simulation_result.visualize_winning_hands(cumulative=True)
 
 
     
-![png](Pied_Poker_files/Pied_Poker_54_0.png)
+![png](sample_images/pied_poker_nb_54_0.png)
     
 
 
@@ -433,19 +429,19 @@ After the simulation runs, let's analyze the hand distribution you are likely to
 
 
 ```python
-simulator = pp.PokerRoundSimulator(total_players=9)
+simulator = pp.PokerRound.PokerRoundSimulator(total_players=9)
 num_simulations = 10000
 
 simulation_result = simulator.simulate(n=num_simulations, n_jobs=1)
 simulation_result.visualize_player_hand_distribution()
 ```
 
-    100%|██████████| 10000/10000 [00:31<00:00, 317.87it/s]
+    100%|██████████| 10000/10000 [00:50<00:00, 199.99it/s]
 
 
 
     
-![png](Pied_Poker_files/Pied_Poker_57_1.png)
+![png](sample_images/pied_poker_nb_57_1.png)
     
 
 
@@ -460,7 +456,7 @@ simulation_result.visualize_winning_hands(cumulative=False)
 
 
     
-![png](Pied_Poker_files/Pied_Poker_59_0.png)
+![png](sample_images/pied_poker_nb_59_0.png)
     
 
 
@@ -473,7 +469,7 @@ simulation_result.visualize_winning_hands(cumulative=True)
 
 
     
-![png](Pied_Poker_files/Pied_Poker_61_0.png)
+![png](sample_images/pied_poker_nb_61_0.png)
     
 
 
@@ -506,7 +502,7 @@ Let's first assume there are only 2 players to keep it simple, and let's run 10,
 
 
 ```python
-simulator = pp.PokerRoundSimulator(community_cards=[],
+simulator = pp.PokerRound.PokerRoundSimulator(community_cards=[],
                        players=[p1],
                       total_players=2)
 num_simulations = 10000
@@ -514,14 +510,14 @@ num_simulations = 10000
 simulation_result = simulator.simulate(n=num_simulations, n_jobs=1)
 ```
 
-    100%|██████████| 10000/10000 [00:05<00:00, 1773.84it/s]
+    100%|██████████| 10000/10000 [00:04<00:00, 2095.01it/s]
 
 
 First, lets just look at the probability that you win with pocket Aces in a game of 2 players:
 
 
 ```python
-simulation_result.probability_of(pp.PlayerWins())
+simulation_result.probability_of(pp.Probability.PlayerWins())
 ```
 
 
@@ -544,7 +540,7 @@ simulation_result.visualize_player_hand_distribution(p1)
 
 
     
-![png](Pied_Poker_files/Pied_Poker_71_0.png)
+![png](sample_images/pied_poker_nb_71_0.png)
     
 
 
@@ -556,7 +552,7 @@ Now that we have explored the probabilities for pocket Aces with 2 players, lets
 
 
 ```python
-simulator = pp.PokerRoundSimulator(community_cards=[],
+simulator = pp.PokerRound.PokerRoundSimulator(community_cards=[],
                        players=[p1],
                       total_players=9)
 num_simulations = 10000
@@ -565,13 +561,13 @@ simulation_result = simulator.simulate(n=num_simulations, n_jobs=1)
 simulation_result
 ```
 
-    100%|██████████| 10000/10000 [00:24<00:00, 400.83it/s]
+    100%|██████████| 10000/10000 [00:31<00:00, 322.56it/s]
 
 
 
 
 
-    <pied_poker.poker_round.poker_round_simulation_result.PokerRoundSimulationResult at 0x7e7189fd40d0>
+    <pied_poker.poker_round.poker_round_simulation_result.PokerRoundSimulationResult at 0x79499fde1d80>
 
 
 
@@ -579,7 +575,7 @@ Remember, with only 2 players, you have an 86% chance of winning with pocket Ace
 
 
 ```python
-simulation_result.probability_of(pp.PlayerWins())
+simulation_result.probability_of(pp.Probability.PlayerWins())
 ```
 
 
@@ -604,7 +600,7 @@ simulation_result.visualize_player_hand_distribution(p1)
 
 
     
-![png](Pied_Poker_files/Pied_Poker_79_0.png)
+![png](sample_images/pied_poker_nb_79_0.png)
     
 
 
@@ -618,7 +614,7 @@ For example, a common outcome for pocket Aces is Three of a Kind. If you only ha
 Lets apply this to some real poker examples.
 
 ### Example 1
-![Image of Yaktocat](https://imgur.com/36D5Ta5.jpg)
+![Image of Yaktocat](https://d1nz104zbf64va.cloudfront.net/pt/v/5/v1-tom-dwan-vs-kagawa--huge-pot.jpg)
 
 In this example, we have 3 players:
 - Tom already has a Straight `(A 2 3 4 5)`
@@ -639,11 +635,11 @@ masa = pp.Player('Masa', pp.Card.of('8c', '8s'))
 andrew = pp.Player('Andrew', pp.Card.of('10h', '9h'))
 community_cards = pp.Card.of('4c', '8h', 'ah', '2s')
 
-round_simulator = pp.PokerRoundSimulator(community_cards, [tom, masa, andrew], 3)
+round_simulator = pp.PokerRound.PokerRoundSimulator(community_cards, [tom, masa, andrew], 3)
 simulation_result = round_simulator.simulate(10000, n_jobs=1)
 ```
 
-    100%|██████████| 10000/10000 [00:07<00:00, 1382.62it/s]
+    100%|██████████| 10000/10000 [00:13<00:00, 720.56it/s]
 
 
 Now that the simulation has been run, we can visualize the liklihood of each player winning:
@@ -655,7 +651,7 @@ simulation_result.visualize_winner_distribution()
 
 
     
-![png](Pied_Poker_files/Pied_Poker_84_0.png)
+![png](sample_images/pied_poker_nb_84_0.png)
     
 
 
@@ -668,7 +664,7 @@ simulation_result.visualize_player_hand_distribution(tom)
 
 
     
-![png](Pied_Poker_files/Pied_Poker_86_0.png)
+![png](sample_images/pied_poker_nb_86_0.png)
     
 
 
@@ -683,7 +679,7 @@ simulation_result.visualize_player_hand_distribution(masa)
 
 
     
-![png](Pied_Poker_files/Pied_Poker_89_0.png)
+![png](sample_images/pied_poker_nb_89_0.png)
     
 
 
@@ -698,7 +694,7 @@ simulation_result.visualize_player_hand_distribution(andrew)
 
 
     
-![png](Pied_Poker_files/Pied_Poker_92_0.png)
+![png](sample_images/pied_poker_nb_92_0.png)
     
 
 
@@ -725,11 +721,11 @@ flanders = pp.Player('Flanders', pp.Card.of('5d', '4c'))
 odea = pp.Player('Odea', pp.Card.of('3h', '3d'))
 community_cards = pp.Card.of('6s', '7s', '3s', 'kh')
 
-round_simulator = pp.PokerRoundSimulator(community_cards, [kallakis, flanders, odea], 3)
+round_simulator = pp.PokerRound.PokerRoundSimulator(community_cards, [kallakis, flanders, odea], 3)
 simulation_result = round_simulator.simulate(10000, n_jobs=1)
 ```
 
-    100%|██████████| 10000/10000 [00:07<00:00, 1261.12it/s]
+    100%|██████████| 10000/10000 [00:08<00:00, 1162.21it/s]
 
 
 Now that the simulation has been run, we can visualize the liklihood of each player winning:
@@ -741,7 +737,7 @@ simulation_result.visualize_winner_distribution()
 
 
     
-![png](Pied_Poker_files/Pied_Poker_97_0.png)
+![png](sample_images/pied_poker_nb_97_0.png)
     
 
 
@@ -756,7 +752,7 @@ simulation_result.visualize_player_hand_distribution(kallakis)
 
 
     
-![png](Pied_Poker_files/Pied_Poker_100_0.png)
+![png](sample_images/pied_poker_nb_100_0.png)
     
 
 
@@ -771,7 +767,7 @@ simulation_result.visualize_player_hand_distribution(flanders)
 
 
     
-![png](Pied_Poker_files/Pied_Poker_103_0.png)
+![png](sample_images/pied_poker_nb_103_0.png)
     
 
 
@@ -786,7 +782,7 @@ simulation_result.visualize_player_hand_distribution(odea)
 
 
     
-![png](Pied_Poker_files/Pied_Poker_106_0.png)
+![png](sample_images/pied_poker_nb_106_0.png)
     
 
 
@@ -799,6 +795,116 @@ Now that we've performed some analysis for this situation, let's look at what ac
 The last card was a 3, giving Odea the win! This was quite unlikely to happen, only about a 2% chance of Odea winning with Four of a Kind!
 
 As we've explored some different possibilities, we have seen how powerful the `pied_poker` library can be! It can calculate any poker probability you could possibly think of!
+
+## Best Starting Hands
+Of course, we all know that `A A` is the best starting hand. But, how does it actually stack up against for example, suited `10s Js`? Or how about `9 9` vs `As Ks`? What about the dreaded `7 2`? Is it really the worst starting hand? Let's dig in!
+
+With `pied_poker`, we can generate sweet charts with just a single line of code!
+
+*Note: `s` denotes 'suited' in this section, i.e. `10s Js` means any suited 10 Jack hand, since all 4 suits have the same pre-flop probabilities.*
+
+Let's first visualize the probability of all SUITED starting hands, on a table with 2 players, for simplicity:
+
+
+```python
+n_players = 2
+n_rounds = 5000
+pp.Visualization.StartingCardProbabilities(suited=True).visualize(n_rounds, n_players)
+```
+
+    Calculating win probabilities (0.0% done)
+    Calculating win probabilities (6.41% done)
+    Calculating win probabilities (12.82% done)
+    Calculating win probabilities (19.23% done)
+    Calculating win probabilities (25.64% done)
+    Calculating win probabilities (32.05% done)
+    Calculating win probabilities (38.46% done)
+    Calculating win probabilities (44.87% done)
+    Calculating win probabilities (51.28% done)
+    Calculating win probabilities (57.69% done)
+    Calculating win probabilities (70.51% done)
+    Calculating win probabilities (76.92% done)
+    Calculating win probabilities (83.33% done)
+    Calculating win probabilities (89.74% done)
+    Calculating win probabilities (96.15% done)
+
+
+
+    
+![png](sample_images/pied_poker_nb_112_1.png)
+    
+
+
+Of course, we can see that AK is the best possible suited starting pair! Interestingly, 7 2 is NOT the worst possible starting hand! Actually, 2 3 has the absolute lowest win probability of 38.6%, whereas 7 2 has a slightly higher win probability of 40.8%.
+
+Cool! Now, let's calculate a similar chart for UNSUITED cards, which is only slightly different!
+
+
+```python
+n_players = 2
+n_rounds = 5000
+pp.Visualization.StartingCardProbabilities(suited=False).visualize(n_rounds, n_players)
+```
+
+    Calculating win probabilities (0.0% done)
+    Calculating win probabilities (5.92% done)
+    Calculating win probabilities (11.83% done)
+    Calculating win probabilities (17.75% done)
+    Calculating win probabilities (23.67% done)
+    Calculating win probabilities (29.59% done)
+    Calculating win probabilities (35.5% done)
+    Calculating win probabilities (41.42% done)
+    Calculating win probabilities (47.34% done)
+    Calculating win probabilities (53.25% done)
+    Calculating win probabilities (59.17% done)
+    Calculating win probabilities (65.09% done)
+    Calculating win probabilities (71.01% done)
+    Calculating win probabilities (76.92% done)
+    Calculating win probabilities (82.84% done)
+    Calculating win probabilities (88.76% done)
+    Calculating win probabilities (94.67% done)
+
+
+
+    
+![png](sample_images/pied_poker_nb_115_1.png)
+    
+
+
+And of course, AA is the best unsuited starting hand, yielding an 85% chance of winning at a table of 2 players!
+
+Notice that, between the suited and unsuited charts, suited cards only tend to generally have 2-3% better chance of winning, meaning they are not really much better than unsuited cards! It's more in your head than anything, because the probability that A) a flush is possible with the table cards, and B) the flush suit is the same as your suit, is around 2-3%.
+
+Additionally, we can visualize the probability of winning with different pocket pairs, dependent on the number of players at the table. For example, AA is much more likely to win if there are only 2 players left in the game, vs a full 9 player table:
+
+
+```python
+min_players=2
+max_players=9
+n_rounds = 5000
+pp.Visualization.PocketPairsVsNumPlayers().visualize(n_rounds=n_rounds, min_players=min_players, max_players=max_players)
+```
+
+    Calculating win probabilities for 2♠ 2♣ (0.0% done)
+    Calculating win probabilities for 3♠ 3♣ (7.69% done)
+    Calculating win probabilities for 4♠ 4♣ (15.38% done)
+    Calculating win probabilities for 5♠ 5♣ (23.08% done)
+    Calculating win probabilities for 6♠ 6♣ (30.77% done)
+    Calculating win probabilities for 7♠ 7♣ (38.46% done)
+    Calculating win probabilities for 8♠ 8♣ (46.15% done)
+    Calculating win probabilities for 9♠ 9♣ (53.85% done)
+    Calculating win probabilities for 10♠ 10♣ (61.54% done)
+    Calculating win probabilities for J♠ J♣ (69.23% done)
+    Calculating win probabilities for Q♠ Q♣ (76.92% done)
+    Calculating win probabilities for K♠ K♣ (84.62% done)
+    Calculating win probabilities for A♠ A♣ (92.31% done)
+
+
+
+    
+![png](sample_images/pied_poker_nb_118_1.png)
+    
+
 
 If you enjoyed this walkthrough, please "Star" the Github repo for this project, it helps make the project more visible: https://github.com/elleklinton/PiedPoker
 
