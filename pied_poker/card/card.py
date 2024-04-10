@@ -13,8 +13,11 @@ class Card:
                 else:  # Case for other digit 2-9
                     self.rank = Rank(rank[:1])
                     self.suit = Suit(rank[1])
-            else:  # Case for royals
-                self.rank = Rank(rank[:1])
+            else:  # Case for royals and T
+                if rank[0].lower() == 't':
+                    self.rank = Rank('10')
+                else:
+                    self.rank = Rank(rank[:1])
                 self.suit = Suit(rank[1])
 
             return
