@@ -23,9 +23,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3cbb2352-993c-4228-8d94-ceb3871a62fa" name="Default Changelist" comment="er">
-      <change afterPath="$PROJECT_DIR$/interactive/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pied_poker/card/card.py" beforeDir="false" afterPath="$PROJECT_DIR$/pied_poker/card/card.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,11 +100,14 @@
       <recent name="$PROJECT_DIR$/pied_poker/hand" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.__init__">
+  <component name="RunManager" selected="Python tests.All Tests (UT+FT)">
     <configuration name="__init__" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="poker" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/interactive" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -279,21 +282,21 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.round_simulator NON CONSOLE" />
       <item itemvalue="Python.__init__" />
+      <item itemvalue="Python.round_simulator NON CONSOLE" />
       <item itemvalue="Python.sample" />
+      <item itemvalue="Shell Script.build.sh" />
+      <item itemvalue="Shell Script.publish.sh" />
       <item itemvalue="Python tests.All Tests (UT+FT)" />
+      <item itemvalue="Python tests.Python tests for test_cases.TestCases" />
       <item itemvalue="Python tests.Unittests for pied_poker.test.unit.deck_internals.test_deck.TestDeck" />
       <item itemvalue="Python tests.test_deck" />
-      <item itemvalue="Python tests.Python tests for test_cases.TestCases" />
-      <item itemvalue="Shell Script.publish.sh" />
-      <item itemvalue="Shell Script.build.sh" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.__init__" />
         <item itemvalue="Shell Script.publish.sh" />
         <item itemvalue="Shell Script.build.sh" />
+        <item itemvalue="Python.__init__" />
         <item itemvalue="Python.sample" />
         <item itemvalue="Python tests.Python tests for test_cases.TestCases" />
       </list>
@@ -339,6 +342,9 @@
       <workItem from="1709882580854" duration="76000" />
       <workItem from="1710542718020" duration="2304000" />
       <workItem from="1712644958940" duration="6646000" />
+      <workItem from="1712709244777" duration="3999000" />
+      <workItem from="1713130968536" duration="599000" />
+      <workItem from="1713135429201" duration="599000" />
     </task>
     <servers />
   </component>
@@ -485,7 +491,7 @@
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_cases_TestCases_test_probability_of_pocket_pair.coverage" NAME="Unittests for test_cases.TestCases.test_probability_of_pocket_pair Coverage Results" MODIFIED="1646007228403" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/poker$poker_round_simulation_result.coverage" NAME="poker_round_simulation_result Coverage Results" MODIFIED="1647817525555" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pied_poker/poker_round" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_probability_value_TestProbabilityValue_test_percent_str.coverage" NAME="Unittests for test_probability_value.TestProbabilityValue.test_percent_str Coverage Results" MODIFIED="1645919247774" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/poker$All_Tests__UT_FT_.coverage" NAME="All Tests (UT+FT) Coverage Results" MODIFIED="1703375715541" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/poker$All_Tests__UT_FT_.coverage" NAME="All Tests (UT+FT) Coverage Results" MODIFIED="1712709355599" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_cases_TestCases_test_flush_draw.coverage" NAME="Unittests for test_cases.TestCases.test_flush_draw Coverage Results" MODIFIED="1646007199739" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_flush_TestFlush_test_diff_number_flush_cards.coverage" NAME="Unittests for test_flush.TestFlush.test_diff_number_flush_cards Coverage Results" MODIFIED="1675121303367" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/poker$Unittests_for_test_three_of_a_kind_TestThreeOfAKind.coverage" NAME="Unittests for test_three_of_a_kind.TestThreeOfAKind Coverage Results" MODIFIED="1644023089264" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/hands" />

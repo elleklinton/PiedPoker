@@ -14,3 +14,4 @@ numpy
 seaborn
 pandas
 matplotlib
+scipy
