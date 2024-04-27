@@ -14,7 +14,7 @@ class TestRound(TestCase):
         np.random.seed(420)
         random.seed(420)
 
-    def test_single_deal_cards_helper(self, players: List[Player] = (), r: PokerRound = None):
+    def test_single_deal_cards_helper(self, players: List[Player] = [], r: PokerRound = None):
         if not r:
             r = PokerRound(players=players)
 

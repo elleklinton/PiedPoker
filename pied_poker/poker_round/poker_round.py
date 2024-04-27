@@ -1,5 +1,4 @@
 from typing import List
-from copy import deepcopy
 
 from pied_poker.card.card import Card
 from pied_poker.deck.deck import Deck
@@ -8,7 +7,8 @@ from pied_poker.poker_round.poker_round_result import PokerRoundResult
 
 
 class PokerRound:
-    def __init__(self, community_cards: List[Card] = (), players: List[Player] = (), other_drawn_cards: List[Card] = ()):
+    def __init__(self, community_cards: List[Card] = [], players: List[Player] = [], other_drawn_cards: List[Card] = (),
+                 total_num_players: int = 2):
         """
         Initializes a round of poker.
 
@@ -20,19 +20,35 @@ class PokerRound:
         the community hand. E.g. If a player folded with As Ad, you would include those cards here since we know those
         cards will never be re-dealt, and cannot be used by any other player.
         :type other_drawn_cards: List[Card]
+        :param total_num_players: The total number of players in the poker round. If not enough players passed in, new
+        players will be generated.
+        :type total_num_players: int
         """
+        players_to_generate = total_num_players - len(players)
+        while players_to_generate > 0:
+            players.append(Player(f'Player {total_num_players - players_to_generate}'))
+            players_to_generate -= 1
+
         player_name_set = set()
         [player_name_set.add(p.name) for p in players]
         assert len(player_name_set) == len(players), 'Error: All players must have unique names.'
 
-        self.community_cards: List[Card] = deepcopy(community_cards) if community_cards else []
-        self.other_drawn_cards = deepcopy(other_drawn_cards) if other_drawn_cards else []
-        self.players: List[Player] = deepcopy(players) if players else []
+        self.community_cards: List[Card] = self.__copy_cards__(community_cards) if community_cards else []
+        self.other_drawn_cards = self.__copy_cards__(other_drawn_cards) if other_drawn_cards else []
+        self.players: List[Player] = self.__copy_players__(players) if players else []
         self.deck: Deck = Deck(self.__cards_to_exclude__)
 
-        self.__starting_deck_state__ = deepcopy(self.deck)
-        self.__starting_players_state__ = deepcopy(players)
-        self.__starting_community_cards_state__ = deepcopy(self.community_cards)
+        self.__starting_deck_state__ = self.deck
+        self.__starting_players_state__ = self.__copy_players__(players)
+        self.__starting_community_cards_state__ = self.__copy_cards__(self.community_cards)
+
+    @staticmethod
+    def __copy_players__(players: List[Player]):
+        return [Player(p.name, PokerRound.__copy_cards__(p.cards), p.hand) for p in players]
+
+    @staticmethod
+    def __copy_cards__(cards: List[Card]):
+        return [card for card in cards]
 
     def deal_cards(self):
         """

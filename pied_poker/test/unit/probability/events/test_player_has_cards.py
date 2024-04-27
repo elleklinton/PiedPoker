@@ -1,7 +1,7 @@
 from unittest import TestCase
 
 from pied_poker.card.card import Card
-from pied_poker.probability import PlayerHasCards
+from pied_poker.probability.events import PlayerHasCards
 from pied_poker.test.unit.probability.events.events_test_utils import EventsTestUtils
 
 

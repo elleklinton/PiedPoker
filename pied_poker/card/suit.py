@@ -5,6 +5,7 @@ class Suit(Comparable):
     ALLOWED_VALUES = ['c', 'd', 'h', 's']  # clubs, diamonds, hearts, spades'
 
     def __init__(self, suit: str):
+        self.__str_value__ = None
         super().__init__(suit)
 
     def __eq__(self, other):
@@ -20,14 +21,21 @@ class Suit(Comparable):
         return 3
 
     def __str__(self):
+        if self.__str_value__:
+            return self.__str_value__
+
+        rv = None
         if self.value.lower() == 'c':
-            return '♣'
+            rv = '♣'
         elif self.value.lower() == 'd':
-            return '♦'
+            rv = '♦'
         elif self.value.lower() == 'h':
-            return '♥'
+            rv = '♥'
         elif self.value.lower() == 's':
-            return '♠'
+            rv = '♠'
+
+        self.__str_value__ = rv
+        return rv
 
     def __repr__(self):
         return self.__str__()

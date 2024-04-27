@@ -19,11 +19,10 @@ class Card:
                 else:
                     self.rank = Rank(rank[:1])
                 self.suit = Suit(rank[1])
-
-            return
-
-        self.rank = Rank(rank)
-        self.suit = Suit(suit)
+        else:
+            self.rank = Rank(rank)
+            self.suit = Suit(suit)
+        self.__string_value__ = f'{self.rank}{self.suit}'
 
     def __eq__(self, other):
         # Since there will never be two cards of the same suit and rank, we only care about comparing rank
@@ -36,7 +35,7 @@ class Card:
         return self.rank < other.rank
 
     def __str__(self):
-        return f'{self.rank}{self.suit}'
+        return self.__string_value__
 
     def __repr__(self):
         return self.__str__()

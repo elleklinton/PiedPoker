@@ -1,6 +1,5 @@
 from unittest import TestCase
 
-from pied_poker import Card
 from pied_poker.hand import BaseHand
 from pied_poker.hand import RoyalFlush
 from pied_poker.test.unit.hands.hand_test_utils import HandTestUtils

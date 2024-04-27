@@ -8,6 +8,8 @@ class Rank(Comparable):
     ALLOWED_VALUES_SET = {'2', '3', '4', '5', '6', '7', '8', '9', '10', 'j', 'q', 'k', 'a'}  # Only has '10'
 
     def __init__(self, value: Union[str, int]):
+        self.__str_value__ = None
+
         if isinstance(value, int):
             super().__init__(str(value))
             self.rank = value
@@ -64,16 +66,24 @@ class Rank(Comparable):
         return self.rank
 
     def __str__(self):
+        if self.__str_value__:
+            return self.__str_value__
+
+        rv = None
+
         if self.rank <= 10:
-            return super().__str__()
+            rv = super().__str__()
         elif self.rank == 11:
-            return 'J'
+            rv = 'J'
         elif self.rank == 12:
-            return 'Q'
+            rv = 'Q'
         elif self.rank == 13:
-            return 'K'
+            rv = 'K'
         elif self.rank == 14:
-            return 'A'
+            rv = 'A'
+
+        self.__str_value__ = rv
+        return rv
 
     def __repr__(self):
         return super().__repr__()
