@@ -4,7 +4,6 @@ import sys
 from typing import List, Callable
 from joblib import Parallel, delayed
 from tqdm import tqdm
-from copy import deepcopy
 
 import pied_poker.card.card as card
 import pied_poker.player.player as player
@@ -30,13 +29,12 @@ class PokerRoundSimulator:
         len(players) < total_players. Default value 5.
         :type total_players: int
         """
-        players = deepcopy(players) if players else []
+        players = round.PokerRound.__copy_players__(players) if players else []
         for i in range(total_players - len(players)):
             i = i + 1 + len(players)
             players.append(player.Player(f'player_{i}', []))
 
         self.round = round.PokerRound(community_cards, players, other_drawn_cards)
-        self.players = self.round.players
 
     def simulate(self, n: int = 1000,
                  n_jobs: int = -1,
