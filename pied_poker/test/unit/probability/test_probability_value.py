@@ -41,3 +41,19 @@ class TestProbabilityValue(TestCase):
     def test_100_probability(self):
         pv = ProbabilityValue(100, 100)
         self.assertEqual(str(pv), '100.0% == infinity:1 odds == (100/100)')
+
+    def test_margin_of_error(self):
+        pv = ProbabilityValue(1, 2)
+        self.assertEqual(0.692951912174839, pv.margin_of_error())
+
+        pv = ProbabilityValue(50, 100)
+        self.assertEqual(0.0979981992270027, pv.margin_of_error())
+
+        pv = ProbabilityValue(50, 100)
+        self.assertEqual(0.12879146517744502, pv.margin_of_error(0.99))
+
+        pv = ProbabilityValue(90, 100)
+        self.assertEqual(0.058798919536201616, pv.margin_of_error())
+
+        pv = ProbabilityValue(100, 100)
+        self.assertEqual(0, pv.margin_of_error())

@@ -1,3 +1,7 @@
+import math
+from scipy.stats import norm
+
+
 class ProbabilityValue:
     def __init__(self, event_count: int, given_count: int):
         if event_count > given_count:
@@ -30,6 +34,12 @@ class ProbabilityValue:
     @property
     def __ratio_str__(self):
         return f'{self.event_count}/{self.given_count}'
+
+    def margin_of_error(self, confidence_level: float = 0.95):
+        p = self.probability
+        z_score = norm.ppf((1 + confidence_level) / 2)
+
+        return z_score * math.sqrt((p * (1 - p)) / self.given_count)
 
     def __str__(self):
         return self.__repr__()
