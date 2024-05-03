@@ -59,7 +59,7 @@ class Straight(BaseHand):
         for card in Deck.ALL_CARDS:
             if card not in self.cards_set and card not in out_cards:
                 newHand = BaseHand(self.cards_sorted + [card]).as_best_hand()
-                if newHand.as_hand(Straight).is_hand or newHand.as_hand(RoyalFlush).is_hand:
+                if newHand.__as_hand__(Straight).is_hand or newHand.__as_hand__(RoyalFlush).is_hand:
                     rv.append(card)
                     out_cards.update([card])
         return rv

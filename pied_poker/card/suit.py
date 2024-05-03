@@ -9,6 +9,8 @@ class Suit(Comparable):
         super().__init__(suit)
 
     def __eq__(self, other):
+        if other is None:
+            return False
         return self.value == other.value
 
     def __hash__(self):

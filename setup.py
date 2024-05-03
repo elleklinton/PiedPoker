@@ -3,7 +3,7 @@ from setuptools import setup
 
 setup(
     name='pied_poker',
-    version='1.3.1',
+    version='1.3.4',
     description='A Python package to run flexible and fast poker simulations using a monte carlo style simulator.',
     long_description='A Python package to run flexible and fast poker simulations using a monte carlo style simulator.',
     url='https://github.com/elleklinton/PiedPoker',
@@ -20,7 +20,7 @@ setup(
               'pied_poker.probability.events',
               'pied_poker.visualization',
               ],
-    install_requires=['joblib', 'tqdm', 'numpy', 'seaborn', 'pandas', 'matplotlib'],
+    install_requires=['joblib', 'tqdm', 'numpy', 'seaborn', 'pandas', 'matplotlib', 'scipy'],
     classifiers=[
         'Development Status :: 1 - Planning',
         'Intended Audience :: Developers',

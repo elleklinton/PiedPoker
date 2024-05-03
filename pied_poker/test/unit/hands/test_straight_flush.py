@@ -35,79 +35,79 @@ class TestStraightFlush(TestCase):
     def test_cards_in_hand(self):
         # Picks correct straight flush
         a = HandTestUtils.build_shorthand('6s', '6c', '5c', '4c', '3c', '2c')
-        self.assertEqual(BaseHand(a).as_hand(StraightFlush).cards_in_hand,HandTestUtils.build_shorthand('6c', '5c', '4c', '3c', '2c'))
-        self.assertEqual(BaseHand(a).as_hand(StraightFlush).cards_not_in_hand, HandTestUtils.build_shorthand())
+        self.assertEqual(BaseHand(a).__as_hand__(StraightFlush).cards_in_hand, HandTestUtils.build_shorthand('6c', '5c', '4c', '3c', '2c'))
+        self.assertEqual(BaseHand(a).__as_hand__(StraightFlush).cards_not_in_hand, HandTestUtils.build_shorthand())
 
         # Test multiple possible, picks highest one
         a = HandTestUtils.build_shorthand('7c', '6c', '5c', '4c', '3c', '2c')
-        self.assertEqual(BaseHand(a).as_hand(StraightFlush).cards_in_hand, HandTestUtils.build_shorthand('7c', '6c', '5c', '4c', '3c'))
-        self.assertEqual(BaseHand(a).as_hand(StraightFlush).cards_not_in_hand, HandTestUtils.build_shorthand())
+        self.assertEqual(BaseHand(a).__as_hand__(StraightFlush).cards_in_hand, HandTestUtils.build_shorthand('7c', '6c', '5c', '4c', '3c'))
+        self.assertEqual(BaseHand(a).__as_hand__(StraightFlush).cards_not_in_hand, HandTestUtils.build_shorthand())
 
     def test_all_possible_straight_flushes(self):
         a = HandTestUtils.build_shorthand('5c', '4c', '3c', '2c', 'ac')
-        self.assertEqual(BaseHand(a).as_hand(StraightFlush).cards_in_hand, HandTestUtils.build_shorthand('5c', '4c', '3c', '2c', 'ac'))
+        self.assertEqual(BaseHand(a).__as_hand__(StraightFlush).cards_in_hand, HandTestUtils.build_shorthand('5c', '4c', '3c', '2c', 'ac'))
         last = a
 
         a = HandTestUtils.build_shorthand('6c', '5c', '4c', '3c', '2c', 'ac')
-        self.assertEqual(BaseHand(a).as_hand(StraightFlush).cards_in_hand, HandTestUtils.build_shorthand('6c', '5c', '4c', '3c', '2c'))
+        self.assertEqual(BaseHand(a).__as_hand__(StraightFlush).cards_in_hand, HandTestUtils.build_shorthand('6c', '5c', '4c', '3c', '2c'))
         HandTestUtils.assertGreaterThan(self, StraightFlush, a, last)
         last = a
 
         a = HandTestUtils.build_shorthand('7c', '6c', '5c', '4c', '3c', '2c', 'ac')
-        self.assertEqual(BaseHand(a).as_hand(StraightFlush).cards_in_hand, HandTestUtils.build_shorthand('7c', '6c', '5c', '4c', '3c'))
+        self.assertEqual(BaseHand(a).__as_hand__(StraightFlush).cards_in_hand, HandTestUtils.build_shorthand('7c', '6c', '5c', '4c', '3c'))
         HandTestUtils.assertGreaterThan(self, StraightFlush, a, last)
         last = a
 
         a = HandTestUtils.build_shorthand('8c', '7c', '6c', '5c', '4c', '3c', '2c', 'ac')
-        self.assertEqual(BaseHand(a).as_hand(StraightFlush).cards_in_hand, HandTestUtils.build_shorthand('8c', '7c', '6c', '5c', '4c'))
+        self.assertEqual(BaseHand(a).__as_hand__(StraightFlush).cards_in_hand, HandTestUtils.build_shorthand('8c', '7c', '6c', '5c', '4c'))
         HandTestUtils.assertGreaterThan(self, StraightFlush, a, last)
         last = a
 
         a = HandTestUtils.build_shorthand('9c', '8c', '7c', '6c', '5c', '4c', '3c', '2c', 'ac')
-        self.assertEqual(BaseHand(a).as_hand(StraightFlush).cards_in_hand, HandTestUtils.build_shorthand('9c', '8c', '7c', '6c', '5c'))
+        self.assertEqual(BaseHand(a).__as_hand__(StraightFlush).cards_in_hand, HandTestUtils.build_shorthand('9c', '8c', '7c', '6c', '5c'))
         HandTestUtils.assertGreaterThan(self, StraightFlush, a, last)
         last = a
 
         a = HandTestUtils.build_shorthand('10c', '9c', '8c', '7c', '6c', '5c', '4c', '3c', '2c', 'ac')
-        self.assertEqual(BaseHand(a).as_hand(StraightFlush).cards_in_hand, HandTestUtils.build_shorthand('10c', '9c', '8c', '7c', '6c'))
+        self.assertEqual(BaseHand(a).__as_hand__(StraightFlush).cards_in_hand, HandTestUtils.build_shorthand('10c', '9c', '8c', '7c', '6c'))
         HandTestUtils.assertGreaterThan(self, StraightFlush, a, last)
         last = a
 
         a = HandTestUtils.build_shorthand('jc', '10c', '9c', '8c', '7c', '6c', '5c', '4c', '3c', '2c', 'ac')
-        self.assertEqual(BaseHand(a).as_hand(StraightFlush).cards_in_hand, HandTestUtils.build_shorthand('jc', '10c', '9c', '8c', '7c'))
+        self.assertEqual(BaseHand(a).__as_hand__(StraightFlush).cards_in_hand, HandTestUtils.build_shorthand('jc', '10c', '9c', '8c', '7c'))
         HandTestUtils.assertGreaterThan(self, StraightFlush, a, last)
         last = a
 
         a = HandTestUtils.build_shorthand('qc', 'jc', '10c', '9c', '8c', '7c', '6c', '5c', '4c', '3c', '2c', 'ac')
-        self.assertEqual(BaseHand(a).as_hand(StraightFlush).cards_in_hand, HandTestUtils.build_shorthand('qc', 'jc', '10c', '9c', '8c'))
+        self.assertEqual(BaseHand(a).__as_hand__(StraightFlush).cards_in_hand, HandTestUtils.build_shorthand('qc', 'jc', '10c', '9c', '8c'))
         HandTestUtils.assertGreaterThan(self, StraightFlush, a, last)
         last = a
 
         a = HandTestUtils.build_shorthand('kc', 'qc', 'jc', '10c', '9c', '8c', '7c', '6c', '5c', '4c', '3c', '2c')
-        self.assertEqual(BaseHand(a).as_hand(StraightFlush).cards_in_hand, HandTestUtils.build_shorthand('kc', 'qc', 'jc', '10c', '9c'))
+        self.assertEqual(BaseHand(a).__as_hand__(StraightFlush).cards_in_hand, HandTestUtils.build_shorthand('kc', 'qc', 'jc', '10c', '9c'))
         HandTestUtils.assertGreaterThan(self, StraightFlush, a, last)
         last = a
 
         a = HandTestUtils.build_shorthand('ac', 'kc', 'qc', 'jc', '10c', '9c', '8c', '7c', '6c', '5c', '4c', '3c', '2c')
-        self.assertEqual(BaseHand(a).as_hand(StraightFlush).cards_in_hand, HandTestUtils.build_shorthand('ac', 'kc', 'qc', 'jc', '10c'))
+        self.assertEqual(BaseHand(a).__as_hand__(StraightFlush).cards_in_hand, HandTestUtils.build_shorthand('ac', 'kc', 'qc', 'jc', '10c'))
         HandTestUtils.assertGreaterThan(self, StraightFlush, a, last)
 
     def test_non_straight_flush(self):
         # Not a straight
         a = HandTestUtils.build_shorthand('qc', 'kc', 'ac', '2c', '3c')
-        self.assertFalse(BaseHand(a).as_hand(StraightFlush).is_hand)
+        self.assertFalse(BaseHand(a).__as_hand__(StraightFlush).is_hand)
 
         # Not a flush
         a = HandTestUtils.build_shorthand('10c', 'js', 'qc', 'kc', 'ac')
-        self.assertFalse(BaseHand(a).as_hand(StraightFlush).is_hand)
+        self.assertFalse(BaseHand(a).__as_hand__(StraightFlush).is_hand)
 
     def test_not_implemented(self):
         HandTestUtils.test_not_implemented(self, StraightFlush)
 
     def test_outs(self):
         a = HandTestUtils.build_shorthand('9s', '7s', '6s', '5s')
-        self.assertEqual(BaseHand(a).as_hand(StraightFlush).__hand_outs__(set()), HandTestUtils.build_shorthand('8s'))
+        self.assertEqual(BaseHand(a).__as_hand__(StraightFlush).__hand_outs__(set()), HandTestUtils.build_shorthand('8s'))
 
         a = HandTestUtils.build_shorthand('8s', '7s', '6s', '5s')
-        self.assertEqual(BaseHand(a).as_hand(StraightFlush).__hand_outs__(set()), HandTestUtils.build_shorthand('4s', '9s'))
+        self.assertEqual(BaseHand(a).__as_hand__(StraightFlush).__hand_outs__(set()), HandTestUtils.build_shorthand('4s', '9s'))
 

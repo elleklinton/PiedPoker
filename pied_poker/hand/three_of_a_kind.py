@@ -33,7 +33,7 @@ class ThreeOfAKind(BaseHand):
         if super().__eq__(other):  # Same class of hand
             if self.ranks_triple[0] == other.ranks_triple[0]:  # Same triple
                 # If have same triple, we delegate to HighCard to determine the winner on the rest of the cards at stake
-                return BaseHand(self.cards_not_in_hand).as_hand(HighCard) == BaseHand(other.cards_not_in_hand).as_hand(HighCard)
+                return BaseHand(self.cards_not_in_hand).__as_hand__(HighCard) == BaseHand(other.cards_not_in_hand).__as_hand__(HighCard)
         return False
 
     def __gt__(self, other):
@@ -47,7 +47,7 @@ class ThreeOfAKind(BaseHand):
             elif self.ranks_triple[0] < other.ranks_triple[0]:
                 return False
             else:  # Same trip card_internals, delegate to HighCard to determine winner
-                return BaseHand(self.cards_not_in_hand).as_hand(HighCard) > BaseHand(other.cards_not_in_hand).as_hand(HighCard)
+                return BaseHand(self.cards_not_in_hand).__as_hand__(HighCard) > BaseHand(other.cards_not_in_hand).__as_hand__(HighCard)
 
     def __lt__(self, other):
         if super().__gt__(other):
@@ -60,7 +60,7 @@ class ThreeOfAKind(BaseHand):
             elif self.ranks_triple[0] > other.ranks_triple[0]:
                 return False
             else:  # Same trip card_internals, delegate to HighCard to determine winner
-                return BaseHand(self.cards_not_in_hand).as_hand(HighCard) < BaseHand(other.cards_not_in_hand).as_hand(HighCard)
+                return BaseHand(self.cards_not_in_hand).__as_hand__(HighCard) < BaseHand(other.cards_not_in_hand).__as_hand__(HighCard)
 
     def __hash__(self):
         return hash(str(self))

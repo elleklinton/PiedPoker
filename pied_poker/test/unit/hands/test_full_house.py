@@ -39,12 +39,12 @@ class TestFullHouse(TestCase):
 
     def test_cards_in_hand(self):
         a = HandTestUtils.build_shorthand('2d', '2c', 'kd', 'kc', 'ks', 'ad', '3d')
-        self.assertEqual(BaseHand(a).as_hand(FullHouse).cards_in_hand, HandTestUtils.build_shorthand('kd', 'kc', 'ks', '2d', '2c'))
-        self.assertEqual(BaseHand(a).as_hand(FullHouse).cards_not_in_hand, HandTestUtils.build_shorthand())
+        self.assertEqual(BaseHand(a).__as_hand__(FullHouse).cards_in_hand, HandTestUtils.build_shorthand('kd', 'kc', 'ks', '2d', '2c'))
+        self.assertEqual(BaseHand(a).__as_hand__(FullHouse).cards_not_in_hand, HandTestUtils.build_shorthand())
 
         a = HandTestUtils.build_shorthand('ad', 'ac', '3d', '3c', '3s', '10d', 'kd')
-        self.assertEqual(BaseHand(a).as_hand(FullHouse).cards_in_hand, HandTestUtils.build_shorthand('ad', 'ac', '3d', '3c', '3s'))
-        self.assertEqual(BaseHand(a).as_hand(FullHouse).cards_not_in_hand, HandTestUtils.build_shorthand())
+        self.assertEqual(BaseHand(a).__as_hand__(FullHouse).cards_in_hand, HandTestUtils.build_shorthand('ad', 'ac', '3d', '3c', '3s'))
+        self.assertEqual(BaseHand(a).__as_hand__(FullHouse).cards_not_in_hand, HandTestUtils.build_shorthand())
 
     def test_tiebreakers(self):
         a = HandTestUtils.build_shorthand('10d', '10c', '10d', '2c', '2s', 'ad', '3d')
@@ -64,20 +64,20 @@ class TestFullHouse(TestCase):
 
     def test_outs(self):
         a = HandTestUtils.build_shorthand('as', 'ad', '2c', '2d', '5c')
-        self.assertEqual(BaseHand(a).as_hand(FullHouse).__hand_outs__(set()), HandTestUtils.build_shorthand(
+        self.assertEqual(BaseHand(a).__as_hand__(FullHouse).__hand_outs__(set()), HandTestUtils.build_shorthand(
             'ac', 'ah', '2h', '2s'
         ))
 
         a = HandTestUtils.build_shorthand('as', 'ad')
-        self.assertEqual(BaseHand(a).as_hand(FullHouse).__hand_outs__(set()), HandTestUtils.build_shorthand(
+        self.assertEqual(BaseHand(a).__as_hand__(FullHouse).__hand_outs__(set()), HandTestUtils.build_shorthand(
         ))
 
         a = HandTestUtils.build_shorthand('as', 'ad', '2c', '2d')
-        self.assertEqual(BaseHand(a).as_hand(FullHouse).__hand_outs__(set()), HandTestUtils.build_shorthand(
+        self.assertEqual(BaseHand(a).__as_hand__(FullHouse).__hand_outs__(set()), HandTestUtils.build_shorthand(
             'ac', 'ah', '2h', '2s'
         ))
 
         a = HandTestUtils.build_shorthand('as', 'ad', 'ac', '2d', '5s', 'kc')
-        self.assertEqual(BaseHand(a).as_hand(FullHouse).__hand_outs__(set()), HandTestUtils.build_shorthand(
+        self.assertEqual(BaseHand(a).__as_hand__(FullHouse).__hand_outs__(set()), HandTestUtils.build_shorthand(
             'kd', 'kh', 'ks', '5c', '5d', '5h', '2c', '2h', '2s'
         ))

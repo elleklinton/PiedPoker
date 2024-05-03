@@ -3,9 +3,9 @@ from unittest import TestCase
 
 from pied_poker.hand.killer_card import KillerCard
 from pied_poker.card.card import Card
-from pied_poker.hand import Flush
+from pied_poker.hand import Flush, HighCard, OnePair
 from pied_poker.hand import TwoPair
-from pied_poker.hand import PokerHand
+from pied_poker.hand import BaseHand
 from pied_poker.hand import Straight
 from pied_poker.hand import FourOfAKind
 from pied_poker.hand import FullHouse
@@ -56,7 +56,7 @@ class TestRoundResult(TestCase):
     def test_winning_hand(self):
         result = self.generate_round_p1_winning()
         self.assertIsInstance(result.winning_hand, FourOfAKind)
-        self.assertEqual(result.winning_hand, PokerHand([Card('as'), Card('ad'), Card('ah'), Card('ac'), Card('10s')]).as_best_hand())
+        self.assertEqual(result.winning_hand, BaseHand([Card('as'), Card('ad'), Card('ah'), Card('ac'), Card('10s')]).as_best_hand())
 
     def test_empty_is_not_winner(self):
         result = self.generate_round_result([], [Card('as')], [])
@@ -137,3 +137,70 @@ class TestRoundResult(TestCase):
         self.assertEqual(p1_killer_cards, [
             KillerCard(Flush, Card.of('2s', '3s', '5s', '7s', '9s', 'js', 'qs', 'ks', 'as'))
         ])
+
+    def test_add_and_remove_card(self):
+        p1 = Player('Ellek', [Card('10s'), Card('10d')]) # Trip 10s
+        p2 = Player('Slim', [Card('2s'), Card('3s')]) # Flush Draw
+        community_cards = Card.of('4s', '8s', '10h', '6c')
+        round_result = PokerRoundResult([p1, p2], community_cards)
+
+        self.assertEqual(p1.hand.hand_rank, ThreeOfAKind.hand_rank)
+        self.assertEqual(p2.hand.hand_rank, HighCard.hand_rank)
+        self.assertIn(p1, round_result.winners)
+
+        round_result.add_community_card(Card('10c'))
+        self.assertEqual(p1.hand.hand_rank, FourOfAKind.hand_rank)
+        self.assertEqual(p2.hand.hand_rank, OnePair.hand_rank)
+        self.assertIn(p1, round_result.winners)
+
+        round_result.remove_community_card(Card('10c'))
+        self.assertEqual(p1.hand.hand_rank, ThreeOfAKind.hand_rank)
+        self.assertEqual(p2.hand.hand_rank, HighCard.hand_rank)
+        self.assertIn(p1, round_result.winners)
+
+        round_result.add_community_card(Card('6d'))
+        self.assertEqual(p1.hand.hand_rank, FullHouse.hand_rank)
+        self.assertEqual(p2.hand.hand_rank, OnePair.hand_rank)
+        self.assertIn(p1, round_result.winners)
+
+        round_result.remove_community_card(Card('6d'))
+        self.assertEqual(p1.hand.hand_rank, ThreeOfAKind.hand_rank)
+        self.assertEqual(p2.hand.hand_rank, HighCard.hand_rank)
+        self.assertIn(p1, round_result.winners)
+
+        round_result.add_community_card(Card('6s'))
+        self.assertEqual(p1.hand.hand_rank, FullHouse.hand_rank)
+        self.assertEqual(p2.hand.hand_rank, Flush.hand_rank)
+        self.assertIn(p1, round_result.winners)
+
+        round_result.remove_community_card(Card('6s'))
+        self.assertEqual(p1.hand.hand_rank, ThreeOfAKind.hand_rank)
+        self.assertEqual(p2.hand.hand_rank, HighCard.hand_rank)
+        self.assertIn(p1, round_result.winners)
+
+        round_result.add_community_card(Card('5s'))
+        self.assertEqual(p1.hand.hand_rank, ThreeOfAKind.hand_rank)
+        self.assertEqual(p2.hand.hand_rank, Flush.hand_rank)
+        self.assertIn(p2, round_result.winners)
+
+        round_result.remove_community_card(Card('5s'))
+        self.assertEqual(p1.hand.hand_rank, ThreeOfAKind.hand_rank)
+        self.assertEqual(p2.hand.hand_rank, HighCard.hand_rank)
+        self.assertIn(p1, round_result.winners)
+
+    def test_add_and_remove_multiple_cards(self):
+        p1 = Player('Ellek', [Card('10s'), Card('10d')])
+        p2 = Player('Slim', [Card('2s'), Card('3s')])
+        community_cards = Card.of('4s', '8s', '10h', '6c')
+
+        round_result = PokerRoundResult([p1, p2], community_cards)
+        self.assertEqual(p1.hand.hand_rank, ThreeOfAKind.hand_rank)
+        self.assertEqual(p2.hand.hand_rank, HighCard.hand_rank)
+
+        round_result.remove_community_card(*Card.of('6c', '10h'))
+        self.assertEqual(p1.hand.hand_rank, OnePair.hand_rank)
+        self.assertEqual(p2.hand.hand_rank, HighCard.hand_rank)
+
+        round_result.add_community_card(*Card.of('10c', '10h', '6s'))
+        self.assertEqual(p1.hand.hand_rank, FourOfAKind.hand_rank)
+        self.assertEqual(p2.hand.hand_rank, Flush.hand_rank)

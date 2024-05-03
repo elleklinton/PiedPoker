@@ -8,7 +8,7 @@ import pied_poker.probability.probability_value as probability_value
 import pied_poker.poker_round.poker_round_result as round_result
 import pied_poker.probability.events.player_has_hand as player_has_hand
 import pied_poker.probability.events.player_wins as player_wins
-import pied_poker.hand.poker_hand as poker_hand
+import pied_poker.hand.base_hand as base_hand
 import pied_poker.player as player
 
 
@@ -102,7 +102,7 @@ class PokerRoundSimulationResult:
         hand_names = []
         hand_probabilities = []
 
-        for hand_type in reversed(poker_hand.PokerHand.ALL_HANDS_RANKED):
+        for hand_type in reversed(base_hand.BaseHand.ALL_HANDS_RANKED):
             p = self.probability_of(player_has_hand.PlayerHasHand(hand_type, player))
             hand_names.append(hand_type.__name__ + f' ({p.__percent_str__})')
             hand_probabilities.append(p.probability)
@@ -149,7 +149,7 @@ class PokerRoundSimulationResult:
         hand_probabilities = []
         last_cumulative_probability = 0
 
-        for hand_type in reversed(poker_hand.PokerHand.ALL_HANDS_RANKED):
+        for hand_type in reversed(base_hand.BaseHand.ALL_HANDS_RANKED):
             hand_str = hand_type.__name__
             hand_count = winning_hand_counts.get(hand_str, 0)
             if cumulative:

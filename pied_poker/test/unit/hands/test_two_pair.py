@@ -77,8 +77,8 @@ class TestTwoPair(TestCase):
 
     def test_cards_in_hand(self):
         a = HandTestUtils.build_shorthand('8d', '8c', '2d', '2c', 'ad')
-        self.assertEqual(BaseHand(a).as_hand(TwoPair).cards_in_hand, HandTestUtils.build_shorthand('8d', '8c', '2d', '2c'))
-        self.assertEqual(BaseHand(a).as_hand(TwoPair).cards_not_in_hand, HandTestUtils.build_shorthand('ad'))
+        self.assertEqual(BaseHand(a).__as_hand__(TwoPair).cards_in_hand, HandTestUtils.build_shorthand('8d', '8c', '2d', '2c'))
+        self.assertEqual(BaseHand(a).__as_hand__(TwoPair).cards_not_in_hand, HandTestUtils.build_shorthand('ad'))
 
     def test_not_implemented(self):
         HandTestUtils.test_not_implemented(self, TwoPair)
@@ -86,7 +86,7 @@ class TestTwoPair(TestCase):
     def test_outs(self):
         a = HandTestUtils.build_shorthand('as', '10d', '10c', '5c', '2s')
 
-        outs = BaseHand(a).as_hand(TwoPair).__hand_outs__(set())
+        outs = BaseHand(a).__as_hand__(TwoPair).__hand_outs__(set())
 
         self.assertEqual(outs, HandTestUtils.build_shorthand(
             'ac', 'ad', 'ah', '5d', '5h', '5s', '2c', '2d', '2h'

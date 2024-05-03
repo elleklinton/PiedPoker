@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import List, Dict, Union, Set
+from typing import List, Dict, Union, Set, Tuple
 
 from pied_poker.card.card import Card
 from pied_poker.card.rank import Rank
@@ -8,7 +8,8 @@ from pied_poker.card.suit import Suit
 from pied_poker.hand.out import Out
 
 # Only 6 thru A can be the highest card on a straight
-STRAIGHT_POSSIBLE_HIGH_CARDS = [Rank(str(i)) for i in ['5', '6', '7', '8', '9', '10', 'j', 'q', 'k', 'a']]
+STRAIGHT_POSSIBLE_HIGH_CARDS_OLD = [Rank(str(i)) for i in ['5', '6', '7', '8', '9', '10', 'j', 'q', 'k', 'a']]
+STRAIGHT_POSSIBLE_HIGH_CARDS: List[Rank] = [Rank(str(i)) for i in ['a', 'k', 'q', 'j', '10', '9', '8', '7', '6', '5']]
 
 
 def getAllHandsRanked() -> List[BaseHand.__class__]:
@@ -44,6 +45,24 @@ class StaticProperty(staticmethod):
         return self.__func__(self)
 
 
+def getAllPossibleStraightRanks() -> List[set[int]]:
+    """
+    Returns all possible straights that can be made in poker
+    :return:
+    :rtype: List[List[Card]]
+    """
+    all_possible_straights = []
+    for high_rank in STRAIGHT_POSSIBLE_HIGH_CARDS:
+        if high_rank != Rank('5'):
+            all_possible_straights.append({high_rank.rank, high_rank.rank - 1, high_rank.rank - 2, high_rank.rank - 3, high_rank.rank - 4})
+        else:
+            all_possible_straights.append({high_rank.rank, high_rank.rank - 1, high_rank.rank - 2, high_rank.rank - 3, Rank('a').rank})
+    return all_possible_straights
+
+
+ALL_POSSIBLE_STRAIGHTS = getAllPossibleStraightRanks()
+
+
 class BaseHand:
     hand_rank: int = -1
 
@@ -54,7 +73,10 @@ class BaseHand:
         :type cards:
         """
         self.cards_sorted: List[Card] = sorted(cards, reverse=True)  # For comparing high cards
-        self.cards_set = set()
+        self.cards_set: Set[Card] = set()
+
+        self.ranks_value_set: Set[int] = set()
+        self.rank_values_set_by_suit: Dict[Suit, Set[int]] = {}
 
         self.ranks_single: List[Rank] = []  # All ranks of single cards, sorted
         self.ranks_pair: List[Rank] = []  # All ranks of pair cards, sorted
@@ -68,25 +90,11 @@ class BaseHand:
 
         self.top_straight: List[Card] = None
         self.straight_flush: List[Card] = None
-        self.all_confirmed_straights: List[List[Card]] = []
-        self.possible_straights: List[List[Card]] = []
 
-        for c in self.cards_sorted:
-            self.__straight_counter__(self.possible_straights, c)
-            self.__suit_counter__(c)
-            self.__rank_counter__(c)
-            self.cards_set.add(c)
+        for card in self.cards_sorted:
+            self.add_card(card, True)
 
-        # Check for case of ace-low straight, which is missed by above logic
-        if self.possible_straights:
-            if self.possible_straights[-1]:
-                if self.possible_straights[-1][-1].rank == Rank('2'):
-                    i = 0
-                    while self.cards_sorted[i].rank == Rank('a'):  # Add all possible ace straights
-                        self.__straight_counter__(self.possible_straights, self.cards_sorted[i])
-                        i += 1
-
-        self.top_straight: List[Card] = self.all_confirmed_straights[0] if self.all_confirmed_straights else None
+        self.__update_straight_and_straight_flush__()
 
     @StaticProperty
     def ALL_HANDS_RANKED(self) -> List[BaseHand.__class__]:
@@ -104,16 +112,108 @@ class BaseHand:
     def cards_not_in_hand(self):
         return self.cards_sorted[:5]
 
-    def as_hand(self, target_class):
+    def __as_hand__(self, target_class):
         self.__class__ = target_class
         return self
 
     def as_best_hand(self):
         for hand_class in self.ALL_HANDS_RANKED:
             # outsGetter = self.outs
-            new: hand_class = self.as_hand(hand_class)
+            new: hand_class = self.__as_hand__(hand_class)
             if new.is_hand:  # This will always be true for EmptyHand so will always be reached
                 return new
+
+    def add_card(self, card: Card, is_init=False):
+        self.cards_set.add(card)
+        self.__suit_counter__(card)
+        self.__rank_counter__(card)
+
+        # insert in correct order in cards_sorted list (sorted H-L)
+        if not is_init:
+            insertion_index = len(self.cards_sorted)
+            for i, c in enumerate(self.cards_sorted):
+                if c.rank < card.rank:
+                    insertion_index = i
+                    break
+            self.cards_sorted.insert(insertion_index, card)
+
+        if not is_init:
+            self.__update_straight_and_straight_flush__()
+
+    def remove_card(self, card: Card):
+        if card not in self.cards_set:
+            raise ValueError(f'Card {card} cannot be removed because it is not in hand!')
+
+        self.cards_sorted = [c for c in self.cards_sorted if not (c.rank == card.rank and c.suit == card.suit)]
+        self.cards_set.remove(card)
+        self.rank_values_set_by_suit[card.suit].remove(card.rank.rank)
+
+        self.rank_counts[card.rank] -= 1
+        self.suit_counts[card.suit] -= 1
+
+        if self.suit_counts[card.suit] == 4:
+            # If we remove a card that was part of a flush, we need to remove the flush suit
+            self.flush_suit = None
+
+        if card.rank in self.ranks_quad:
+            self.ranks_quad.remove(card.rank)
+            self.ranks_triple.append(card.rank)
+            if len(self.ranks_triple) > 1 and self.ranks_triple[-1] > self.ranks_triple[-2]:
+                self.ranks_triple = sorted(self.ranks_triple, reverse=True)
+        elif card.rank in self.ranks_triple:
+            self.ranks_triple.remove(card.rank)
+            self.ranks_pair.append(card.rank)
+            if len(self.ranks_pair) > 1 and self.ranks_pair[-1] > self.ranks_pair[-2]:
+                self.ranks_pair = sorted(self.ranks_pair, reverse=True)
+        elif card.rank in self.ranks_pair:
+            self.ranks_pair.remove(card.rank)
+            self.ranks_single.append(card.rank)
+            if len(self.ranks_single) > 1 and self.ranks_single[-1] > self.ranks_single[-2]:
+                self.ranks_single = sorted(self.ranks_single, reverse=True)
+        elif card.rank in self.ranks_single:
+            self.ranks_single.remove(card.rank)
+            self.ranks_value_set.remove(card.rank.rank)
+
+        self.__update_straight_and_straight_flush__()
+
+    def __update_straight_and_straight_flush__(self):
+        self.straight_flush = None
+        self.top_straight = None
+
+        straights = self.__get_possible_straights__()
+        if len(straights) == 0:
+            return
+
+        self.top_straight = self.__get_cards_in_straight__(straights[0])
+        if self.flush_suit != None:
+            # Check for straight flush
+            for straight in straights:
+                if straight.issubset(self.rank_values_set_by_suit[self.flush_suit]):
+                    self.straight_flush = self.__get_cards_in_straight__(straight, self.flush_suit)
+                    return
+
+    def __get_possible_straights__(self) -> List[Set[int]]:
+        return [s for s in ALL_POSSIBLE_STRAIGHTS if s.issubset(self.ranks_value_set)]
+
+    def __get_cards_in_straight__(self, straight: Set[int], target_suit: Union[Suit | None] = None) -> List[Card]:
+        """
+        Get straight cards given a set of straight ranks, optionally specifying a suit if there is a straight flush
+        """
+        rv: List[Card] = []
+        for card in self.cards_sorted:
+            if card.rank.rank in straight:
+                if target_suit is not None:
+                    if card.suit == target_suit:
+                        rv.append(card)
+                else:
+                    if len(rv) == 0:
+                        rv.append(card)
+                    elif len(rv) > 0 and rv[-1].rank != card.rank:
+                        rv.append(card)
+        if Rank('a').rank in straight and Rank('2').rank in straight:
+            # move ace to end
+            rv.append(rv.pop(0))
+        return rv
 
     def __suit_counter__(self, c: Card):
         self.suit_counts[c.suit] = self.suit_counts.get(c.suit, 0) + 1
@@ -122,51 +222,33 @@ class BaseHand:
 
     def __rank_counter__(self, c: Card):
         self.rank_counts[c.rank] = self.rank_counts.get(c.rank, 0) + 1
+        self.ranks_value_set.add(c.rank.rank)
+
+        self.rank_values_set_by_suit[c.suit] = self.rank_values_set_by_suit.get(c.suit, set())
+        self.rank_values_set_by_suit[c.suit].add(c.rank.rank)
 
         if self.rank_counts[c.rank] == 1:
             self.ranks_single.append(c.rank)
+            if len(self.ranks_single) > 1 and self.ranks_single[0] < self.ranks_single[1]:
+                self.ranks_single = sorted(self.ranks_single, reverse=True)
 
         if self.rank_counts[c.rank] == 2:
             self.ranks_single.remove(c.rank)
             self.ranks_pair.append(c.rank)
+            if len(self.ranks_pair) > 1 and self.ranks_pair[-1] > self.ranks_pair[-2]:
+                self.ranks_pair = sorted(self.ranks_pair, reverse=True)
 
         if self.rank_counts[c.rank] == 3:
             self.ranks_pair.remove(c.rank)
             self.ranks_triple.append(c.rank)
+            if len(self.ranks_triple) > 1 and self.ranks_triple[-1] > self.ranks_triple[-2]:
+                self.ranks_triple = sorted(self.ranks_triple, reverse=True)
 
         if self.rank_counts[c.rank] == 4:
             self.ranks_triple.remove(c.rank)
             self.ranks_quad.append(c.rank)
-
-    def __straight_counter__(self, possible_straights: List[List[Card]], c: Card):
-        new_straights = []
-
-        for s in possible_straights:
-            # If length < 5, we can check for a straight
-            # If length == 5, we can only replace the last card_internals on the straight
-            lowest_card_in_straight = s[-1]
-
-            if len(s) <= 5:
-                if lowest_card_in_straight.rank - c.rank == 1 and len(s) < 5:
-                    # Next card_internals for straight is here
-                    s.append(c)
-                    if len(s) == 5:
-                        self.all_confirmed_straights.append(s)
-                        self.__straight_flush_counter__(s)
-                elif lowest_card_in_straight.rank == c.rank:
-                    # Next card is equal to current lowest card in straight
-                    # Therefore, we duplicate this list again, but replace the
-                    # last element with the current card (in case a straight flush shows up)
-                    new_possible_straight = s.copy()[:len(s) - 1] + [c]
-                    new_straights.append(new_possible_straight)
-                    if len(new_possible_straight) == 5:
-                        self.all_confirmed_straights.append(new_possible_straight)
-                        self.__straight_flush_counter__(s)
-
-        possible_straights.extend(new_straights)
-
-        if c.rank in STRAIGHT_POSSIBLE_HIGH_CARDS and [c] not in new_straights:
-            possible_straights.append([c])
+            if len(self.ranks_quad) > 1 and self.ranks_quad[-1] > self.ranks_quad[-2]:
+                self.ranks_quad = sorted(self.ranks_quad, reverse=True)
 
     def __straight_flush_counter__(self, s: List[Card]):
         if not self.straight_flush:
@@ -239,7 +321,7 @@ class BaseHand:
 
         for hand_class in self.ALL_HANDS_RANKED:
             if hand_class.hand_rank >= curr_winning_hand_class.hand_rank:
-                outs = self.as_hand(hand_class).__hand_outs__(known_cards_and_outs)
+                outs = self.__as_hand__(hand_class).__hand_outs__(known_cards_and_outs)
                 outs = self.__outs_with_cards_in_hand__(cards_in_player_hand, outs)
 
                 if len(outs) > 0:
@@ -252,14 +334,14 @@ class BaseHand:
                         better_outs = []
                         for out in outs:
                             hand_with_out = BaseHand(self.cards_sorted + [out]).as_best_hand()
-                            if hand_with_out > curr_winning_hand.as_hand(self_original_class):
+                            if hand_with_out > curr_winning_hand.__as_hand__(self_original_class):
                                 better_outs.append(out)
 
                         if len(better_outs) > 0:
                             rv.append(Out(hand_class, better_outs))
 
-        self.as_hand(self_original_class)
-        curr_winning_hand.as_hand(curr_winning_hand_class)
+        self.__as_hand__(self_original_class)
+        curr_winning_hand.__as_hand__(curr_winning_hand_class)
         return rv
 
     def __outs_with_cards_in_hand__(self, cards_in_player_hand: List[Card], outs: List[Card]) -> List[Card]:

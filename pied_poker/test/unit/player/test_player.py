@@ -1,6 +1,10 @@
+from copy import deepcopy
 from unittest import TestCase
 
+import numpy as np
+
 from pied_poker.card.card import Card
+from pied_poker.deck import Deck
 from pied_poker.hand import FourOfAKind
 from pied_poker.hand import FullHouse
 from pied_poker.player import Player
@@ -42,6 +46,32 @@ class TestPlayer(TestCase):
 
         player.poker_hand([Card('ad'), Card('10s'), Card('10d'), Card('5h'), Card('7c')])
         self.assertEqual('Ellek: FullHouse([A♠, A♣, A♦, 10♠, 10♦], [])', str(player))
+
+    def test_add_and_remove_cards(self):
+        np.random.seed(420)
+        for i in range(100):
+            deck = Deck()
+            player = Player('Ellek', cards=deck.draw(2))
+            community_cards = deck.draw(3)
+
+            hand = player.poker_hand(community_cards)
+            outs = hand.outs()
+            original_hand = deepcopy(hand)
+
+            for out in outs:
+                for out_card in out.cards:
+                    player.add_community_cards(out_card)
+                    self.assertNotEqual(hand, original_hand)
+                    self.assertEqual(hand.__class__.hand_rank, out.out_class.hand_rank)
+                    self.assertGreater(hand, original_hand)
+
+                    player.remove_community_card(out_card)
+                    hand = hand.as_best_hand()
+                    self.assertEqual(hand, original_hand)
+
+
+
+
 
 
 

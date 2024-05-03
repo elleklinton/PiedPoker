@@ -59,9 +59,9 @@ class TestOnePair(TestCase):
         a = HandTestUtils.build_shorthand('3d', '3c', '6h', 'qs', 'kd',
                                           '4s', '5d')
         # Should pick 2 cards that are a pair
-        self.assertEqual(BaseHand(a).as_hand(OnePair).cards_in_hand, HandTestUtils.build_shorthand('3d', '3c'))
+        self.assertEqual(BaseHand(a).__as_hand__(OnePair).cards_in_hand, HandTestUtils.build_shorthand('3d', '3c'))
         # Should pick next top 3 cards after the pair
-        self.assertEqual(BaseHand(a).as_hand(OnePair).cards_not_in_hand, HandTestUtils.build_shorthand('kd', 'qs', '6h'))
+        self.assertEqual(BaseHand(a).__as_hand__(OnePair).cards_not_in_hand, HandTestUtils.build_shorthand('kd', 'qs', '6h'))
 
     def test_not_implemented(self):
         HandTestUtils.test_not_implemented(self, OnePair)
@@ -69,7 +69,7 @@ class TestOnePair(TestCase):
     def test_outs(self):
         a = HandTestUtils.build_shorthand('as', 'ks', '5s')
 
-        outs = BaseHand(a).as_hand(OnePair).__hand_outs__(set())
+        outs = BaseHand(a).__as_hand__(OnePair).__hand_outs__(set())
         self.assertEqual(outs, HandTestUtils.build_shorthand(
             'ac', 'ad', 'ah', 'kc', 'kd', 'kh', '5c', '5d', '5h'
         ))

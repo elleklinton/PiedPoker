@@ -1,7 +1,7 @@
 from pied_poker.card.card import Card
 from pied_poker.card.rank import Rank
 from pied_poker.hand.flush import Flush
-from pied_poker.hand import FourOfAKind
+from pied_poker.hand import FourOfAKind, Straight
 from pied_poker.hand import FullHouse
 from pied_poker.probability.events.no_tie import NoTie
 from pied_poker.probability.events.player_has_hand import PlayerHasHand
@@ -88,6 +88,48 @@ class TestCases(SimulationTestCase):
             target_event=PlayerHasHand(Flush),
             target_probability=1 - ((38/47) * (37/46)),
             delta=0.015,
+        )
+        self.assert_probability(payload)
+
+    def test_open_ended_straight_draw(self):
+        """
+        In this test case, we have an open-ended straight draw, and we are calculating the probability of hitting the
+        straight by the river.
+
+        We can calculate this by first calculating the probability that we do NOT hit the flush, which is:
+            39/47 * 38/46
+
+        Therefore, the probability of hitting the flush is 1 - P(not hitting flush), which is:
+            1 - ((39/47) * (38/46)) = 31.5%
+        """
+        payload = SimulationTestCasePayload(
+            simulator_factory_fn=SimulatorFactory.round_simulator,
+            community_cards=[Card('10h'), Card('9d'), Card('3d')],
+            player_cards=[Card('8s'), Card('7c')],
+            target_event=PlayerHasHand(Straight),
+            target_probability=1 - ((39/47) * (38/46)),
+            delta=0.015,
+        )
+        self.assert_probability(payload)
+
+    def test_gut_shot_straight_draw(self):
+        """
+        In this test case, we have an inside (gut-shot) straight draw, and we are calculating the probability of
+        hitting the straight by the river.
+
+        We can calculate this by first calculating the probability that we do NOT hit the straight, which is:
+            43/47 * 42/46
+
+        Therefore, the probability of hitting the flush is 1 - P(not hitting flush), which is:
+            1 - ((43/47) * (42/46)) = 14.5%
+        """
+        payload = SimulationTestCasePayload(
+            simulator_factory_fn=SimulatorFactory.round_simulator,
+            community_cards=[Card('10h'), Card('jd'), Card('3d')],
+            player_cards=[Card('8s'), Card('7c')],
+            target_event=PlayerHasHand(Straight),
+            target_probability=1 - ((43/47) * (42/46)),
+            delta=0.01,
         )
         self.assert_probability(payload)
 

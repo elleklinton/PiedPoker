@@ -45,10 +45,10 @@ class TestHighCard(TestCase):
         # Test high card > Base hand not initialized with anything
         a = HandTestUtils.build_shorthand('7d', '8d', '10d', 'qd', 'kd',
                                           '3d', '4d')
-        self.assertGreater(BaseHand(a).as_hand(HighCard), BaseHand(a))
-        self.assertFalse(BaseHand(a).as_hand(HighCard) < BaseHand(a))
-        self.assertLess(BaseHand(a), BaseHand(a).as_hand(HighCard))
-        self.assertFalse(BaseHand(a) > BaseHand(a).as_hand(HighCard))
+        self.assertGreater(BaseHand(a).__as_hand__(HighCard), BaseHand(a))
+        self.assertFalse(BaseHand(a).__as_hand__(HighCard) < BaseHand(a))
+        self.assertLess(BaseHand(a), BaseHand(a).__as_hand__(HighCard))
+        self.assertFalse(BaseHand(a) > BaseHand(a).__as_hand__(HighCard))
 
     def test_tiebreakers(self):
         # From https://automaticpoker.com/poker-basics/what-happens-if-you-have-the-same-hand-in-poker/
@@ -76,9 +76,9 @@ class TestHighCard(TestCase):
         a = HandTestUtils.build_shorthand('7d', '8d', '10d', 'qd', 'kd',
                                           '3d', '4d')
         # Should pick top 5 cards in descending order
-        self.assertEqual(BaseHand(a).as_hand(HighCard).cards_in_hand, HandTestUtils.build_shorthand('kd', 'qd', '10d', '8d', '7d'))
+        self.assertEqual(BaseHand(a).__as_hand__(HighCard).cards_in_hand, HandTestUtils.build_shorthand('kd', 'qd', '10d', '8d', '7d'))
         # Should exclude last 2 cards
-        self.assertEqual(BaseHand(a).as_hand(HighCard).cards_not_in_hand, HandTestUtils.build_shorthand('4d', '3d'))
+        self.assertEqual(BaseHand(a).__as_hand__(HighCard).cards_not_in_hand, HandTestUtils.build_shorthand('4d', '3d'))
 
     def test_not_implemented(self):
         HandTestUtils.test_not_implemented(self, HighCard)
@@ -86,7 +86,7 @@ class TestHighCard(TestCase):
     def test_outs(self):
         a = HandTestUtils.build_shorthand('10s')
 
-        outs = BaseHand(a).as_hand(HighCard).__hand_outs__(set())
+        outs = BaseHand(a).__as_hand__(HighCard).__hand_outs__(set())
         self.assertEqual(outs, HandTestUtils.build_shorthand(
             'jc', 'jd', 'jh', 'js', 'qc', 'qd', 'qh', 'qs', 'kc', 'kd', 'kh', 'ks', 'ac', 'ad', 'ah', 'as'
         ))
@@ -95,7 +95,7 @@ class TestHighCard(TestCase):
         a = HandTestUtils.build_shorthand('as', '10s')
         b = HandTestUtils.build_shorthand('as')
 
-        self.assertGreater(BaseHand(a).as_hand(HighCard), BaseHand(b).as_hand(HighCard))
-        self.assertLess(BaseHand(b).as_hand(HighCard), BaseHand(a).as_hand(HighCard))
-        self.assertNotEqual(BaseHand(b).as_hand(HighCard), BaseHand(a).as_hand(HighCard))
+        self.assertGreater(BaseHand(a).__as_hand__(HighCard), BaseHand(b).__as_hand__(HighCard))
+        self.assertLess(BaseHand(b).__as_hand__(HighCard), BaseHand(a).__as_hand__(HighCard))
+        self.assertNotEqual(BaseHand(b).__as_hand__(HighCard), BaseHand(a).__as_hand__(HighCard))
 

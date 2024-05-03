@@ -14,16 +14,16 @@ from pied_poker.hand import TwoPair
 from pied_poker.test.unit.hands.hand_test_utils import HandTestUtils
 
 ALL_RANKED_HANDS = [
-    BaseHand(HandTestUtils.build_shorthand('10d', 'jd', 'qd', 'kd', 'ad')).as_hand(RoyalFlush),
-    BaseHand(HandTestUtils.build_shorthand('9d', '10d', 'jd', 'qd', 'kd')).as_hand(StraightFlush),
-    BaseHand(HandTestUtils.build_shorthand('9d', '9c', '9h', '9s', 'kd')).as_hand(FourOfAKind),
-    BaseHand(HandTestUtils.build_shorthand('9d', '9c', 'jd', 'js', 'jh')).as_hand(FullHouse),
-    BaseHand(HandTestUtils.build_shorthand('2d', '4d', '8d', 'qd', 'kd')).as_hand(Flush),
-    BaseHand(HandTestUtils.build_shorthand('9d', '10h', 'js', 'qc', 'kd')).as_hand(Straight),
-    BaseHand(HandTestUtils.build_shorthand('9d', '9c', '9h', 'qd', 'kd')).as_hand(ThreeOfAKind),
-    BaseHand(HandTestUtils.build_shorthand('9d', '9h', '10d', '10h', 'kd')).as_hand(TwoPair),
-    BaseHand(HandTestUtils.build_shorthand('9d', '9h', 'jd', 'qd', 'kd')).as_hand(OnePair),
-    BaseHand(HandTestUtils.build_shorthand('9d', '2c', '6h', 'qd', 'as')).as_hand(HighCard),
+    BaseHand(HandTestUtils.build_shorthand('10d', 'jd', 'qd', 'kd', 'ad')).__as_hand__(RoyalFlush),
+    BaseHand(HandTestUtils.build_shorthand('9d', '10d', 'jd', 'qd', 'kd')).__as_hand__(StraightFlush),
+    BaseHand(HandTestUtils.build_shorthand('9d', '9c', '9h', '9s', 'kd')).__as_hand__(FourOfAKind),
+    BaseHand(HandTestUtils.build_shorthand('9d', '9c', 'jd', 'js', 'jh')).__as_hand__(FullHouse),
+    BaseHand(HandTestUtils.build_shorthand('2d', '4d', '8d', 'qd', 'kd')).__as_hand__(Flush),
+    BaseHand(HandTestUtils.build_shorthand('9d', '10h', 'js', 'qc', 'kd')).__as_hand__(Straight),
+    BaseHand(HandTestUtils.build_shorthand('9d', '9c', '9h', 'qd', 'kd')).__as_hand__(ThreeOfAKind),
+    BaseHand(HandTestUtils.build_shorthand('9d', '9h', '10d', '10h', 'kd')).__as_hand__(TwoPair),
+    BaseHand(HandTestUtils.build_shorthand('9d', '9h', 'jd', 'qd', 'kd')).__as_hand__(OnePair),
+    BaseHand(HandTestUtils.build_shorthand('9d', '2c', '6h', 'qd', 'as')).__as_hand__(HighCard),
 ]
 
 

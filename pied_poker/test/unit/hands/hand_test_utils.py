@@ -26,36 +26,36 @@ class HandTestUtils():
 
     @staticmethod
     def __assert_is_hand__(test_instance: TestCase, class_type, a, b):
-        test_instance.assertTrue(BaseHand(a).as_hand(class_type).is_hand, f'Test Failed:\n{BaseHand(a).as_hand(class_type)}\nwas not recognized as a hand of this class')
-        test_instance.assertTrue(BaseHand(b).as_hand(class_type).is_hand, f'Test Failed:\n{BaseHand(b).as_hand(class_type)}\nwas not recognized as a hand of this class')
+        test_instance.assertTrue(BaseHand(a).__as_hand__(class_type).is_hand, f'Test Failed:\n{BaseHand(a).__as_hand__(class_type)}\nwas not recognized as a hand of this class')
+        test_instance.assertTrue(BaseHand(b).__as_hand__(class_type).is_hand, f'Test Failed:\n{BaseHand(b).__as_hand__(class_type)}\nwas not recognized as a hand of this class')
 
     @staticmethod
     def assertEquals(test_instance: TestCase, class_type, a, b):
         HandTestUtils.__assert_is_hand__(test_instance, class_type, a, b)
 
-        test_instance.assertEqual(BaseHand(a).as_hand(class_type), BaseHand(b).as_hand(class_type), f'Test Failed:\n{BaseHand(a).as_hand(class_type)}\n!=\n{BaseHand(b).as_hand(class_type)}\n(expected eq)')
-        test_instance.assertFalse(BaseHand(a).as_hand(class_type) > BaseHand(b).as_hand(class_type), f'Test Failed:\n{BaseHand(a).as_hand(class_type)}\n>\n{BaseHand(b).as_hand(class_type)}\n(expected eq)')
-        test_instance.assertFalse(BaseHand(a).as_hand(class_type) < BaseHand(b).as_hand(class_type), f'Test Failed:\n{BaseHand(a).as_hand(class_type)}\n<\n{BaseHand(b).as_hand(class_type)}\n(expected eq)')
+        test_instance.assertEqual(BaseHand(a).__as_hand__(class_type), BaseHand(b).__as_hand__(class_type), f'Test Failed:\n{BaseHand(a).__as_hand__(class_type)}\n!=\n{BaseHand(b).__as_hand__(class_type)}\n(expected eq)')
+        test_instance.assertFalse(BaseHand(a).__as_hand__(class_type) > BaseHand(b).__as_hand__(class_type), f'Test Failed:\n{BaseHand(a).__as_hand__(class_type)}\n>\n{BaseHand(b).__as_hand__(class_type)}\n(expected eq)')
+        test_instance.assertFalse(BaseHand(a).__as_hand__(class_type) < BaseHand(b).__as_hand__(class_type), f'Test Failed:\n{BaseHand(a).__as_hand__(class_type)}\n<\n{BaseHand(b).__as_hand__(class_type)}\n(expected eq)')
 
     @staticmethod
     def assertGreaterThan(test_instance: TestCase, class_type, a, b):
         HandTestUtils.__assert_is_hand__(test_instance, class_type, a, b)
 
-        test_instance.assertNotEqual(BaseHand(a).as_hand(class_type), BaseHand(b).as_hand(class_type), f'Test Failed:\n{BaseHand(a).as_hand(class_type)}\n==\n{BaseHand(b).as_hand(class_type)}\n(expected gt)')
-        test_instance.assertGreater(BaseHand(a).as_hand(class_type), BaseHand(b).as_hand(class_type), f'Test Failed:\n{BaseHand(a).as_hand(class_type)}\n!>\n{BaseHand(b).as_hand(class_type)}\n(expected gt)')
-        test_instance.assertLess(BaseHand(b).as_hand(class_type), BaseHand(a).as_hand(class_type), f'Test Failed:\n{BaseHand(b).as_hand(class_type)}\n!<\n{BaseHand(a).as_hand(class_type)}\n(expected lt)')
-        test_instance.assertFalse(BaseHand(a).as_hand(class_type) < BaseHand(b).as_hand(class_type), f'Test Failed:\n{BaseHand(a).as_hand(class_type)}\n<\n{BaseHand(b).as_hand(class_type)}\n(expected gt)')
-        test_instance.assertFalse(BaseHand(b).as_hand(class_type) > BaseHand(a).as_hand(class_type), f'Test Failed:\n{BaseHand(a).as_hand(class_type)}\n<\n{BaseHand(b).as_hand(class_type)}\n(expected gt)')
+        test_instance.assertNotEqual(BaseHand(a).__as_hand__(class_type), BaseHand(b).__as_hand__(class_type), f'Test Failed:\n{BaseHand(a).__as_hand__(class_type)}\n==\n{BaseHand(b).__as_hand__(class_type)}\n(expected gt)')
+        test_instance.assertGreater(BaseHand(a).__as_hand__(class_type), BaseHand(b).__as_hand__(class_type), f'Test Failed:\n{BaseHand(a).__as_hand__(class_type)}\n!>\n{BaseHand(b).__as_hand__(class_type)}\n(expected gt)')
+        test_instance.assertLess(BaseHand(b).__as_hand__(class_type), BaseHand(a).__as_hand__(class_type), f'Test Failed:\n{BaseHand(b).__as_hand__(class_type)}\n!<\n{BaseHand(a).__as_hand__(class_type)}\n(expected lt)')
+        test_instance.assertFalse(BaseHand(a).__as_hand__(class_type) < BaseHand(b).__as_hand__(class_type), f'Test Failed:\n{BaseHand(a).__as_hand__(class_type)}\n<\n{BaseHand(b).__as_hand__(class_type)}\n(expected gt)')
+        test_instance.assertFalse(BaseHand(b).__as_hand__(class_type) > BaseHand(a).__as_hand__(class_type), f'Test Failed:\n{BaseHand(a).__as_hand__(class_type)}\n<\n{BaseHand(b).__as_hand__(class_type)}\n(expected gt)')
 
     @staticmethod
     def assertLessThan(test_instance: TestCase, class_type, a, b):
         HandTestUtils.__assert_is_hand__(test_instance, class_type, a, b)
 
-        test_instance.assertNotEqual(BaseHand(a).as_hand(class_type), BaseHand(b).as_hand(class_type), f'Test Failed:\n{BaseHand(a).as_hand(class_type)}\n==\n{BaseHand(b).as_hand(class_type)}\n(expected lt)')
-        test_instance.assertLess(BaseHand(a).as_hand(class_type), BaseHand(b).as_hand(class_type), f'Test Failed:\n{BaseHand(a).as_hand(class_type)}\n!<\n{BaseHand(b).as_hand(class_type)}\n(expected lt)')
-        test_instance.assertGreater(BaseHand(b).as_hand(class_type), BaseHand(a).as_hand(class_type), f'Test Failed:\n{BaseHand(b).as_hand(class_type)}\n!>\n{BaseHand(a).as_hand(class_type)}\n(expected gt)')
-        test_instance.assertFalse(BaseHand(a).as_hand(class_type) > BaseHand(b).as_hand(class_type), f'Test Failed:\n{BaseHand(a).as_hand(class_type)}\n>\n{BaseHand(b).as_hand(class_type)}\n(expected lt)')
-        test_instance.assertFalse(BaseHand(b).as_hand(class_type) < BaseHand(a).as_hand(class_type), f'Test Failed:\n{BaseHand(a).as_hand(class_type)}\n>\n{BaseHand(b).as_hand(class_type)}\n(expected lt)')
+        test_instance.assertNotEqual(BaseHand(a).__as_hand__(class_type), BaseHand(b).__as_hand__(class_type), f'Test Failed:\n{BaseHand(a).__as_hand__(class_type)}\n==\n{BaseHand(b).__as_hand__(class_type)}\n(expected lt)')
+        test_instance.assertLess(BaseHand(a).__as_hand__(class_type), BaseHand(b).__as_hand__(class_type), f'Test Failed:\n{BaseHand(a).__as_hand__(class_type)}\n!<\n{BaseHand(b).__as_hand__(class_type)}\n(expected lt)')
+        test_instance.assertGreater(BaseHand(b).__as_hand__(class_type), BaseHand(a).__as_hand__(class_type), f'Test Failed:\n{BaseHand(b).__as_hand__(class_type)}\n!>\n{BaseHand(a).__as_hand__(class_type)}\n(expected gt)')
+        test_instance.assertFalse(BaseHand(a).__as_hand__(class_type) > BaseHand(b).__as_hand__(class_type), f'Test Failed:\n{BaseHand(a).__as_hand__(class_type)}\n>\n{BaseHand(b).__as_hand__(class_type)}\n(expected lt)')
+        test_instance.assertFalse(BaseHand(b).__as_hand__(class_type) < BaseHand(a).__as_hand__(class_type), f'Test Failed:\n{BaseHand(a).__as_hand__(class_type)}\n>\n{BaseHand(b).__as_hand__(class_type)}\n(expected lt)')
 
     @staticmethod
     def test_not_implemented(test_instance: TestCase, class_type):

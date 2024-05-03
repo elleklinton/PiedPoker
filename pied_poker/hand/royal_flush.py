@@ -57,8 +57,8 @@ class RoyalFlush(BaseHand):
     def __hand_outs__(self, out_cards: Set[Card]) -> List[Card]:
         rv = []
 
-        for straight_flush_out in self.as_hand(StraightFlush).__hand_outs__({*out_cards}, True):
-            hand = BaseHand(self.cards_sorted + [straight_flush_out]).as_hand(RoyalFlush)
+        for straight_flush_out in self.__as_hand__(StraightFlush).__hand_outs__({*out_cards}, True):
+            hand = BaseHand(self.cards_sorted + [straight_flush_out]).__as_hand__(RoyalFlush)
             if hand.is_hand:
                 rv.append(straight_flush_out)
                 out_cards.update({straight_flush_out})

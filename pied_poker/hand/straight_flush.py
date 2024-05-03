@@ -53,8 +53,8 @@ class StraightFlush(BaseHand):
 
     def __hand_outs__(self, out_cards: Set[Card], include_higher_hand_outs=False) -> List[Card]:
         rv = []
-        for flushOut in self.as_hand(Flush).__hand_outs__({*out_cards}, True):
-            newHand = BaseHand(self.cards_sorted + [flushOut]).as_hand(StraightFlush)
+        for flushOut in self.__as_hand__(Flush).__hand_outs__({*out_cards}, True):
+            newHand = BaseHand(self.cards_sorted + [flushOut]).__as_hand__(StraightFlush)
             if newHand.is_hand and flushOut not in out_cards:
                 if newHand.__class__.hand_rank == StraightFlush.hand_rank or \
                         (newHand.hand_rank > self.hand_rank and include_higher_hand_outs):

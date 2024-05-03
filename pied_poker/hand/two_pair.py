@@ -22,7 +22,7 @@ class TwoPair(BaseHand):
 
     @property
     def cards_in_hand(self):
-        return [c for c in self.cards_sorted if c.rank in self.ranks_pair]
+        return [c for c in self.cards_sorted if c.rank in self.ranks_pair[:2]]
 
     @property
     def cards_not_in_hand(self):

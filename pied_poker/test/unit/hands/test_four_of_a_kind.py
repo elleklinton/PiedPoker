@@ -29,12 +29,12 @@ class TestFourOfAKind(TestCase):
 
     def test_cards_in_hand(self):
         a = HandTestUtils.build_shorthand('ah', 'ad', 'ac', 'as', '3d', '4d', '5d')
-        self.assertEqual(BaseHand(a).as_hand(FourOfAKind).cards_in_hand, HandTestUtils.build_shorthand('ah', 'ad', 'ac', 'as'))
-        self.assertEqual(BaseHand(a).as_hand(FourOfAKind).cards_not_in_hand, HandTestUtils.build_shorthand('5d'))
+        self.assertEqual(BaseHand(a).__as_hand__(FourOfAKind).cards_in_hand, HandTestUtils.build_shorthand('ah', 'ad', 'ac', 'as'))
+        self.assertEqual(BaseHand(a).__as_hand__(FourOfAKind).cards_not_in_hand, HandTestUtils.build_shorthand('5d'))
 
         a = HandTestUtils.build_shorthand('3h', '3d', '3c', '3s', '10d', 'ad', '10d')
-        self.assertEqual(BaseHand(a).as_hand(FourOfAKind).cards_in_hand, HandTestUtils.build_shorthand('3h', '3d', '3c', '3s'))
-        self.assertEqual(BaseHand(a).as_hand(FourOfAKind).cards_not_in_hand, HandTestUtils.build_shorthand('ad'))
+        self.assertEqual(BaseHand(a).__as_hand__(FourOfAKind).cards_in_hand, HandTestUtils.build_shorthand('3h', '3d', '3c', '3s'))
+        self.assertEqual(BaseHand(a).__as_hand__(FourOfAKind).cards_not_in_hand, HandTestUtils.build_shorthand('ad'))
 
     def test_not_implemented(self):
         HandTestUtils.test_not_implemented(self, FourOfAKind)
@@ -42,6 +42,6 @@ class TestFourOfAKind(TestCase):
     def test_outs(self):
         a = HandTestUtils.build_shorthand('as', 'ac', 'ad', '2s', '2h', '2d', '5c', '8c')
 
-        self.assertEqual(BaseHand(a).as_hand(FourOfAKind).__hand_outs__(set()), HandTestUtils.build_shorthand(
+        self.assertEqual(BaseHand(a).__as_hand__(FourOfAKind).__hand_outs__(set()), HandTestUtils.build_shorthand(
             'ah', '2c'
         ))

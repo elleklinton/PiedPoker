@@ -1,5 +1,10 @@
+from copy import deepcopy
 from unittest import TestCase
 
+import numpy as np
+
+from pied_poker.card import Rank, Card
+from pied_poker.deck import Deck
 from pied_poker.player import Player
 from pied_poker.hand.flush import Flush
 from pied_poker.hand import EmptyHand
@@ -53,6 +58,11 @@ class TestBaseHand(TestCase):
         hand = BaseHand(cards)
         self.assertIsInstance(hand.as_best_hand(), Flush)
 
+    def test_as_best_hand_flush_with_straight_also_present(self):
+        cards = HandTestUtils.build_shorthand('2d', '3d', '4s', '5d', '6c', '8d', '10s', 'jh', 'ad')
+        hand = BaseHand(cards)
+        self.assertIsInstance(hand.as_best_hand(), Flush)
+
     def test_as_best_hand_full_house(self):
         cards = HandTestUtils.build_shorthand('2s', '2d', '3h', '3d', '3s', 'jh', 'as')
         hand = BaseHand(cards)
@@ -72,6 +82,69 @@ class TestBaseHand(TestCase):
         cards = HandTestUtils.build_shorthand('as', 'ks', 'qs', 'js', '10s')
         hand = BaseHand(cards)
         self.assertIsInstance(hand.as_best_hand(), RoyalFlush)
+
+    def test_add_card_flush_draw_hits(self):
+        cards = HandTestUtils.build_shorthand('3s', '5s', '8s', '10s')
+        hand = BaseHand(cards).as_best_hand()
+        self.assertNotIsInstance(hand.as_best_hand(), Flush)
+        self.assertIsInstance(hand, HighCard)
+
+        hand.add_card(HandTestUtils.build_shorthand('as')[0])
+        self.assertIsInstance(hand.as_best_hand(), Flush)
+        self.assertNotIsInstance(hand, HighCard)
+
+    def test_add_card_straight_draw_hits(self):
+        cards = HandTestUtils.build_shorthand('3s', '5c', '6d', '7s')
+        hand = BaseHand(cards).as_best_hand()
+        self.assertNotIsInstance(hand.as_best_hand(), Straight)
+        self.assertIsInstance(hand, HighCard)
+
+        hand.add_card(HandTestUtils.build_shorthand('4h')[0])
+        self.assertIsInstance(hand.as_best_hand(), Straight)
+        self.assertNotIsInstance(hand, HighCard)
+
+    def test_add_card_two_pair(self):
+        cards = HandTestUtils.build_shorthand('3s', '3c', '6d', '6s', '10h')
+        hand = BaseHand(cards).as_best_hand()
+        self.assertIsInstance(hand, TwoPair)
+
+        hand.add_card(HandTestUtils.build_shorthand('4h')[0])
+        self.assertIsInstance(hand.as_best_hand(), TwoPair)
+
+        hand.add_card(HandTestUtils.build_shorthand('10s')[0])
+        self.assertIsInstance(hand.as_best_hand(), TwoPair)
+        self.assertEqual(hand.cards_in_hand[0].rank, Rank('10'))
+        self.assertEqual(hand.cards_in_hand[1].rank, Rank('10'))
+        self.assertEqual(hand.cards_in_hand[2].rank, Rank('6'))
+        self.assertEqual(hand.cards_in_hand[3].rank, Rank('6'))
+
+        hand.add_card(HandTestUtils.build_shorthand('3h')[0])
+        self.assertIsInstance(hand.as_best_hand(), FullHouse)
+        self.assertEqual(hand.cards_in_hand[0].rank, Rank('10'))
+        self.assertEqual(hand.cards_in_hand[1].rank, Rank('10'))
+        self.assertEqual(hand.cards_in_hand[2].rank, Rank('3'))
+        self.assertEqual(hand.cards_in_hand[3].rank, Rank('3'))
+        self.assertEqual(hand.cards_in_hand[4].rank, Rank('3'))
+
+    def test_remove_card_flush(self):
+        cards = HandTestUtils.build_shorthand('3s', '5s', '8s', '10s', 'as')
+        hand = BaseHand(cards).as_best_hand()
+        self.assertIsInstance(hand.as_best_hand(), Flush)
+
+        hand.remove_card(HandTestUtils.build_shorthand('3s')[0])
+        self.assertNotIsInstance(hand.as_best_hand(), Flush)
+        self.assertIsInstance(hand, HighCard)
+        self.assertIsInstance(hand.as_best_hand(), HighCard)
+
+    def test_remove_card_straight(self):
+        cards = HandTestUtils.build_shorthand('3s', '5c', '6d', '7s', '4h')
+        hand = BaseHand(cards).as_best_hand()
+        self.assertIsInstance(hand.as_best_hand(), Straight)
+
+        hand.remove_card(HandTestUtils.build_shorthand('4h')[0])
+        self.assertNotIsInstance(hand.as_best_hand(), Straight)
+        self.assertIsInstance(hand, HighCard)
+        self.assertIsInstance(hand.as_best_hand(), HighCard)
 
     def test_hashes_unique(self):
         # Test 2 different hands (but same type) have different hashes
@@ -152,5 +225,26 @@ class TestBaseHand(TestCase):
         player_2_hand = BaseHand(cards=[*player_2.cards, *community_cards]).as_best_hand()
 
         self.assertTrue(player_2_hand > player_1_hand)
+
+    def test_add_outs_and_remove_outs(self):
+        np.random.seed(420)
+
+        for i in range(100):
+            cards = Deck().draw(5)
+            hand = BaseHand(cards).as_best_hand()
+            original_hand = deepcopy(hand)
+            outs = hand.outs()
+            for out in outs:
+                for out_card in out.cards:
+                    hand.add_card(out_card)
+                    hand = hand.as_best_hand()
+                    self.assertNotEqual(hand, original_hand)
+                    self.assertEqual(hand.__class__.hand_rank, out.out_class.hand_rank)
+                    self.assertGreater(hand, original_hand)
+
+                    hand.remove_card(out_card)
+                    hand = hand.as_best_hand()
+                    self.assertEqual(hand, original_hand)
+
 
 

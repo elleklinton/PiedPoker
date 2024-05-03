@@ -49,8 +49,8 @@ class TestThreeOfAKind(TestCase):
 
     def test_cards_in_hand(self):
         a = HandTestUtils.build_shorthand('8d', '8c', '8h', '2c', 'ad', 'kh', 'js')
-        self.assertEqual(BaseHand(a).as_hand(ThreeOfAKind).cards_in_hand, HandTestUtils.build_shorthand('8d', '8c', '8h'))
-        self.assertEqual(BaseHand(a).as_hand(ThreeOfAKind).cards_not_in_hand, HandTestUtils.build_shorthand('ad', 'kh'))
+        self.assertEqual(BaseHand(a).__as_hand__(ThreeOfAKind).cards_in_hand, HandTestUtils.build_shorthand('8d', '8c', '8h'))
+        self.assertEqual(BaseHand(a).__as_hand__(ThreeOfAKind).cards_not_in_hand, HandTestUtils.build_shorthand('ad', 'kh'))
 
     def test_not_implemented(self):
         HandTestUtils.test_not_implemented(self, ThreeOfAKind)
@@ -58,6 +58,6 @@ class TestThreeOfAKind(TestCase):
     def test_outs(self):
         a = HandTestUtils.build_shorthand('as', 'ad', '5s', '5d', '6c')
 
-        outs = BaseHand(a).as_hand(ThreeOfAKind).__hand_outs__(set())
+        outs = BaseHand(a).__as_hand__(ThreeOfAKind).__hand_outs__(set())
 
         self.assertEqual(outs, HandTestUtils.build_shorthand('ac', 'ah', '5c', '5h'))

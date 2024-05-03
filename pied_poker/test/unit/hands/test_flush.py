@@ -45,20 +45,20 @@ class TestFlush(TestCase):
     def test_cards_in_hand(self):
         # Finds all diamonds
         a = HandTestUtils.build_shorthand('5d', '6d', '7d', '10d', 'ad', 'js', 'ks')
-        self.assertEqual(BaseHand(a).as_hand(Flush).cards_in_hand, HandTestUtils.build_shorthand('ad', '10d', '7d', '6d', '5d'))
-        self.assertEqual(BaseHand(a).as_hand(Flush).cards_not_in_hand, HandTestUtils.build_shorthand())
+        self.assertEqual(BaseHand(a).__as_hand__(Flush).cards_in_hand, HandTestUtils.build_shorthand('ad', '10d', '7d', '6d', '5d'))
+        self.assertEqual(BaseHand(a).__as_hand__(Flush).cards_not_in_hand, HandTestUtils.build_shorthand())
 
         # Finds highest diamonds
         a = HandTestUtils.build_shorthand('2d', '5d', '6d', '7d', '10d', 'ad', 'js', 'ks')
-        self.assertEqual(BaseHand(a).as_hand(Flush).cards_in_hand, HandTestUtils.build_shorthand('ad', '10d', '7d', '6d', '5d'))
-        self.assertEqual(BaseHand(a).as_hand(Flush).cards_not_in_hand, HandTestUtils.build_shorthand())
+        self.assertEqual(BaseHand(a).__as_hand__(Flush).cards_in_hand, HandTestUtils.build_shorthand('ad', '10d', '7d', '6d', '5d'))
+        self.assertEqual(BaseHand(a).__as_hand__(Flush).cards_not_in_hand, HandTestUtils.build_shorthand())
 
     def test_same_high_card_are_not_equal(self):
         c1 = HandTestUtils.build_shorthand('ks', 'qs', '9s', '8s', '7s')
         c2 = HandTestUtils.build_shorthand('ks', 'qs', '8s', '7s', '4s')
 
-        h1 = BaseHand(c1).as_hand(Flush)
-        h2 = BaseHand(c2).as_hand(Flush)
+        h1 = BaseHand(c1).__as_hand__(Flush)
+        h2 = BaseHand(c2).__as_hand__(Flush)
 
         self.assertTrue(h1 != h2)
         self.assertFalse(h1 == h2)
@@ -73,7 +73,7 @@ class TestFlush(TestCase):
     def test_outs(self):
         a = HandTestUtils.build_shorthand('as', '9s', '7s', '5s', '10d')
 
-        self.assertEqual(BaseHand(a).as_hand(Flush).__hand_outs__(set()), HandTestUtils.build_shorthand(
+        self.assertEqual(BaseHand(a).__as_hand__(Flush).__hand_outs__(set()), HandTestUtils.build_shorthand(
             '2s', '3s', '4s', '6s', '8s', '10s', 'js', 'qs', 'ks'
         ))
 
@@ -82,8 +82,8 @@ class TestFlush(TestCase):
         c1 = HandTestUtils.build_shorthand('kd', '3h')
         c2 = HandTestUtils.build_shorthand('7d', '9d')
 
-        h1 = BaseHand(tableCards + c1).as_hand(Flush)
-        h2 = BaseHand(tableCards + c2).as_hand(Flush)
+        h1 = BaseHand(tableCards + c1).__as_hand__(Flush)
+        h2 = BaseHand(tableCards + c2).__as_hand__(Flush)
 
         self.assertTrue(h1 != h2)
         self.assertFalse(h1 == h2)

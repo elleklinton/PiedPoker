@@ -14,10 +14,52 @@ class PokerRoundResult:
         self.community_cards = community_cards
         self.winners = set([p for p in self.players_ranked if p.hand == self.players_ranked[0].hand])
         self.player_during_round: Dict[Player, Player] = {}
+
         for p in players:
             self.player_during_round[p] = p
 
-        self.__check_unique_cards__()
+        all_player_cards = [card for player in self.players_ranked for card in player.cards]
+        self.player_cards_set: Set[Card] = set(all_player_cards)
+        self.community_cards_set: Set[Card] = set(community_cards)
+
+        if len(self.player_cards_set) != len(all_player_cards):
+            raise ValueError('Error! Duplicate player cards detected')
+        elif len(self.community_cards_set) != len(community_cards):
+            raise ValueError('Error! Duplicate community cards detected')
+
+    def add_community_card(self, *cards: Card):
+        for c in cards:
+            if c in self.community_cards_set:
+                raise ValueError(f'cannot add {c} to community cards, already in community cards')
+            if c in self.player_cards_set:
+                raise ValueError(f'cannot add {c} to community cards, already in player cards')
+
+        self.community_cards.extend(cards)
+        for c in cards:
+            self.community_cards_set.add(c)
+
+        for p in self.players_ranked:
+            p.add_community_cards(*cards)
+
+        self.players_ranked = sorted(self.players_ranked, reverse=True, key=lambda p: p.hand)
+        self.winners = set([p for p in self.players_ranked if p.hand == self.players_ranked[0].hand])
+
+    def remove_community_card(self, *cards: Card):
+        for c in cards:
+            if c not in self.community_cards_set:
+                raise ValueError(f'cannot remove {c} from community cards, not in community cards')
+            if c in self.player_cards_set:
+                raise ValueError(f'cannot remove {c} from community cards, in player cards')
+
+        self.community_cards = [c for c in self.community_cards if c not in cards]
+        for c in cards:
+            self.community_cards_set.remove(c)
+
+        for p in self.players_ranked:
+            p.remove_community_card(*cards)
+
+        self.players_ranked = sorted(self.players_ranked, reverse=True, key=lambda p: p.hand)
+        self.winners = set([p for p in self.players_ranked if p.hand == self.players_ranked[0].hand])
 
     def outs(self, player: Player, should_include_equal_hand_outs=True) -> List[Out]:
         """

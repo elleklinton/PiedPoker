@@ -34,7 +34,7 @@ class OnePair(BaseHand):
         if super().__eq__(other):  # Same class of hand
             if self.ranks_pair[0] == other.ranks_pair[0]:  # Same pair
                 # If have same pair, we delegate to HighCard to determine the winner on the rest of the cards at stake
-                return BaseHand(self.cards_not_in_hand).as_hand(HighCard) == BaseHand(other.cards_not_in_hand).as_hand(HighCard)
+                return BaseHand(self.cards_not_in_hand).__as_hand__(HighCard) == BaseHand(other.cards_not_in_hand).__as_hand__(HighCard)
         return False
 
     def __gt__(self, other):
@@ -47,7 +47,7 @@ class OnePair(BaseHand):
                 return True
             elif self.ranks_pair[0] == other.ranks_pair[0]:
                 # If have same pair, we delegate to HighCard to determine the winner on the rest of the cards at stake
-                return BaseHand(self.cards_not_in_hand).as_hand(HighCard) > BaseHand(other.cards_not_in_hand).as_hand(HighCard)
+                return BaseHand(self.cards_not_in_hand).__as_hand__(HighCard) > BaseHand(other.cards_not_in_hand).__as_hand__(HighCard)
 
         return False
 
@@ -61,7 +61,7 @@ class OnePair(BaseHand):
                 return True
             elif self.ranks_pair[0] == other.ranks_pair[0]:
                 # If have same pair, we delegate to HighCard to determine the winner on the rest of the cards at stake
-                return BaseHand(self.cards_not_in_hand).as_hand(HighCard) < BaseHand(other.cards_not_in_hand).as_hand(HighCard)
+                return BaseHand(self.cards_not_in_hand).__as_hand__(HighCard) < BaseHand(other.cards_not_in_hand).__as_hand__(HighCard)
 
         return False
 
