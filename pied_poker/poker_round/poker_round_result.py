@@ -27,7 +27,7 @@ class PokerRoundResult:
         elif len(self.community_cards_set) != len(community_cards):
             raise ValueError('Error! Duplicate community cards detected')
 
-    def add_community_card(self, *cards: Card):
+    def add_community_cards(self, *cards: Card):
         for c in cards:
             if c in self.community_cards_set:
                 raise ValueError(f'cannot add {c} to community cards, already in community cards')
@@ -44,14 +44,17 @@ class PokerRoundResult:
         self.players_ranked = sorted(self.players_ranked, reverse=True, key=lambda p: p.hand)
         self.winners = set([p for p in self.players_ranked if p.hand == self.players_ranked[0].hand])
 
-    def remove_community_card(self, *cards: Card):
+    def remove_community_cards(self, *cards: Card):
+        cards_to_remove_set = set()
         for c in cards:
             if c not in self.community_cards_set:
                 raise ValueError(f'cannot remove {c} from community cards, not in community cards')
             if c in self.player_cards_set:
                 raise ValueError(f'cannot remove {c} from community cards, in player cards')
+            cards_to_remove_set.add(c)
 
-        self.community_cards = [c for c in self.community_cards if c not in cards]
+        self.community_cards = [c for c in self.community_cards if c not in cards_to_remove_set]
+
         for c in cards:
             self.community_cards_set.remove(c)
 

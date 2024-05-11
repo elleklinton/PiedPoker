@@ -1,3 +1,4 @@
+from copy import deepcopy
 from typing import List
 from unittest import TestCase
 
@@ -148,42 +149,42 @@ class TestRoundResult(TestCase):
         self.assertEqual(p2.hand.hand_rank, HighCard.hand_rank)
         self.assertIn(p1, round_result.winners)
 
-        round_result.add_community_card(Card('10c'))
+        round_result.add_community_cards(Card('10c'))
         self.assertEqual(p1.hand.hand_rank, FourOfAKind.hand_rank)
         self.assertEqual(p2.hand.hand_rank, OnePair.hand_rank)
         self.assertIn(p1, round_result.winners)
 
-        round_result.remove_community_card(Card('10c'))
+        round_result.remove_community_cards(Card('10c'))
         self.assertEqual(p1.hand.hand_rank, ThreeOfAKind.hand_rank)
         self.assertEqual(p2.hand.hand_rank, HighCard.hand_rank)
         self.assertIn(p1, round_result.winners)
 
-        round_result.add_community_card(Card('6d'))
+        round_result.add_community_cards(Card('6d'))
         self.assertEqual(p1.hand.hand_rank, FullHouse.hand_rank)
         self.assertEqual(p2.hand.hand_rank, OnePair.hand_rank)
         self.assertIn(p1, round_result.winners)
 
-        round_result.remove_community_card(Card('6d'))
+        round_result.remove_community_cards(Card('6d'))
         self.assertEqual(p1.hand.hand_rank, ThreeOfAKind.hand_rank)
         self.assertEqual(p2.hand.hand_rank, HighCard.hand_rank)
         self.assertIn(p1, round_result.winners)
 
-        round_result.add_community_card(Card('6s'))
+        round_result.add_community_cards(Card('6s'))
         self.assertEqual(p1.hand.hand_rank, FullHouse.hand_rank)
         self.assertEqual(p2.hand.hand_rank, Flush.hand_rank)
         self.assertIn(p1, round_result.winners)
 
-        round_result.remove_community_card(Card('6s'))
+        round_result.remove_community_cards(Card('6s'))
         self.assertEqual(p1.hand.hand_rank, ThreeOfAKind.hand_rank)
         self.assertEqual(p2.hand.hand_rank, HighCard.hand_rank)
         self.assertIn(p1, round_result.winners)
 
-        round_result.add_community_card(Card('5s'))
+        round_result.add_community_cards(Card('5s'))
         self.assertEqual(p1.hand.hand_rank, ThreeOfAKind.hand_rank)
         self.assertEqual(p2.hand.hand_rank, Flush.hand_rank)
         self.assertIn(p2, round_result.winners)
 
-        round_result.remove_community_card(Card('5s'))
+        round_result.remove_community_cards(Card('5s'))
         self.assertEqual(p1.hand.hand_rank, ThreeOfAKind.hand_rank)
         self.assertEqual(p2.hand.hand_rank, HighCard.hand_rank)
         self.assertIn(p1, round_result.winners)
@@ -197,10 +198,37 @@ class TestRoundResult(TestCase):
         self.assertEqual(p1.hand.hand_rank, ThreeOfAKind.hand_rank)
         self.assertEqual(p2.hand.hand_rank, HighCard.hand_rank)
 
-        round_result.remove_community_card(*Card.of('6c', '10h'))
+        round_result.remove_community_cards(*Card.of('6c', '10h'))
         self.assertEqual(p1.hand.hand_rank, OnePair.hand_rank)
         self.assertEqual(p2.hand.hand_rank, HighCard.hand_rank)
 
-        round_result.add_community_card(*Card.of('10c', '10h', '6s'))
+        round_result.add_community_cards(*Card.of('10c', '10h', '6s'))
         self.assertEqual(p1.hand.hand_rank, FourOfAKind.hand_rank)
         self.assertEqual(p2.hand.hand_rank, Flush.hand_rank)
+
+    def test_add_remove_cards_fully_reverts(self):
+        p1 = Player('Ellek', [Card('As'), Card('Ad')])
+        p2 = Player('Slim', [Card('Kd'), Card('8d')])
+        community_cards = Card.of('4d', '7c', '7d', '7s', '2d')
+
+        round_result_pre_flop = PokerRoundResult([p1, p2], [])
+        round_result_river = PokerRoundResult([p1, p2], community_cards)
+
+        # Add cards and check state
+        self.assertEqual(round_result_pre_flop.player_one, round_result_river.player_one)
+        # self.assertNotEqual(round_result_pre_flop.players_ranked, round_result_river.players_ranked)
+        self.assertNotEqual(round_result_pre_flop.community_cards, round_result_river.community_cards)
+        # self.assertNotEqual(round_result_pre_flop.winners, round_result_river.winners)
+        self.assertEqual(round_result_pre_flop.player_cards_set, round_result_river.player_cards_set)
+        self.assertNotEqual(round_result_pre_flop.community_cards_set, round_result_river.community_cards_set)
+
+        # remove cards and check state
+        round_result_river.remove_community_cards(*round_result_river.community_cards)
+
+        self.assertEqual(round_result_pre_flop.player_one, round_result_river.player_one)
+        self.assertEqual(round_result_pre_flop.players_ranked, round_result_river.players_ranked)
+        self.assertEqual(round_result_pre_flop.community_cards, round_result_river.community_cards)
+        self.assertEqual(round_result_pre_flop.winners, round_result_river.winners)
+        self.assertEqual(round_result_pre_flop.player_cards_set, round_result_river.player_cards_set)
+        self.assertEqual(round_result_pre_flop.community_cards_set, round_result_river.community_cards_set)
+

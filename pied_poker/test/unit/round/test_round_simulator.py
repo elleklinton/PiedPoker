@@ -5,6 +5,8 @@ import random
 from pied_poker.card.card import Card
 from pied_poker.player import Player
 from pied_poker.poker_round import PokerRoundSimulator
+from pied_poker.hand.one_pair import OnePair
+from pied_poker.hand.high_card import HighCard
 
 
 class TestRoundSimulator(TestCase):
@@ -52,3 +54,46 @@ class TestRoundSimulator(TestCase):
         rs.simulate(0, 1, False)
         rs.simulate(0, 2, True)
         rs.simulate(0, 2, False)
+
+    def test_aces_never_behind_preflop(self):
+        np.random.seed(420)
+        players = [Player('Ellek', cards=[Card('as'), Card('ad')]), Player('Snoop')]
+        rs = PokerRoundSimulator(players=players, total_players=2)
+
+        simulation_result = rs.simulate(100, 1, False)
+
+        # remove river
+        [r.remove_community_cards(r.community_cards[-1]) for r in simulation_result.__rounds__]
+        # remove turn
+        [r.remove_community_cards(r.community_cards[-1]) for r in simulation_result.__rounds__]
+        # remove flop
+        [r.remove_community_cards(*r.community_cards) for r in simulation_result.__rounds__]
+
+        for i, r in enumerate(simulation_result.__rounds__):
+            self.assertIn(Player('Ellek'), r.winners)
+            self.assertEqual(r.player_during_round[Player('Ellek')].hand.hand_rank, OnePair.hand_rank)
+
+    def test_dirty_diaper_never_ahead_preflop(self):
+        np.random.seed(420)
+        players = [Player('Ellek', cards=[Card('2s'), Card('3d')]), Player('Snoop')]
+        rs = PokerRoundSimulator(players=players, total_players=2)
+
+        simulation_result = rs.simulate(100, 1, False)
+
+        # remove river
+        [r.remove_community_cards(r.community_cards[-1]) for r in simulation_result.__rounds__]
+        # remove turn
+        [r.remove_community_cards(r.community_cards[-1]) for r in simulation_result.__rounds__]
+        # remove flop
+        [r.remove_community_cards(*r.community_cards) for r in simulation_result.__rounds__]
+
+        for i, r in enumerate(simulation_result.__rounds__):
+            snoop = r.player_during_round[Player('Snoop')]
+            if snoop.cards[0].rank.rank == 2 and snoop.cards[1].rank.rank == 3 or \
+                    snoop.cards[0].rank.rank == 3 and snoop.cards[1].rank.rank == 2:
+                self.assertIn(Player('Snoop'), r.winners)
+                self.assertIn(Player('Ellek'), r.winners)
+                self.assertEqual(r.player_during_round[Player('Snoop')].hand.hand_rank, HighCard.hand_rank)
+            else:
+                self.assertNotIn(Player('Ellek'), r.winners)
+                self.assertEqual(r.player_during_round[Player('Ellek')].hand.hand_rank, HighCard.hand_rank)
