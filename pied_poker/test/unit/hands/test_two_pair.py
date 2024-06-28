@@ -75,6 +75,20 @@ class TestTwoPair(TestCase):
         HandTestUtils.assertGreaterThan(self, TwoPair, a, b)
         HandTestUtils.assertLessThan(self, TwoPair, b, a)
 
+    def testKickerWithThreePair(self):
+        # 55 vs 99
+        # board has AA KK 3
+        # Player with 99 should be the winner
+        community_cards = HandTestUtils.build_shorthand('Ad', 'As', 'Kd', 'Ks', '3d')
+        nine_nine = HandTestUtils.build_shorthand('9d', '9s')
+        five_five = HandTestUtils.build_shorthand('5d', '5s')
+
+        nine_nine_player = BaseHand(community_cards + nine_nine).as_best_hand()
+        five_five_player = BaseHand(community_cards + five_five).as_best_hand()
+        self.assertNotEqual(nine_nine_player, five_five_player, 'Error! Expected 99 to not be equal to 55')
+        self.assertGreater(nine_nine_player, five_five_player, 'Error! Expected 99 to beat 55')
+
+
     def test_cards_in_hand(self):
         a = HandTestUtils.build_shorthand('8d', '8c', '2d', '2c', 'ad')
         self.assertEqual(BaseHand(a).__as_hand__(TwoPair).cards_in_hand, HandTestUtils.build_shorthand('8d', '8c', '2d', '2c'))

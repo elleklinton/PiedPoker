@@ -21,11 +21,11 @@ class HighCard(BaseHand):
 
     @property
     def cards_in_hand(self):
-        return [c for c in self.cards_sorted if c.rank in self.ranks_single][:5]
+        return [c for c in self.cards_sorted][:5]
 
     @property
     def cards_not_in_hand(self):
-        return [c for c in self.cards_sorted if c.rank in self.ranks_single][5:]
+        return []
 
     @property
     def is_hand(self):

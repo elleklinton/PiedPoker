@@ -26,8 +26,8 @@ class TwoPair(BaseHand):
 
     @property
     def cards_not_in_hand(self):
-        # Only take the first high card_internals since 2 pair takes up 4/5 cards
-        return [c for c in self.cards_sorted if c.rank not in self.ranks_pair][:1]
+        # Only take the first high card since 2 pair takes up 4/5 cards
+        return self.get_kickers(1)
 
     def __eq__(self, other):
         if super().__eq__(other):  # Same class of hand

@@ -112,6 +112,17 @@ class BaseHand:
     def cards_not_in_hand(self):
         return self.cards_sorted[:5]
 
+    def get_kickers(self, num_kickers: int) -> List[Card]:
+        cards_in_hand = set(self.cards_in_hand)
+        rv = []
+        i = 0
+        while len(rv) < num_kickers and i < len(self.cards_sorted):
+            if self.cards_sorted[i] not in self.cards_in_hand:
+                rv.append(self.cards_sorted[i])
+            i += 1
+
+        return rv
+
     def __as_hand__(self, target_class):
         self.__class__ = target_class
         return self

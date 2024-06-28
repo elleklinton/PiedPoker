@@ -78,7 +78,7 @@ class TestHighCard(TestCase):
         # Should pick top 5 cards in descending order
         self.assertEqual(BaseHand(a).__as_hand__(HighCard).cards_in_hand, HandTestUtils.build_shorthand('kd', 'qd', '10d', '8d', '7d'))
         # Should exclude last 2 cards
-        self.assertEqual(BaseHand(a).__as_hand__(HighCard).cards_not_in_hand, HandTestUtils.build_shorthand('4d', '3d'))
+        self.assertEqual(BaseHand(a).__as_hand__(HighCard).cards_not_in_hand, [])
 
     def test_not_implemented(self):
         HandTestUtils.test_not_implemented(self, HighCard)

@@ -184,3 +184,20 @@ class TestCases(SimulationTestCase):
             n_players=2
         )
         self.assert_probability(payload)
+
+    def test_probability_of_pocket_aces_winning(self):
+        """
+        In this case, we are calculating the probability of pocket aces winning, which should be equal to 85% (if we do
+        not include ties)
+        """
+        payload = SimulationTestCasePayload(
+            simulator_factory_fn=SimulatorFactory.round_simulator,
+            community_cards=[],
+            player_cards=[Card('as'), Card('ad')],
+            target_event=PlayerWins(),
+            given_event=PlayerHasPocketPair(exact_rank=Rank('a')),
+            target_probability=0.85,
+            delta=0.015,
+            n_players=2
+        )
+        self.assert_probability(payload)

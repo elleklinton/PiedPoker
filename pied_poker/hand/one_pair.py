@@ -28,7 +28,7 @@ class OnePair(BaseHand):
 
     @property
     def cards_not_in_hand(self):
-        return [c for c in self.cards_sorted if c.rank not in self.ranks_pair][:3]
+        return self.get_kickers(3)
 
     def __eq__(self, other):
         if super().__eq__(other):  # Same class of hand

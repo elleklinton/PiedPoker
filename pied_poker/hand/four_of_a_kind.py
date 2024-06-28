@@ -26,7 +26,7 @@ class FourOfAKind(BaseHand):
 
     @property
     def cards_not_in_hand(self):
-        return [c for c in self.cards_sorted if c.rank not in self.ranks_quad][:1]
+        return self.get_kickers(1)
 
     def __eq__(self, other):
         if super().__eq__(other):  # Same class of hand
